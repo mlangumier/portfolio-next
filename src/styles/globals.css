@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: 40 45 80;
+  --color-primary-light: 70 80 130;
+  --color-primary-dark: 5 10 25;
+  --color-primary-over: 15 45 75;
+
+  --color-secondary: 240 140 0;
+  --color-secondary-light: 255 170 50;
+  --color-secondary-dark: 150 90 0;
+  --color-secondary-over: 170 100 0;
+
+  --color-grey: 85 85 85;
+  --color-grey-light: 230 230 230;
+  --color-grey-dark: 50 50 50;
+  --color-grey-black: 25 25 25;
+
+  /* --color-beige: 245 235 230; */
+
+  --color-error: 255 0 0;
+  --color-success: 0 150 0;
+  --color-info: 0 150 255;
+  --color-warning: 255 125 0;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+} */
+
+/* body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@layer base {
+  html {
+    @apply text-[10px] bg-white text-grey-dark;
+  }
+
+  body {
+    @apply min-w-[320px] min-h-full overflow-hidden;
+  }
+
+  #root {
+    @apply max-w-[1280px] m-auto text-center flex flex-col h-[100vh];
+  }
+
+  body,
+  input,
+  select,
+  .text-body {
+    @apply text-base leading-[2.2rem];
+  }
+
+  h1,
+  .h1-like {
+    @apply text-large-30 font-semibold uppercase leading-[3.5rem];
+  }
+  h2,
+  .h2-like {
+    @apply text-large-25 leading-[3rem];
+  }
+  h3,
+  .h3-like {
+    @apply text-large leading-[2.5rem];
+  }
+  h4,
+  .h4-like {
+    @apply text-medium leading-[2.2rem];
+  }
+
+  a {
+    @apply cursor-pointer text-base leading-[2.2rem] font-medium no-underline transition-all duration-200 ease-in-out hover:text-primary-over;
+  }
+
+  li {
+    @apply list-none;
+  }
+
+  input,
+  select,
+  textarea,
+  button {
+    @apply focus:outline-none;
+  }
+}
+
+/* @layer components {} */
