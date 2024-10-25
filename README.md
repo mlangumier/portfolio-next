@@ -1,49 +1,42 @@
-# Portfolio
+# Next.js Portfolio
 
-A portfolio project with my resume and examples of professional and personnal projects I have worked on.
+Hi! I am Mathieu Langumier, and this is my portfolio.
 
-## Techs & dependencies:
+This is a project that regroups some personnal and profesionnal projects I have had the pleasure of working on. It serves as both a continuous training project and an overview of the skills I have acquired.
 
-- Next.js
-- Typescript
-- TailwindCss
-- i18
+Please enjoy your visit, and don't hesitate to contact me if you have questions or need any information
 
-## Next.js v15
+## Description
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This project uses Next.js 15 with Turbopack, React 19, TypeScript and TailwindCSS. Various dependencies will be added depending on the different skills used in this projects. The most common dependencies such as Axios, Tanstack Query, Redux and i18n will be used, others will be added if they are relevant.
 
-### Getting Started
+[Work in Progress]
 
-First, run the development server:
+## Start the project
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+There are a few steps required to setup the environment. Instead of using `localhost:3000` during development, we'll be using `https://mathieulangumier.local`. By doing so, seting up the production environment and deployment will be much easier and the experience while developing will be much closer to the one in production.
+
+### - Step 1: Change the host name (#localhost)
+
+In the file `~/../../etc/hosts`, add the name `mathieulangumier.local` to the list host names.
+
+### - Step 2: HTTPS Certificate
+
+Install [mkcert](https://github.com/FiloSottile/mkcert) and the use the following command, it will generate the certificates required to run on a locally-trusted environment.
+
+```
+mkcert --cert-file mathieulangumier.local.crt --key-file mathieulangumier.local.key mathieulangumier.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Once the two files are created, create a `/cert` folder a the root of the project and move them inside.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### - Step 3: Docker
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This project uses Docker v27.3.1 and docker-compose v2.29.2-desktop.2. Make sure you have a relatively recent version for both.
 
-### Learn More
+Use the command `docker-compose build` to run the project for the first time. After that, use `docker-compose up` to start the development environment. Use Ctrl+C to exit, and `docker-compose down` to stop the containers.
+Navigate to `https://mathieulangumier.local` and make sure that this URL works. The app should automatically reload while making changes on the project.
 
-To learn more about Next.js, take a look at the following resources:
+### Warning
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-### Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+If you have an Apache or Nginx server that starts automatically, you might need to stop them manually to allow this app to start.

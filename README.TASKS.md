@@ -1,15 +1,10 @@
-## Useful links & inspirations
+# Organisation
 
-- [Format README files](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#paragraphs)
+This file is a way to organise the developpement process and regroup some useful links and tips that are used throughout the project. Some tools like Notion, Jira or Trello are much more efficient at doing this, but the goal here is not to be precise and have a strict organisation, but to have an overview of the project that is easily accesible while working on it.
+
+## Tips & inspirations
 
 - [Wix Design by Maya Nelson](https://www.wix.com/website-template/view/html/2622?originUrl=https%3A%2F%2Fwww.wix.com%2Fwebsite%2Ftemplates%2Fhtml%2Fportfolio-cv&tpClick=view_button&esi=bab18c59-35d9-412d-986c-991e8416c5c8)
-
-## Tips:
-
-Check useful commands and setup new aliases:
-
-- Check git log in compact clear lines (alias: `git logg`):
-  `git log --graph --decorate --oneline`
 
 ## Ideas:
 
@@ -28,11 +23,13 @@ Internationalized website in with QoL dependencies.
 - [x] Next.js
 - [x] Typescript
 - [x] TailwindCss
+- [x] Docker
 - [] Zod (for typescript)
 - [] i18n (Next.js) / next-intl (Vercel) / react-i18next / react-intl
 - [] Tanstack/React Query
 - [] Axios
-- [] (Optional) Redux
+- [] Redux
+- [] Tests unitaires
 - [] (Optional) Firebase database
 
 ## Tasks
@@ -40,13 +37,15 @@ Internationalized website in with QoL dependencies.
 ### Initialisation
 
 - [x] Install dependencies and create basic project structure
+- [x] Setup Docker for local environment (Vercel doesn't support Docker in production)
 - [x] Import style template and setup first layout and page files
 
 ### Setup
 
 - [] Theme: Choose color scheme, fonts
-- [] Structure: Create the first pages and layout : one general layout + one for main website layout (project pages will have specific layouts)
-- [] Test deploying on Vercel
+- [] Structure: Create the first pages and layout : one general layout + one for main website layout (project pages will have their own layouts)
+- [] Create "work in progress" template / redirection
+- [] Setup and deploy on Vercel with Github
 
 ### Pages Layout
 
