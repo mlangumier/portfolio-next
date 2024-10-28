@@ -1,0 +1,14 @@
+# Build
+FROM node:18-alpine AS dependencies
+WORKDIR /app
+COPY package*.json ./
+RUN npm install -g npm@latest && npm ci
+
+FROM node:18-alpine AS development
+WORKDIR /app
+COPY . .
+COPY --from=dependencies /app/node_modules ./node_modules
+ENV NODE_ENV development
+
+EXPOSE 3000
+CMD ["npm", "run", "dev"]

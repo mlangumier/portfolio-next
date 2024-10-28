@@ -23,7 +23,7 @@
 # misc
 .DS_Store
 *.pem
-README.TASKS.md
+/certs
 
 # debug
 npm-debug.log*
