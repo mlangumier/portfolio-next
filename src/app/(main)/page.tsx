@@ -1,9 +1,7 @@
-const Homepage = async () => {
+export default function Homepage() {
   return (
-    <div>
-      <h1>Homepage</h1>
+    <div className="h-screen flex justify-center align-middle">
+      <h1 className="m-auto">[Work in Progress]</h1>
     </div>
   );
-};
-
-export default Homepage;
+}

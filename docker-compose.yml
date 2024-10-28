@@ -1,0 +1,26 @@
+services:
+  nginx-proxy:
+    image: jwilder/nginx-proxy
+    container_name: nginx-proxy-mathieulangumier
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - /var/run/docker.sock:/tmp/docker.sock:ro
+      - ./certs:/etc/nginx/certs
+    depends_on:
+      - nextjs
+  nextjs:
+    container_name: mathieulangumier-next-dev
+    build:
+      context: .
+      target: development
+      dockerfile: ./Dockerfile.dev
+    volumes:
+      - "./.:/app"
+      - "./node_modules:/app/node_modules"
+    ports:
+      - "3000:3000"
+    environment:
+      - VIRTUAL_HOST=mathieulangumier.local
+      - VIRTUAL_PORT=3000
