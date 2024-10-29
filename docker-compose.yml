@@ -1,7 +1,7 @@
 services:
   nginx-proxy:
     image: jwilder/nginx-proxy
-    container_name: nginx-proxy-mathieulangumier
+    container_name: mathieulangumier-nginx-proxy
     ports:
       - "80:80"
       - "443:443"
@@ -11,14 +11,14 @@ services:
     depends_on:
       - nextjs
   nextjs:
-    container_name: mathieulangumier-next-dev
+    container_name: mathieulangumier-next15-dev
     build:
       context: .
       target: development
       dockerfile: ./Dockerfile.dev
     volumes:
-      - "./.:/app"
-      - "./node_modules:/app/node_modules"
+      - ./.:/app
+      - ./node_modules:/app/node_modules
     ports:
       - "3000:3000"
     environment:

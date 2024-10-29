@@ -1,11 +1,10 @@
-FROM node:hydrogen as dependencies
-
+# Build
+FROM node:18-alpine AS dependencies
 WORKDIR /app
+COPY package*.json ./
+RUN npm install -g npm@latest && npm ci
 
-COPY package.json package-lock.json ./
-RUN npm install -g npm@10.8.2 && npm ci
-
-FROM node:hydrogen as development
+FROM node:18-alpine AS development
 WORKDIR /app
 COPY . .
 COPY --from=dependencies /app/node_modules ./node_modules
