@@ -1,0 +1,22 @@
+#!/bin/sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo ">>> 🔵 Starting pre-commit process..."
+
+# We start the check & formatting process with Prettier & ESLint setup in the file "/scripts.format.sh".
+npm run check-n-format
+
+# If checks and formattings are successful for both, we try a production build.
+echo ">>> 🔵 Now starting the production build..."
+
+npm run build || {
+        echo '>>> 🔴 Next.js build failed. Check the error log above.'
+        false;
+}
+
+# If build is successful, the commit can procede:
+echo '>>> 🟢 Pre-commit verifications successful! Committing changes...'
+
+
+# This line allows the script to be executed but cancels the commit. Uncomment if you need to test commit-related scripts but don't want the commit to happen.
+# exit 1
