@@ -1,96 +1,91 @@
+@import "./fonts/fonts.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --color-primary: 40 45 80;
-  --color-primary-light: 70 80 130;
-  --color-primary-dark: 5 10 25;
-  --color-primary-over: 15 45 75;
+    /* Primary - Blue */
+    --color-primary: 20 81 105;
+    --color-primary-light: 52 161 188;
+    --color-primary-dark: 11 44 62;
+    --color-primary-black: 1 22 30;
+    --color-primary-over: 47 129 154;
+    --color-primary-transparent: 47 129 154; /* Opacity: 0.2 */
 
-  --color-secondary: 240 140 0;
-  --color-secondary-light: 255 170 50;
-  --color-secondary-dark: 150 90 0;
-  --color-secondary-over: 170 100 0;
+    /* Secondary - Gold */
+    --color-secondary: 255 194 41;
+    --color-secondary-light: 255 235 52;
+    --color-secondary-dark: 217 153 13;
 
-  --color-grey: 85 85 85;
-  --color-grey-light: 230 230 230;
-  --color-grey-dark: 50 50 50;
-  --color-grey-black: 25 25 25;
+    /* --color-secondary-over: 170 100 0; */
 
-  /* --color-beige: 245 235 230; */
+    /* Grey */
+    --color-grey: 108 117 125;
+    --color-grey-light: 233 236 239;
+    /* --color-grey-medium: 173 181 189; //for opacity? */
+    --color-grey-dark: 33 37 41;
+    --color-grey-black: 19 21 24;
 
-  --color-error: 255 0 0;
-  --color-success: 0 150 0;
-  --color-info: 0 150 255;
-  --color-warning: 255 125 0;
+    /* Notifications */
+    --color-error: 255 0 0;
+    --color-success: 0 150 0;
+    --color-info: 0 150 255;
+    --color-warning: 255 125 0;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-} */
-
-/* body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-} */
-
 @layer base {
-  html {
-    @apply text-[10px] bg-white text-grey-dark;
-  }
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
 
-  body {
-    @apply min-w-[320px] min-h-full overflow-hidden;
-  }
+    #root,
+    html,
+    body {
+        @apply h-full w-full;
+    }
 
-  #root {
-    @apply max-w-[1280px] m-auto text-center flex flex-col h-[100vh];
-  }
+    body {
+        @apply overflow-hidden bg-white font-ranade text-base leading-[2rem] text-grey-dark;
+    }
 
-  body,
-  input,
-  select,
-  .text-body {
-    @apply text-base leading-[2.2rem];
-  }
+    h1,
+    .h1-like {
+        @apply font-excon text-large-30;
+    }
+    h2,
+    .h2-like {
+        @apply font-excon text-large-25;
+    }
+    h3,
+    .h3-like {
+        @apply font-excon text-large-22;
+    }
+    h4,
+    .h4-like {
+        @apply font-excon text-large;
+    }
 
-  h1,
-  .h1-like {
-    @apply text-large-30 font-semibold uppercase leading-[3.5rem];
-  }
-  h2,
-  .h2-like {
-    @apply text-large-25 leading-[3rem];
-  }
-  h3,
-  .h3-like {
-    @apply text-large leading-[2.5rem];
-  }
-  h4,
-  .h4-like {
-    @apply text-medium leading-[2.2rem];
-  }
+    a {
+        @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline transition-all duration-200 ease-in-out hover:text-primary-light;
+    }
 
-  a {
-    @apply cursor-pointer text-base leading-[2.2rem] font-medium no-underline transition-all duration-200 ease-in-out hover:text-primary-over;
-  }
+    li {
+        @apply list-none;
+    }
 
-  li {
-    @apply list-none;
-  }
-
-  input,
-  select,
-  textarea,
-  button {
-    @apply focus:outline-none;
-  }
+    input,
+    select,
+    textarea,
+    button {
+        @apply focus:outline-none;
+    }
 }
 
 @layer components {
+}
+
+@layer utilities {
 }

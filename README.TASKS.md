@@ -8,7 +8,7 @@ This file is a way to organise the developpement process and regroup some useful
 
 ## Ideas:
 
-These pages might need different layouts:
+These pages - if implemented - might need different layouts:
 
 - Blog posts page (with API)
 - Netflix clone (+ API)
@@ -24,13 +24,13 @@ Internationalized website in with QoL dependencies.
 - [x] Typescript
 - [x] TailwindCss
 - [x] Docker
-- [] Zod (for typescript)
-- [] i18n (Next.js) / next-intl (Vercel) / react-i18next / react-intl
-- [] Tanstack/React Query
-- [] Axios
-- [] Redux
-- [] Tests unitaires
-- [] (Optional) Firebase database
+- [ ] Zod (for typescript & forms)
+- [ ] i18n (Next.js) / next-intl (Vercel) / react-i18next / react-intl
+- [ ] Tanstack/React Query
+- [ ] Axios
+- [ ] Redux
+- [ ] Tests unitaires
+- [ ] (Optional) Firebase database
 
 ## Tasks
 
@@ -42,19 +42,19 @@ Internationalized website in with QoL dependencies.
 
 ### Setup
 
-- [] Theme: Choose color scheme, fonts
-- [] Structure: Create the first pages and layout : one general layout + one for main website layout (project pages will have their own layouts)
-- [] Create "work in progress" template / redirection
-- [] Setup and deploy on Vercel with Github
+- [x] Theme: Choose color scheme, fonts (inspired by template, but personnal color)
+- [x] Setup ESLint, Prettier & Husky pre-commit script
+- [x] Create "work in progress" template
+- [x] Deploy on Vercel with Github
 
 ### Pages Layout
 
-- [] Layout: responsive and working with all content quantity (low, enough, huge)
-- [] Header: Responsive + burger menu, title, links.
-- [] Footer Responsive, links and disclaimers.
+- [ ] Header: Responsive + burger menu, title, links.
+- [ ] Footer Responsive, links and disclaimers.
+- [ ] Layout: responsive and working with all content quantity
 
 ### Homepage
 
-- [] Background + responsive orientation
-- [] Modal (generic)
-- [] Modal content
+- [ ] Background + responsive orientation
+- [ ] Modal (generic)
+- [ ] Modal content

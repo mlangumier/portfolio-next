@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /**
+    * @license
+    *
+    * Font Family: Excon
+    * Designed by: Alisa Nowak
+    * URL: https://www.fontshare.com/fonts/excon
+    * © 2024 Indian Type Foundry
+    *
+    * Excon Light 
+    * Excon Regular 
+    * Excon Medium 
+    * Excon Bold 
+    *
+    */
+    @font-face {
+        font-family: "Excon";
+        font-weight: 300;
+        font-style: light;
+        src:
+            url("./Excon/Excon-Light.woff2") format("woff2"),
+            url("./Excon/Excon-Light.woff") format("woff"),
+            url("./Excon/Excon-Light.ttf") format("woff"),
+            url("./Excon/Excon-Light.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Excon";
+        font-weight: 400;
+        font-style: regular;
+        src:
+            url("./Excon/Excon-Regular.woff2") format("woff2"),
+            url("./Excon/Excon-Regular.woff") format("woff"),
+            url("./Excon/Excon-Regular.ttf") format("woff"),
+            url("./Excon/Excon-Regular.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Excon";
+        font-weight: 500;
+        font-style: medium;
+        src:
+            url("./Excon/Excon-Medium.woff2") format("woff2"),
+            url("./Excon/Excon-Medium.woff") format("woff"),
+            url("./Excon/Excon-Medium.ttf") format("woff"),
+            url("./Excon/Excon-Medium.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Excon";
+        font-weight: 700;
+        font-style: bold;
+        src:
+            url("./Excon/Excon-Bold.woff2") format("woff2"),
+            url("./Excon/Excon-Bold.woff") format("woff"),
+            url("./Excon/Excon-Bold.ttf") format("woff"),
+            url("./Excon/Excon-Bold.eot") format("embedded-opentype");
+    }
+
+    /**
+    * @license
+    *
+    * Font Family: Ranade
+    * Designed by: Easha Ranade, Indian Type Foundry
+    * URL: https://www.fontshare.com/fonts/ranade
+    * © 2024 Indian Type Foundry
+    *
+    * Ranade Light 
+    * Ranade Regular 
+    * Ranade Medium 
+    * Ranade Bold 
+    *
+    */
+    @font-face {
+        font-family: "Ranade";
+        font-weight: 300;
+        font-style: light;
+        src:
+            url("./Ranade/Ranade-Light.woff2") format("woff2"),
+            url("./Ranade/Ranade-Light.woff") format("woff"),
+            url("./Ranade/Ranade-Light.ttf") format("woff"),
+            url("./Ranade/Ranade-Light.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Ranade";
+        font-weight: 400;
+        font-style: regular;
+        src:
+            url("./Ranade/Ranade-Regular.woff2") format("woff2"),
+            url("./Ranade/Ranade-Regular.woff") format("woff"),
+            url("./Ranade/Ranade-Regular.ttf") format("woff"),
+            url("./Ranade/Ranade-Regular.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Ranade";
+        font-weight: 500;
+        font-style: medium;
+        src:
+            url("./Ranade/Ranade-Medium.woff2") format("woff2"),
+            url("./Ranade/Ranade-Medium.woff") format("woff"),
+            url("./Ranade/Ranade-Medium.ttf") format("woff"),
+            url("./Ranade/Ranade-Medium.eot") format("embedded-opentype");
+    }
+    @font-face {
+        font-family: "Ranade";
+        font-weight: 700;
+        font-style: bold;
+        src:
+            url("./Ranade/Ranade-Bold.woff2") format("woff2"),
+            url("./Ranade/Ranade-Bold.woff") format("woff"),
+            url("./Ranade/Ranade-Bold.ttf") format("woff"),
+            url("./Ranade/Ranade-Bold.eot") format("embedded-opentype");
+    }
+}

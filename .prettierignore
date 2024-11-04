@@ -1,0 +1,14 @@
+**/node_modules/**
+**/dist/**
+**/build/**
+.next
+.vscode/**
+.dockerignore
+.eslintignore
+.gitingore
+docker-compose.yml
+package.json
+package-lock.json
+postcss.config.mjs
+README.TASKS.md
+tsconfig.*
