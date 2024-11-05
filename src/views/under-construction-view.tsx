@@ -6,9 +6,9 @@ import { underConstructionImage } from '@/assets/images';
 
 const UnderConstructionView: React.FC = () => {
     return (
-        <main className="flex h-full flex-col justify-center">
-            <div className="bg-grey-light md:flex md:flex-row">
-                <div className="bg-secondary px-8 py-12 text-center md:flex md:flex-[7] md:flex-col md:justify-center">
+        <div className="">
+            <div className="max-w-[480px] bg-grey-light md:flex md:max-w-[1140px] md:flex-row">
+                <div className="bg-secondary px-8 py-12 text-center md:flex md:flex-[55%] md:flex-col md:justify-center">
                     <h2 className="pb-8 font-bold uppercase md:pb-12">[ Work in Progress ]</h2>
                     <div>
                         <p className="pb-4">
@@ -30,7 +30,7 @@ const UnderConstructionView: React.FC = () => {
                         <p>I hope to see you soon!</p>
                     </div>
                 </div>
-                <div className="m-auto p-8 md:flex-[5]">
+                <div className="m-auto p-8 md:flex-[45%]">
                     <Image
                         src={underConstructionImage}
                         alt="Undraw illustration for coming soon page"
@@ -38,7 +38,7 @@ const UnderConstructionView: React.FC = () => {
                     />
                 </div>
             </div>
-        </main>
+        </div>
     );
 };
 

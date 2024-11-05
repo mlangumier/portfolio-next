@@ -6,11 +6,10 @@
 
 :root {
     /* Primary - Blue */
-    --color-primary: 20 81 105;
+    --color-primary: 47 129 154;
     --color-primary-light: 52 161 188;
     --color-primary-dark: 11 44 62;
-    --color-primary-black: 1 22 30;
-    --color-primary-over: 47 129 154;
+    --color-primary-over: 20 81 105;
     --color-primary-transparent: 47 129 154; /* Opacity: 0.2 */
 
     /* Secondary - Gold */
@@ -26,6 +25,7 @@
     /* --color-grey-medium: 173 181 189; //for opacity? */
     --color-grey-dark: 33 37 41;
     --color-grey-black: 19 21 24;
+    /* TODO: find less aggressive main text color (dark grey != almost black) */
 
     /* Notifications */
     --color-error: 255 0 0;
@@ -44,28 +44,28 @@
     #root,
     html,
     body {
-        @apply h-full w-full;
+        @apply h-full;
     }
 
     body {
-        @apply overflow-hidden bg-white font-ranade text-base leading-[2rem] text-grey-dark;
+        @apply bg-white font-serif text-base leading-[2rem] text-grey-dark;
     }
 
     h1,
     .h1-like {
-        @apply font-excon text-large-30;
+        @apply font-sans text-large-30;
     }
     h2,
     .h2-like {
-        @apply font-excon text-large-25;
+        @apply font-sans text-large-25;
     }
     h3,
     .h3-like {
-        @apply font-excon text-large-22;
+        @apply font-sans text-large-22;
     }
     h4,
     .h4-like {
-        @apply font-excon text-large;
+        @apply font-sans text-large;
     }
 
     a {

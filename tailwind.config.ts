@@ -17,8 +17,8 @@ const config: Config = {
             xl: '1200px',
         },
         fontFamily: {
-            excon: ['"Excon"', ...defaultTheme.fontFamily.sans],
-            ranade: ['"Ranade"', ...defaultTheme.fontFamily.serif],
+            sans: ['"Excon"', ...defaultTheme.fontFamily.sans],
+            serif: ['"Ranade"', ...defaultTheme.fontFamily.serif],
         },
         fontSize: {
             'small-10': ['1rem', '2rem'],
@@ -36,7 +36,6 @@ const config: Config = {
                     DEFAULT: 'rgb(var(--color-primary))',
                     light: 'rgb(var(--color-primary-light))',
                     dark: 'rgb(var(--color-primary-dark))',
-                    black: 'rgb(var(--color-primary-black))',
                     over: 'rgb(var(--color-primary-over))',
                     transparent: 'rgba(var(--color-primary-transparent) / 0.2)',
                 },

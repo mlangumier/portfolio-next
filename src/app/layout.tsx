@@ -2,6 +2,8 @@ import '@/styles/globals.css';
 
 import React from 'react';
 
+import { Analytics } from '@vercel/analytics/react';
+
 export function generateMetadata() {
     return {
         title: 'Portfolio Mathieu Langumier',
@@ -17,7 +19,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body>{children}</body>
+            <body>
+                {children}
+                <Analytics />
+            </body>
         </html>
     );
 }

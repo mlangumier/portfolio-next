@@ -24,8 +24,8 @@ Internationalized website in with QoL dependencies.
 - [x] Typescript
 - [x] TailwindCss
 - [x] Docker
+- [ ] i18n + next-intl
 - [ ] Zod (for typescript & forms)
-- [ ] i18n (Next.js) / next-intl (Vercel) / react-i18next / react-intl
 - [ ] Tanstack/React Query
 - [ ] Axios
 - [ ] Redux
@@ -49,9 +49,10 @@ Internationalized website in with QoL dependencies.
 
 ### Pages Layout
 
-- [ ] Header: Responsive + burger menu, title, links.
-- [ ] Footer Responsive, links and disclaimers.
-- [ ] Layout: responsive and working with all content quantity
+- [x] Layout responsive
+- [x] Header: Navigation + burger menu, title, links
+- [x] Footer links and contact
+- [ ] Internationalization FR/EN
 
 ### Homepage
 

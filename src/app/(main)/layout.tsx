@@ -1,11 +1,7 @@
 import React from 'react';
 
+import MainLayout from '@/components/layout/main-layout';
+
 export default function Layout({ children }: { children: React.ReactNode }) {
-    return (
-        <>
-            <header></header>
-            {children}
-            <footer></footer>
-        </>
-    );
+    return <MainLayout>{children}</MainLayout>;
 }
