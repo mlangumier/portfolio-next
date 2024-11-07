@@ -1,15 +1,7 @@
 import React from 'react';
 
-import Layout from './(main)/layout';
+import NotFoundView from '@/views/not-found-view';
 
-const NotFound: React.FC = async () => {
-    return (
-        <Layout>
-            <div className="flex flex-col items-center justify-center">
-                <h2>Oops! Something went wrong!</h2>
-            </div>
-        </Layout>
-    );
-};
-
-export default NotFound;
+export default function GlobalNotFound() {
+    return <NotFoundView />;
+}

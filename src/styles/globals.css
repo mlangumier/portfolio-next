@@ -25,7 +25,6 @@
     /* --color-grey-medium: 173 181 189; //for opacity? */
     --color-grey-dark: 33 37 41;
     --color-grey-black: 19 21 24;
-    /* TODO: find less aggressive main text color (dark grey != almost black) */
 
     /* Notifications */
     --color-error: 255 0 0;
