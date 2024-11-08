@@ -20,7 +20,7 @@
         },
         "UnderConstruction": {
             "title": "Page en construction",
-            "welcomeText": "Bienvenues, chers visiteurs ! Je suis en train de développer cette page, elle devrait donc être bientôt disponible.",
+            "welcomeText": "Bienvenues, chers visiteurs ! Cette page est actuellement en développement, elle devrait donc être bientôt disponible.",
             "githubText": "En attendant, vous pouvez jeter un oeil sur le <code>repository Github</code> si vous voulez plus d'informations sur les outils que j'utilise et les fonctionnalités qui pourront être mises en place sur ce site.",
             "linkedinText": "N'hésitez pas à me contacter sur <code>LinkedIn</code> si vous avez la moindre question concernant mon parcours ou ce projet.",
             "goodbyeText": "Je vous remercie de votre visite, et espère vous retrouver rapidement !"
