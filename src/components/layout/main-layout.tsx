@@ -12,7 +12,7 @@ const MainLayout: React.FC<IProps> = ({ children }) => {
         <div className="flex min-h-svh flex-col">
             <Header />
 
-            <main className="flex grow flex-col items-center justify-center bg-grey-light">
+            <main className="flex grow flex-col items-center justify-center bg-grey-light px-8 py-16 md:px-12 md:py-20">
                 {children}
             </main>
 
