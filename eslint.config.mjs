@@ -46,6 +46,20 @@ const eslintConfig = [
                     extensions: ['.ts', '.tsx', '.js', '.jsx', '.mjs'],
                 },
             ],
+            // Shows an error if using Next.js' navigation tools instead of Next-intl's.
+            'no-restricted-imports': [
+                'error',
+                {
+                    name: 'next/link',
+                    message: 'Please import from `@/navigation` instead.',
+                    importNames: ['default'],
+                },
+                {
+                    name: 'next/navigation',
+                    message: 'Please import from `@/navigation` instead.',
+                    importNames: ['redirect', 'permanentRedirect', 'userRouter', 'usePathname'],
+                },
+            ],
         },
     },
     {
