@@ -17,6 +17,7 @@ npm run build || {
 # If build is successful, the commit can procede:
 echo '>>> 🟢 Pre-commit verifications successful! Committing changes...'
 
+git add .
 
 # This line allows the script to be executed but cancels the commit. Uncomment if you need to test commit-related scripts but don't want the commit to happen.
 # exit 1
