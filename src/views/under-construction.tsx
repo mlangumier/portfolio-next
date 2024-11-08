@@ -10,8 +10,8 @@ const UnderConstructionView: React.FC = () => {
 
     return (
         <div className="">
-            <div className="max-w-[480px] md:flex md:max-w-[1140px] md:flex-row">
-                <div className="px-8 py-12 text-center md:flex md:flex-[55%] md:flex-col md:justify-center md:text-start">
+            <div className="flex max-w-[480px] flex-col gap-12 md:max-w-[1140px] md:flex-row">
+                <div className="text-center md:flex md:flex-[55%] md:flex-col md:justify-center md:text-start">
                     <h2 className="pb-8 text-center text-large font-bold uppercase md:pb-12 md:text-large-25">
                         [ {t('title')} ]
                     </h2>
@@ -23,7 +23,7 @@ const UnderConstructionView: React.FC = () => {
                             {t.rich('githubText', {
                                 code: chunk => (
                                     <ExternalLink
-                                        href="https://github.com/mlangumier/portfolio-next"
+                                        href="https://github.com/mlangumier/portfolio"
                                         className="underline"
                                     >
                                         {chunk}
@@ -47,11 +47,11 @@ const UnderConstructionView: React.FC = () => {
                         <p>{t('goodbyeText')}</p>
                     </div>
                 </div>
-                <div className="m-auto p-8 md:flex-[45%]">
+                <div className="flex md:flex-[45%]">
                     <Image
                         src={underConstructionImage}
                         alt="Undraw illustration for coming soon page"
-                        className="m-auto w-full max-w-[480px]"
+                        className="w-full max-w-[480px]"
                     />
                 </div>
             </div>
