@@ -9,7 +9,7 @@ const NotFoundView: React.FC = () => {
 
     return (
         <div className="flex flex-col items-center justify-center">
-            <Image src={notFoundImage} alt={t('text')} className="w-full max-w-screen-sm" />
+            <Image src={notFoundImage} alt={''} className="w-full max-w-screen-sm" />
             <h2 className="pt-4 text-center uppercase">{t('text')}</h2>
         </div>
     );

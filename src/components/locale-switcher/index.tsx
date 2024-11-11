@@ -11,10 +11,11 @@ import { Locale, usePathname, useRouter } from '@/i18n/routing';
  */
 
 interface Props {
+    btnLabel: string;
     handleCloseMobileMenu: () => void;
 }
 
-const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
+const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => {
     const locale = useLocale() as Locale;
     const router = useRouter();
     const [isPending, startTransition] = useTransition(); // Add 'isPending' to use with Spinner
@@ -36,6 +37,7 @@ const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
 
     return (
         <button
+            aria-label={btnLabel}
             className="hover:cursor-pointer"
             onClick={() => handleSwitchLocale(locale === 'fr' ? 'en' : 'fr')}
             disabled={isPending}

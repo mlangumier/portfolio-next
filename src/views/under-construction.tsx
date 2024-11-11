@@ -22,10 +22,7 @@ const UnderConstructionView: React.FC = () => {
                         <p className="pb-4">
                             {t.rich('githubText', {
                                 code: chunk => (
-                                    <ExternalLink
-                                        href="https://github.com/mlangumier/portfolio"
-                                        className="underline"
-                                    >
+                                    <ExternalLink href="https://github.com/mlangumier/portfolio" className="underline">
                                         {chunk}
                                     </ExternalLink>
                                 ),
@@ -48,11 +45,7 @@ const UnderConstructionView: React.FC = () => {
                     </div>
                 </div>
                 <div className="flex md:flex-[45%]">
-                    <Image
-                        src={underConstructionImage}
-                        alt="Undraw illustration for coming soon page"
-                        className="w-full max-w-[480px]"
-                    />
+                    <Image src={underConstructionImage} alt="" className="m-auto w-full max-w-[480px]" />
                 </div>
             </div>
         </div>

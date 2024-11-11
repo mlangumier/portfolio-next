@@ -3,12 +3,13 @@ import React from 'react';
 
 interface Props {
     isOpen: boolean;
+    btnLabel: string;
     handleIsOpen: () => void;
 }
 
-const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen }) => {
+const BurgerIcon: React.FC<Props> = ({ isOpen, btnLabel, handleIsOpen }) => {
     return (
-        <div onClick={handleIsOpen} className="relative h-full w-14">
+        <button aria-label={btnLabel} onClick={handleIsOpen} className="relative h-full w-14 hover:cursor-pointer">
             <span
                 className={clsx(
                     'absolute right-[50%] top-0 h-1.5 w-7 transform rounded-sm bg-primary transition duration-500 ease-in-out',
@@ -27,7 +28,7 @@ const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen }) => {
                     isOpen && '-translate-x-1.5 -translate-y-3 rotate-45'
                 )}
             />
-        </div>
+        </button>
     );
 };
 

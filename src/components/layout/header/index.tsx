@@ -2,9 +2,9 @@
 
 import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import LocalSwitcher from '@/components/locale-switcher/locale-switcher';
+import LocalSwitcher from '@/components/locale-switcher';
 import NavigationLink from '@/components/navigation/navigation-link';
 import { Link, Pathnames } from '@/i18n/routing';
 
@@ -24,9 +24,21 @@ const Header: React.FC = () => {
     const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
     const t = useTranslations('Components.Header');
 
+    useEffect(() => {
+        // Disable scrolling on body when mobile menu opens
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } // else { document.body.style.overflow = "" } // needed?
+
+        // Clean up overflow on unmount component (prevent unexpected behaviour)
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [isMenuOpen]);
+
     const navItems: INavItem[] = [
         { label: t('navigation.about-me'), href: '/' },
-        // { label: t('navigation.experiences'), href: '/experiences' },
+        { label: t('navigation.experiences'), href: '/experiences' },
         // { label: t('navigation.projects'), href: '/projects' },
     ];
 
@@ -34,15 +46,12 @@ const Header: React.FC = () => {
         <header className="m-auto w-full max-w-screen-xl">
             <div className="flex flex-row justify-between px-8 py-12">
                 {/* Title */}
-                <Link
-                    href="/"
-                    className="flex flex-col items-baseline hover:text-inherit lg:flex-row"
-                >
+                <Link href="/" className="flex flex-col items-baseline hover:text-inherit lg:flex-row">
                     <div className="flex flex-row items-center gap-4">
                         <span className="hidden size-[18px] rotate-12 bg-primary sm:inline" />
-                        <h1 className="text-large-25 font-bold lg:leading-[2rem]">
-                            Mathieu Langumier
-                        </h1>
+                        <p className="h1-like text-large-25 font-bold text-primary-dark lg:leading-[2rem]">
+                            {t('name')}
+                        </p>
                     </div>
                     <p className="text-[1.8rem] font-light uppercase">
                         <span className="hidden lg:inline lg:px-4">/</span>
@@ -54,27 +63,35 @@ const Header: React.FC = () => {
                 <div
                     className={clsx(
                         'absolute left-0 flex h-full w-full transform items-center justify-center bg-grey-light transition duration-500 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
-                        isMenuOpen ? 'top-0 opacity-100' : 'top-[-100%] opacity-0'
+                        isMenuOpen ? 'top-0 z-[100] opacity-100' : 'top-[-100%] opacity-0'
                     )}
                 >
                     <ul className="flex flex-col items-center gap-14 pb-[15rem] md:flex-row md:gap-10 md:pb-0">
                         {navItems.map((item: INavItem) => (
-                            <NavigationLink
-                                key={item.href}
-                                href={item.href}
-                                onClick={() => setIsMenuOpen(false)}
-                            >
-                                {item.label}
-                            </NavigationLink>
+                            <li key={item.href}>
+                                <NavigationLink
+                                    checkActive
+                                    // TODO: Add some of this as a <a> utility class (global.css, 'hover-text-primary' transition):
+                                    className="font-sans text-large-25 font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary-light md:text-large md:font-light"
+                                    href={item.href}
+                                    onClick={() => setIsMenuOpen(false)}
+                                >
+                                    {item.label}
+                                </NavigationLink>
+                            </li>
                         ))}
 
-                        <LocalSwitcher handleCloseMobileMenu={() => setIsMenuOpen(false)} />
+                        <LocalSwitcher
+                            btnLabel={t('localeSwitcher.label')}
+                            handleCloseMobileMenu={() => setIsMenuOpen(false)}
+                        />
                     </ul>
                 </div>
 
                 {/* Mobile burger */}
-                <div className="flex items-center justify-center pt-4 md:hidden">
+                <div className="z-[100] flex items-center justify-center pt-4 md:hidden">
                     <BurgerIcon
+                        btnLabel={t('navigation.btnBurger')}
                         isOpen={isMenuOpen}
                         handleIsOpen={() => setIsMenuOpen(!isMenuOpen)}
                     />
