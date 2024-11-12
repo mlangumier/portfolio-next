@@ -21,7 +21,7 @@
     /* Grey */
     --color-grey: 108 117 125;
     --color-grey-light: 233 236 239;
-    /* --color-grey-medium: 173 181 189; //for opacity? */
+    --color-grey-neutral: 200 200 200; /* For opacity? */
     --color-grey-dark: 33 37 41;
     --color-grey-black: 19 21 24;
 

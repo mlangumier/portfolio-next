@@ -85,11 +85,11 @@ These will be added if they are relevant to the showcased projects:
 - [ ] Choose first project
 
 ### Miscellaneous
+- [ ] Scroll to top (bottom-right, appear after scroll screen-height) or sticky header (or both)
 - [ ] (Optional/Test) Switch Prettier tabSize to 2 instead of 4
 - [ ] Verifier les fontSize sur mobile -> lisibilité (fontsize?)
 - [ ] Update `README.md` file
 - [ ] Optimize Vercel setup (Analytics, Insight)
-- [ ] Scroll to top (bottom-right, appear after scroll screen-height) or sticky header (or both)
 - [ ] Add tailwind utility/component classes for transitions (card, button, links etc.):
   - [ ] `Card` component: add options for shadows, paddings, & max-w (extend Theme)
   - [ ] `Button` component: add sizes options for padding & colors (setup in `global.css`, component layer)
