@@ -70,6 +70,7 @@ These will be added if they are relevant to the showcased projects:
 - [x] Finish SEO setup & performance tests
 
 ### Page - Experiences
+- [ ] Page design & layout
 - [ ] Setup experience cards
 - [ ] Slide-in animation from both side (domino layout: img|text?; extend theme)
 - [ ] Display skills list (import SVGs)
@@ -85,8 +86,7 @@ These will be added if they are relevant to the showcased projects:
 - [ ] Choose first project
 
 ### Miscellaneous
-- [ ] Scroll to top (bottom-right, appear after scroll screen-height) or sticky header (or both)
-- [ ] (Optional/Test) Switch Prettier tabSize to 2 instead of 4
+- [x] Adjust header to stick to top
 - [ ] Verifier les fontSize sur mobile -> lisibilité (fontsize?)
 - [ ] Update `README.md` file
 - [ ] Optimize Vercel setup (Analytics, Insight)
@@ -94,4 +94,6 @@ These will be added if they are relevant to the showcased projects:
   - [ ] `Card` component: add options for shadows, paddings, & max-w (extend Theme)
   - [ ] `Button` component: add sizes options for padding & colors (setup in `global.css`, component layer)
 - [ ] Translation for accessibility & common items (links, buttons)
+- [ ] (Optional) Scroll to top buttons
+- [ ] (Optional/Test) Switch Prettier tabSize to 2 instead of 4
 - [ ] (optional) Rework Svg as components (need change fill color?)
