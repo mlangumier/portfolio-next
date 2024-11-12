@@ -1,16 +1,37 @@
 {
-    "Global": {
-        "Metadata": {
-            "title": "Portfolio Mathieu Langumier",
-            "description": "A portfolio with my resume and examples of professional and personnal projects I have had the pleasure of working on."
-        }
-    },
-
     "Pages": {
         "Homepage": {
             "metadata": {
-                "title": "",
-                "description": ""
+                "title": "Portfolio Mathieu Langumier",
+                "description": "A portfolio with my resume and examples of professional and personnal projects I have had the pleasure of working on."
+            },
+            "content": {
+                "intro": {
+                    "name": "Mathieu Langumier",
+                    "title": "Frontend Developer",
+                    "description": "Developer with experience on multiple JavaScript and TypeScript frameworks, like <code>React</code> & <code>Next.js</code>, now looking for new challenges."
+                },
+                "overview": {
+                    "title": "Overview",
+                    "skills": {
+                        "title": "Technical Skills"
+                    },
+                    "experiences": {
+                        "title": "Experiences",
+                        "dixeed": {
+                            "jobInfo": "2022-2024 - <code>Frontend Developer</code>, Dixeed",
+                            "description": "Developed <code>dynamic web & mobile applications</code> according to the given designs and technical specifications sheets."
+                        },
+                        "ffy": {
+                            "jobInfo": "2022 - <code>Frontend Developer</code>, Flying For You",
+                            "description": "Developed an <code>admin plateform</code> to observe and manage data sent by the mobile application."
+                        }
+                    },
+                    "contact": {
+                        "title": "Contact",
+                        "text": "For more information, you can contact me on LinkedIn, and you can check this project's repository on Github."
+                    }
+                }
             }
         },
         "Experiences": {},
@@ -29,15 +50,17 @@
 
     "Components": {
         "Header": {
+            "name": "Mathieu Langumier",
             "title": "Frontend developer",
             "navigation": {
+                "btnBurger": "Open and close menu",
                 "about-me": "About me",
                 "experiences": "Experiences",
                 "projects": "Projects"
+            },
+            "localeSwitcher": {
+                "label": "Change language"
             }
-        },
-        "LocaleSwitcher": {
-            "label": ""
         }
     }
 }

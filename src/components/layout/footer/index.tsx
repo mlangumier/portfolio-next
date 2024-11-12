@@ -1,27 +1,8 @@
 import Image from 'next/image';
 import React from 'react';
 
-import { githubIcon, linkedInIcon } from '@/assets/images';
 import ExternalLink from '@/components/navigation/external-link';
-
-interface ISocialMediaLink {
-    label: string;
-    url: string;
-    icon: string;
-}
-
-const links: ISocialMediaLink[] = [
-    {
-        label: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/mathieu-langumier/',
-        icon: linkedInIcon,
-    },
-    {
-        label: 'Github',
-        url: 'https://github.com/mlangumier',
-        icon: githubIcon,
-    },
-];
+import { externalLinksList, IExternalLink } from '@/utils/links';
 
 const Footer: React.FC = () => {
     return (
@@ -32,14 +13,12 @@ const Footer: React.FC = () => {
                 </div>
                 <div className="m-auto text-center md:m-0">
                     <ul className="flew-row flex gap-8 py-4">
-                        {links.map((link: ISocialMediaLink) => (
-                            <ExternalLink key={link.label} href={link.url}>
-                                <Image
-                                    src={link.icon}
-                                    alt={`${link.label} icon`}
-                                    className="size-12 md:size-10"
-                                />
-                            </ExternalLink>
+                        {externalLinksList.map((link: IExternalLink) => (
+                            <li key={link.label}>
+                                <ExternalLink href={link.url}>
+                                    <Image src={link.icon} alt={`${link.label} icon`} className="size-12 md:size-10" />
+                                </ExternalLink>
+                            </li>
                         ))}
                     </ul>
                 </div>

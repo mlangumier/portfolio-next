@@ -9,7 +9,7 @@ interface IProps {
 
 const MainLayout: React.FC<IProps> = ({ children }) => {
     return (
-        <div className="flex min-h-svh flex-col">
+        <div className="flex min-h-svh flex-col shadow-lg">
             <Header />
 
             <main className="flex grow flex-col items-center justify-center bg-grey-light px-8 py-16 md:px-12 md:py-20">

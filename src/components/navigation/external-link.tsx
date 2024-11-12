@@ -1,21 +1,18 @@
 import clsx from 'clsx';
 import React from 'react';
 
-interface Props {
-    href: string;
-    children: React.ReactNode;
+interface Props extends React.DetailedHTMLProps<React.AnchorHTMLAttributes<HTMLAnchorElement>, HTMLAnchorElement> {
     className?: string;
+    colorsInverse?: boolean;
 }
 
-const ExternalLink: React.FC<Props> = ({ children, href, className }) => (
+const ExternalLink: React.FC<Props> = ({ colorsInverse = false, className, ...rest }) => (
     <a
-        href={href}
         target="_blank"
         rel="noreferrer"
-        className={clsx('text-primary hover:text-primary-over', className)}
-    >
-        {children}
-    </a>
+        className={clsx('', className, colorsInverse || 'text-primary hover:text-primary-over')}
+        {...rest}
+    />
 );
 
 export default ExternalLink;

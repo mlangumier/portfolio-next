@@ -26,6 +26,7 @@
             url("./Excon/Excon-Light.woff") format("woff"),
             url("./Excon/Excon-Light.ttf") format("woff"),
             url("./Excon/Excon-Light.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Excon";
@@ -36,6 +37,7 @@
             url("./Excon/Excon-Regular.woff") format("woff"),
             url("./Excon/Excon-Regular.ttf") format("woff"),
             url("./Excon/Excon-Regular.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Excon";
@@ -46,6 +48,7 @@
             url("./Excon/Excon-Medium.woff") format("woff"),
             url("./Excon/Excon-Medium.ttf") format("woff"),
             url("./Excon/Excon-Medium.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Excon";
@@ -56,6 +59,7 @@
             url("./Excon/Excon-Bold.woff") format("woff"),
             url("./Excon/Excon-Bold.ttf") format("woff"),
             url("./Excon/Excon-Bold.eot") format("embedded-opentype");
+        font-display: swap;
     }
 
     /**
@@ -81,6 +85,7 @@
             url("./Ranade/Ranade-Light.woff") format("woff"),
             url("./Ranade/Ranade-Light.ttf") format("woff"),
             url("./Ranade/Ranade-Light.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Ranade";
@@ -91,6 +96,7 @@
             url("./Ranade/Ranade-Regular.woff") format("woff"),
             url("./Ranade/Ranade-Regular.ttf") format("woff"),
             url("./Ranade/Ranade-Regular.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Ranade";
@@ -101,6 +107,7 @@
             url("./Ranade/Ranade-Medium.woff") format("woff"),
             url("./Ranade/Ranade-Medium.ttf") format("woff"),
             url("./Ranade/Ranade-Medium.eot") format("embedded-opentype");
+        font-display: swap;
     }
     @font-face {
         font-family: "Ranade";
@@ -111,5 +118,6 @@
             url("./Ranade/Ranade-Bold.woff") format("woff"),
             url("./Ranade/Ranade-Bold.ttf") format("woff"),
             url("./Ranade/Ranade-Bold.eot") format("embedded-opentype");
+        font-display: swap;
     }
 }
