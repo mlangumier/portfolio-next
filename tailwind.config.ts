@@ -48,7 +48,7 @@ const config: Config = {
                 grey: {
                     DEFAULT: 'rgb(var(--color-grey))',
                     light: 'rgb(var(--color-grey-light))',
-                    // medium: "rgb(var(--color-grey-medium))",
+                    neutral: 'rgb(var(--color-grey-neutral))',
                     dark: 'rgb(var(--color-grey-dark))',
                     black: 'rgb(var(--color-grey-black))',
                 },

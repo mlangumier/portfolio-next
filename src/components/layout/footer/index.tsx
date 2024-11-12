@@ -6,10 +6,10 @@ import { externalLinksList, IExternalLink } from '@/utils/links';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="m-auto w-full max-w-screen-xl">
-            <div className="flex flex-col-reverse px-8 pb-8 pt-12 md:flex-row md:items-center md:justify-between">
+        <footer className="mx-auto w-full border-t border-grey-neutral">
+            <div className="mx-auto flex max-w-screen-xl flex-col-reverse px-8 pb-6 pt-8 md:flex-row md:items-center md:justify-between">
                 <div className="m-auto mt-8 text-center md:m-0">
-                    <p className="">© 2024 Mathieu Langumier</p>
+                    <p>© 2024 Mathieu Langumier</p>
                 </div>
                 <div className="m-auto text-center md:m-0">
                     <ul className="flew-row flex gap-8 py-4">
