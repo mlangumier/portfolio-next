@@ -10,19 +10,18 @@
     --color-primary-light: 52 161 188;
     --color-primary-dark: 11 44 62;
     --color-primary-over: 20 81 105;
-    --color-primary-transparent: 47 129 154; /* Opacity: 0.2 */
+    --color-primary-transparent: 47 129 154; /* Primary & Opacity: 0.2 */
 
     /* Secondary - Gold */
-    --color-secondary: 255 194 41;
-    --color-secondary-light: 255 235 52;
-    --color-secondary-dark: 217 153 13;
-
-    /* --color-secondary-over: 170 100 0; */
+    --color-secondary: 217 153 13;
+    --color-secondary-light: 255 194 41;
+    --color-secondary-dark: 170 100 0;
+    --color-secondary-transparent: 255 194 41; /* Secondary-light & Opacity: 0.5 */
 
     /* Grey */
     --color-grey: 108 117 125;
     --color-grey-light: 233 236 239;
-    /* --color-grey-medium: 173 181 189; //for opacity? */
+    --color-grey-neutral: 200 200 200; /* For opacity? */
     --color-grey-dark: 33 37 41;
     --color-grey-black: 19 21 24;
 
@@ -68,7 +67,7 @@
     }
 
     a {
-        @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline transition-all duration-200 ease-in-out hover:text-primary-light;
+        @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline;
     }
 
     li {

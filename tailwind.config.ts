@@ -43,13 +43,12 @@ const config: Config = {
                     DEFAULT: 'rgb(var(--color-secondary))',
                     light: 'rgb(var(--color-secondary-light))',
                     dark: 'rgb(var(--color-secondary-dark))',
-                    // over: "rgb(var(--color-secondary-over))",
-                    // transparent: "rgb(var(--color-secondary-transparent))",
+                    transparent: 'rgb(var(--color-secondary-transparent) / 0.5)',
                 },
                 grey: {
                     DEFAULT: 'rgb(var(--color-grey))',
                     light: 'rgb(var(--color-grey-light))',
-                    // medium: "rgb(var(--color-grey-medium))",
+                    neutral: 'rgb(var(--color-grey-neutral))',
                     dark: 'rgb(var(--color-grey-dark))',
                     black: 'rgb(var(--color-grey-black))',
                 },
@@ -65,6 +64,9 @@ const config: Config = {
                 info: {
                     DEFAULT: 'rgb(var(--color-info))',
                 },
+            },
+            boxShadow: {
+                'bottom-right': '6px 6px 6px 0 rgba(var(--color-grey-dark) / 0.1)',
             },
             // Use keyframes and animations for reusable "fade" and "slide" animations
             // keyframes:{},

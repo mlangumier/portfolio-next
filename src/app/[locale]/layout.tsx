@@ -1,21 +1,23 @@
 import '@/styles/globals.css';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages, getTranslations } from 'next-intl/server';
+import { getMessages } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
 import { Locale, routing } from '@/i18n/routing';
-import { LayoutProps, PageProps } from '@/utils/types';
+import { LayoutProps } from '@/utils/types';
 import { Analytics } from '@vercel/analytics/react';
 
-export async function generateMetadata({ params }: PageProps) {
-    const { locale } = await params;
-    const t = await getTranslations({ locale, namespace: 'Global.Metadata' });
+import type { Metadata } from 'next';
 
+export function metadata(): Metadata {
     return {
-        title: t('title'),
-        description: t('description'),
+        title: {
+            template: '%s | Mathieu Langumier',
+            default: 'Portfolio | Mathieu Langumier',
+        },
+        description: 'Portfolio - Next.js 15, TypeScript & TailwindCSS.',
     };
 }
 

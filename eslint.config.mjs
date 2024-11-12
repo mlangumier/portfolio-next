@@ -39,6 +39,8 @@ const eslintConfig = [
         },
 
         rules: {
+            //? If long import error (3+ per line), implement this rule:
+            // 'import/max-import-per-line': ['error', { code: 120, ignorePattern: '^import .*' }],
             'react/jsx-props-no-spreading': 'off',
             'react/jsx-filename-extension': [
                 1,
