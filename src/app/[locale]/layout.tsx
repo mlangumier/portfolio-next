@@ -9,6 +9,18 @@ import { Locale, routing } from '@/i18n/routing';
 import { LayoutProps } from '@/utils/types';
 import { Analytics } from '@vercel/analytics/react';
 
+import type { Metadata } from 'next';
+
+export function metadata(): Metadata {
+    return {
+        title: {
+            template: '%s | Mathieu Langumier',
+            default: 'Portfolio | Mathieu Langumier',
+        },
+        description: 'Portfolio - Next.js 15, TypeScript & TailwindCSS.',
+    };
+}
+
 export default async function LocaleLayout({ children, params }: LayoutProps) {
     const { locale } = await params;
 

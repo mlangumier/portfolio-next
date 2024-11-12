@@ -53,7 +53,13 @@ const HomepageView = () => {
                 </div>
 
                 <div className="flex min-w-fit items-center justify-center">
-                    <Image src={profilePicture} alt="" className="size-[20rem] rounded-full md:size-[25rem]" />
+                    <Image
+                        src={profilePicture}
+                        alt=""
+                        height={250}
+                        width={250}
+                        className="size-[20rem] rounded-full md:size-[25rem]"
+                    />
                 </div>
             </section>
 

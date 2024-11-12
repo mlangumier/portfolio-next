@@ -6,10 +6,6 @@ import React, { useTransition } from 'react';
 import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 
-/** TODO:
- * - Add tooltip "Switch to english"/"Passer en français"
- */
-
 interface Props {
     btnLabel: string;
     handleCloseMobileMenu: () => void;
@@ -43,9 +39,9 @@ const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => 
             disabled={isPending}
         >
             {locale === 'fr' ? (
-                <Image src={englishFlagIcon} alt="" className="size-16 md:size-10" />
+                <Image src={englishFlagIcon} alt="" height={40} width={40} className="size-16 md:size-10" />
             ) : (
-                <Image src={frenchFlagIcon} alt="" className="size-16 md:size-10" />
+                <Image src={frenchFlagIcon} alt="" height={40} width={40} className="size-16 md:size-10" />
             )}
         </button>
     );

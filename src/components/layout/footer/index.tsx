@@ -16,7 +16,13 @@ const Footer: React.FC = () => {
                         {externalLinksList.map((link: IExternalLink) => (
                             <li key={link.label}>
                                 <ExternalLink href={link.url}>
-                                    <Image src={link.icon} alt={`${link.label} icon`} className="size-12 md:size-10" />
+                                    <Image
+                                        src={link.icon}
+                                        alt={`${link.label} icon`}
+                                        height={30}
+                                        width={30}
+                                        className="size-12 md:size-10"
+                                    />
                                 </ExternalLink>
                             </li>
                         ))}
