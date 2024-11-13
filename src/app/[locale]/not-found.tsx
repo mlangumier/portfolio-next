@@ -5,9 +5,9 @@ import NotFoundView from '@/views/not-found-view';
 
 // Should only appears if the url is wrong an error occured with the locale.
 export default function NotFound() {
-    return (
-        <MainLayout>
-            <NotFoundView />
-        </MainLayout>
-    );
+  return (
+    <MainLayout>
+      <NotFoundView />
+    </MainLayout>
+  );
 }
