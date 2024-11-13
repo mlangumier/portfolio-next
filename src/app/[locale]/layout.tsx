@@ -12,34 +12,34 @@ import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 
 export function metadata(): Metadata {
-    return {
-        title: {
-            template: '%s | Mathieu Langumier',
-            default: 'Portfolio | Mathieu Langumier',
-        },
-        description: 'Portfolio - Next.js 15, TypeScript & TailwindCSS.',
-    };
+  return {
+    title: {
+      template: '%s | Mathieu Langumier',
+      default: 'Portfolio | Mathieu Langumier',
+    },
+    description: 'Portfolio - Next.js 15, TypeScript & TailwindCSS.',
+  };
 }
 
 export default async function LocaleLayout({ children, params }: LayoutProps) {
-    const { locale } = await params;
+  const { locale } = await params;
 
-    // Ensures valid incoming `locale`
-    if (!routing.locales.includes(locale as Locale)) {
-        notFound();
-    }
+  // Ensures valid incoming `locale`
+  if (!routing.locales.includes(locale as Locale)) {
+    notFound();
+  }
 
-    // Providing all messages to the client side for easier starting point (adapt later)
-    const messages = await getMessages();
+  // Providing all messages to the client side for easier starting point (adapt later)
+  const messages = await getMessages();
 
-    return (
-        <html lang={locale}>
-            <body>
-                <NextIntlClientProvider messages={messages}>
-                    {children}
-                    <Analytics />
-                </NextIntlClientProvider>
-            </body>
-        </html>
-    );
+  return (
+    <html lang={locale}>
+      <body>
+        <NextIntlClientProvider messages={messages}>
+          {children}
+          <Analytics />
+        </NextIntlClientProvider>
+      </body>
+    </html>
+  );
 }

@@ -4,10 +4,10 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
-    /* config options here */
+  /* config options here */
 
-    // To work with Docker:
-    output: 'standalone',
+  // To work with Docker:
+  output: 'standalone',
 };
 
 export default withNextIntl(nextConfig);

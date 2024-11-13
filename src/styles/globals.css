@@ -5,84 +5,91 @@
 @tailwind utilities;
 
 :root {
-    /* Primary - Blue */
-    --color-primary: 47 129 154;
-    --color-primary-light: 52 161 188;
-    --color-primary-dark: 11 44 62;
-    --color-primary-over: 20 81 105;
-    --color-primary-transparent: 47 129 154; /* Primary & Opacity: 0.2 */
+  /* Primary - Blue */
+  --color-primary: 47 129 154;
+  --color-primary-light: 52 161 188;
+  --color-primary-dark: 11 44 62;
+  --color-primary-over: 20 81 105;
+  --color-primary-transparent: 47 129 154; /* Primary & Opacity: 0.2 */
 
-    /* Secondary - Gold */
-    --color-secondary: 217 153 13;
-    --color-secondary-light: 255 194 41;
-    --color-secondary-dark: 170 100 0;
-    --color-secondary-transparent: 255 194 41; /* Secondary-light & Opacity: 0.5 */
+  /* Secondary - Gold */
+  --color-secondary: 217 153 13;
+  --color-secondary-light: 255 194 41;
+  --color-secondary-dark: 170 100 0;
+  --color-secondary-transparent: 255 194 41; /* Secondary-light & Opacity: 0.5 */
 
-    /* Grey */
-    --color-grey: 108 117 125;
-    --color-grey-light: 233 236 239;
-    --color-grey-neutral: 200 200 200; /* For opacity? */
-    --color-grey-dark: 33 37 41;
-    --color-grey-black: 19 21 24;
+  /* Grey */
+  --color-grey: 108 117 125;
+  --color-grey-light: 233 236 239;
+  --color-grey-neutral: 200 200 200; /* For opacity? */
+  --color-grey-dark: 33 37 41;
+  --color-grey-black: 19 21 24;
 
-    /* Notifications */
-    --color-error: 255 0 0;
-    --color-success: 0 150 0;
-    --color-info: 0 150 255;
-    --color-warning: 255 125 0;
+  /* Notifications */
+  --color-error: 255 0 0;
+  --color-success: 0 150 0;
+  --color-info: 0 150 255;
+  --color-warning: 255 125 0;
 }
 
 @layer base {
-    *,
-    *::before,
-    *::after {
-        box-sizing: border-box;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
 
-    #root,
-    html,
-    body {
-        @apply h-full;
-    }
+  #root,
+  html,
+  body {
+    @apply h-full;
+  }
 
-    body {
-        @apply bg-white font-serif text-base leading-[2rem] text-grey-dark;
-    }
+  body {
+    @apply bg-white font-serif text-base leading-[2rem] text-grey-dark;
+  }
 
-    h1,
-    .h1-like {
-        @apply font-sans text-large-30;
-    }
-    h2,
-    .h2-like {
-        @apply font-sans text-large-25;
-    }
-    h3,
-    .h3-like {
-        @apply font-sans text-large-22;
-    }
-    h4,
-    .h4-like {
-        @apply font-sans text-large;
-    }
+  h1,
+  .h1-like {
+    @apply font-sans text-large-30;
+  }
+  h2,
+  .h2-like {
+    @apply font-sans text-large-25;
+  }
+  h3,
+  .h3-like {
+    @apply font-sans text-large-22;
+  }
+  h4,
+  .h4-like {
+    @apply font-sans text-large;
+  }
+  h5,
+  .h5-like {
+    @apply font-sans text-medium;
+  }
 
-    a {
-        @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline;
-    }
+  a {
+    @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline;
+  }
 
-    li {
-        @apply list-none;
-    }
+  li {
+    @apply list-none;
+  }
 
-    input,
-    select,
-    textarea,
-    button {
-        @apply focus:outline-none;
-    }
+  input,
+  select,
+  textarea,
+  button {
+    @apply focus:outline-none;
+  }
 }
 
 @layer components {
+  .btn {
+    @apply rounded-xl bg-primary px-8 py-4 font-sans text-white transition-all duration-200 ease-in-out hover:bg-primary-over;
+  }
 }
 
 @layer utilities {
