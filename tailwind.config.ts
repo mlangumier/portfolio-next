@@ -22,9 +22,9 @@ const config: Config = {
         },
         fontSize: {
             'small-10': ['1rem', '2rem'],
-            small: ['1.2rem', '2rem'],
-            base: ['1.4rem', '2rem'],
-            medium: ['1.6rem', '2rem'],
+            small: ['1.4rem', '2rem'],
+            base: ['1.6rem', '2rem'],
+            medium: ['1.8rem', '2rem'],
             large: ['2rem', '2.5rem'],
             'large-22': ['2.2rem', '3rem'],
             'large-25': ['2.5rem', '3.5rem'],
@@ -43,6 +43,7 @@ const config: Config = {
                     DEFAULT: 'rgb(var(--color-secondary))',
                     light: 'rgb(var(--color-secondary-light))',
                     dark: 'rgb(var(--color-secondary-dark))',
+                    over: 'rgb(var(--color-secondary-dark))',
                     transparent: 'rgb(var(--color-secondary-transparent) / 0.5)',
                 },
                 grey: {
