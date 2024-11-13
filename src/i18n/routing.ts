@@ -2,16 +2,16 @@ import { createNavigation } from 'next-intl/navigation';
 import { defineRouting } from 'next-intl/routing';
 
 export const routing = defineRouting({
-    locales: ['fr', 'en'],
-    defaultLocale: 'fr',
-    pathnames: {
-        '/': '/',
-        '/experiences': '/experiences',
-        '/projects': {
-            fr: '/projets',
-            en: '/projects',
-        },
+  locales: ['fr', 'en'],
+  defaultLocale: 'fr',
+  pathnames: {
+    '/': '/',
+    '/experiences': '/experiences',
+    '/projects': {
+      fr: '/projets',
+      en: '/projects',
     },
+  },
 });
 
 export type Locale = (typeof routing.locales)[number];
@@ -23,5 +23,5 @@ export const { Link, redirect, getPathname, usePathname, useRouter } = createNav
 
 // For static page generation
 export function generateStaticParams() {
-    return routing.locales.map((locale: Locale) => ({ locale }));
+  return routing.locales.map((locale: Locale) => ({ locale }));
 }

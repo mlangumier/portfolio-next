@@ -7,13 +7,13 @@ import { LayoutProps } from '@/utils/types';
 
 // Next.js will build static pages within this layout (pages + locales)
 export function generateStaticParams() {
-    return routing.locales.map((locale: Locale) => ({ locale }));
+  return routing.locales.map((locale: Locale) => ({ locale }));
 }
 
 export default async function Layout({ children, params }: LayoutProps) {
-    const { locale } = await params;
-    // Enable static rendering
-    setRequestLocale(locale);
+  const { locale } = await params;
+  // Enable static rendering
+  setRequestLocale(locale);
 
-    return <MainLayout>{children}</MainLayout>;
+  return <MainLayout>{children}</MainLayout>;
 }

@@ -1,66 +1,66 @@
 {
-    "Pages": {
-        "Homepage": {
-            "metadata": {
-                "title": "Portfolio",
-                "description": "Portfolio avec mon CV et des exemples de projets personnels et professionnels que j'ai eu le plaisir de développer."
+  "Pages": {
+    "Homepage": {
+      "metadata": {
+        "title": "Portfolio",
+        "description": "Portfolio avec mon CV et des exemples de projets personnels et professionnels que j'ai eu le plaisir de développer."
+      },
+      "content": {
+        "intro": {
+          "name": "Mathieu Langumier",
+          "title": "Développeur Frontend",
+          "description": "Développeur avec de l'expérience sur plusieurs frameworks JavaScript et TypeScript, dont <code>React</code> & <code>Next.js</code>, désormais en quête de nouveaux défis."
+        },
+        "overview": {
+          "title": "Apperçu",
+          "skills": {
+            "title": "Compétences Techniques"
+          },
+          "experiences": {
+            "title": "Expériences",
+            "dixeed": {
+              "jobInfo": "2022-2024 - <code>Développeur Frontend</code>, Dixeed",
+              "description": "Développer des <code>applications web & mobiles dynamiques</code> à partir de designs et fiches techniques."
             },
-            "content": {
-                "intro": {
-                    "name": "Mathieu Langumier",
-                    "title": "Développeur Frontend",
-                    "description": "Développeur avec de l'expérience sur plusieurs frameworks JavaScript et TypeScript, dont <code>React</code> & <code>Next.js</code>, désormais en quête de nouveaux défis."
-                },
-                "overview": {
-                    "title": "Apperçu",
-                    "skills": {
-                        "title": "Compétences Techniques"
-                    },
-                    "experiences": {
-                        "title": "Expériences",
-                        "dixeed": {
-                            "jobInfo": "2022-2024 - <code>Développeur Frontend</code>, Dixeed",
-                            "description": "Développer des <code>applications web & mobiles dynamiques</code> à partir de designs et fiches techniques."
-                        },
-                        "ffy": {
-                            "jobInfo": "2022 - <code>Développeur Frontend</code>, Flying For You",
-                            "description": "Développer une <code>plateforme administrateur</code> afin d'observer et gérer les données envoyées par l'application mobile."
-                        }
-                    },
-                    "contact": {
-                        "title": "Contact",
-                        "text": "Pour plus d'informations, n'hésitez pas à me contacter sur LinkedIn. Vous pouvez accéder au repository du projet sur Github par le lien suivant."
-                    }
-                }
+            "ffy": {
+              "jobInfo": "2022 - <code>Développeur Frontend</code>, Flying For You",
+              "description": "Développer une <code>plateforme administrateur</code> afin d'observer et gérer les données envoyées par l'application mobile."
             }
-        },
-        "Experiences": {},
-        "Projects": {},
-        "NotFound": {
-            "text": "Page non trouvée"
-        },
-        "UnderConstruction": {
-            "title": "Page en construction",
-            "welcomeText": "Bienvenues, chers visiteurs ! Cette page est actuellement en développement, elle devrait donc être bientôt disponible.",
-            "githubText": "En attendant, vous pouvez jeter un oeil sur le <code>repository Github</code> si vous voulez plus d'informations sur les outils que j'utilise et les fonctionnalités qui pourront être mises en place sur ce site.",
-            "linkedinText": "N'hésitez pas à me contacter sur <code>LinkedIn</code> si vous avez la moindre question concernant mon parcours ou ce projet.",
-            "goodbyeText": "Je vous remercie de votre visite, et espère vous retrouver rapidement !"
+          },
+          "contact": {
+            "title": "Contact",
+            "text": "Pour plus d'informations, n'hésitez pas à me contacter sur LinkedIn. Vous pouvez accéder au repository du projet sur Github par le lien suivant."
+          }
         }
+      }
     },
-
-    "Components": {
-        "Header": {
-            "name": "Mathieu Langumier",
-            "title": "Développeur Frontend",
-            "navigation": {
-                "btnBurger": "Ouvrir et fermer le menu",
-                "about-me": "À Propos",
-                "experiences": "Expériences",
-                "projects": "Projets"
-            },
-            "localeSwitcher": {
-                "label": "Changer de langue"
-            }
-        }
+    "Experiences": {},
+    "Projects": {},
+    "NotFound": {
+      "text": "Page non trouvée"
+    },
+    "UnderConstruction": {
+      "title": "Page en construction",
+      "welcomeText": "Bienvenues, chers visiteurs ! Cette page est actuellement en développement, elle devrait donc être bientôt disponible.",
+      "githubText": "En attendant, vous pouvez jeter un oeil sur le <code>repository Github</code> si vous voulez plus d'informations sur les outils que j'utilise et les fonctionnalités qui pourront être mises en place sur ce site.",
+      "linkedinText": "N'hésitez pas à me contacter sur <code>LinkedIn</code> si vous avez la moindre question concernant mon parcours ou ce projet.",
+      "goodbyeText": "Je vous remercie de votre visite, et espère vous retrouver rapidement !"
     }
+  },
+
+  "Components": {
+    "Header": {
+      "name": "Mathieu Langumier",
+      "title": "Développeur Frontend",
+      "navigation": {
+        "btnBurger": "Ouvrir et fermer le menu",
+        "about-me": "À Propos",
+        "experiences": "Expériences",
+        "projects": "Projets"
+      },
+      "localeSwitcher": {
+        "label": "Changer de langue"
+      }
+    }
+  }
 }
