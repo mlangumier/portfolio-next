@@ -45,8 +45,8 @@ const Header: React.FC = () => {
     ];
 
     return (
-        <header className="fixed z-[100] mx-auto h-[8rem] w-full bg-white shadow-lg">
-            <div className="mx-auto flex h-full max-w-screen-xl flex-row justify-between px-8 py-4 md:items-center">
+        <header className="fixed z-[100] mx-auto h-fit min-h-[8rem] w-full bg-white shadow-lg">
+            <div className="mx-auto flex min-h-[8rem] max-w-screen-xl flex-row justify-between px-8 py-4 md:items-center">
                 {/* Title */}
                 <Link href="/" className="flex flex-col items-baseline hover:text-inherit lg:flex-row">
                     <div className="flex flex-row items-center gap-4">
@@ -64,16 +64,15 @@ const Header: React.FC = () => {
                 {/* Responsive navigation*/}
                 <div
                     className={clsx(
-                        'fixed left-0 top-0 flex h-screen w-screen transform items-center justify-center bg-grey-light transition duration-500 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
+                        'fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-grey-light transition-opacity duration-300 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
                         isMenuOpen ? 'z-[100] opacity-100' : 'top-[-100%] opacity-0'
                     )}
                 >
-                    <ul className="flex flex-col items-center gap-14 pb-[15rem] md:flex-row md:gap-10 md:pb-0">
+                    <ul className="flex flex-col items-center justify-center gap-14 md:flex-row md:gap-10 md:pb-0 portrait:pb-[15rem] landscape:gap-8 landscape:pb-0">
                         {navItems.map((item: INavItem) => (
                             <li key={item.href}>
                                 <NavigationLink
                                     checkActive
-                                    // TODO: Add some of this as a <a> utility class (global.css, 'hover-text-primary' transition):
                                     className="font-sans text-large-25 font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary-light md:text-large md:font-light"
                                     href={item.href}
                                     onClick={() => setIsMenuOpen(false)}

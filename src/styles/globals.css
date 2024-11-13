@@ -65,6 +65,10 @@
     .h4-like {
         @apply font-sans text-large;
     }
+    h5,
+    .h5-like {
+        @apply font-sans text-medium;
+    }
 
     a {
         @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline;
@@ -83,6 +87,9 @@
 }
 
 @layer components {
+    .btn {
+        @apply rounded-xl bg-primary px-8 py-4 font-sans text-white transition-all duration-200 ease-in-out hover:bg-primary-over;
+    }
 }
 
 @layer utilities {

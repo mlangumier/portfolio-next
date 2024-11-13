@@ -70,8 +70,10 @@ These will be added if they are relevant to the showcased projects:
 - [x] Finish SEO setup & performance tests
 
 ### Page - Experiences
-- [ ] Page design & layout
+- [x] Page design & layout
+- [ ] Content: translation & images
 - [ ] Setup experience cards
+- [ ] Drawer animation
 - [ ] Slide-in animation from both side (domino layout: img|text?; extend theme)
 - [ ] Display skills list (import SVGs)
 - [ ] 'Download Resume' button
@@ -87,7 +89,7 @@ These will be added if they are relevant to the showcased projects:
 
 ### Miscellaneous
 - [x] Adjust header to stick to top
-- [ ] Verifier les fontSize sur mobile -> lisibilité (fontsize?)
+- [x] Verifier les fontSize sur mobile -> lisibilité (fontsize?)
 - [ ] Update `README.md` file
 - [ ] Optimize Vercel setup (Analytics, Insight)
 - [ ] Add tailwind utility/component classes for transitions (card, button, links etc.):
