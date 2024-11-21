@@ -46,32 +46,36 @@
   }
 
   body {
-    @apply bg-white font-serif text-base leading-[2rem] text-grey-dark;
+    @apply grid min-h-svh grid-rows-layout bg-white font-serif text-base font-normal text-grey-dark;
+    /* @apply bg-white font-serif text-base font-normal text-grey-dark; */
   }
-
   h1,
-  .h1-like {
-    @apply font-sans text-large-30;
+  .title-h1 {
+    @apply font-sans text-3xl md:text-4xl;
   }
   h2,
-  .h2-like {
-    @apply font-sans text-large-25;
+  .title-h2 {
+    @apply font-sans text-2xl md:text-3xl;
   }
   h3,
-  .h3-like {
-    @apply font-sans text-large-22;
+  .title-h3 {
+    @apply font-sans text-2xl;
   }
   h4,
-  .h4-like {
-    @apply font-sans text-large;
+  .title-h4 {
+    @apply font-sans text-xl;
   }
   h5,
-  .h5-like {
-    @apply font-sans text-medium;
+  .title-h5 {
+    @apply font-sans text-lg;
+  }
+  h6,
+  .title-h6 {
+    @apply font-sans text-base;
   }
 
   a {
-    @apply cursor-pointer text-base font-medium leading-[2.2rem] no-underline;
+    @apply cursor-pointer text-base font-medium no-underline;
   }
 
   li {
@@ -82,15 +86,22 @@
   select,
   textarea,
   button {
-    @apply focus:outline-none;
+    @apply border-none bg-none focus:outline-none;
   }
 }
 
 @layer components {
+  /* TODO: Move to ButtonComponent (rename 'cta-link' ?) if only used there, or keep here if used for components & CTAs (then add function for color selection (check best way to do it)
+    ! internal links => nav-links != cta-links;
+    ! external links and component specific (bg-none, p-none) ;
+  */
   .btn {
-    @apply rounded-xl bg-primary px-8 py-4 font-sans text-white transition-all duration-200 ease-in-out hover:bg-primary-over;
+    @apply rounded-md bg-primary px-5 py-3 font-sans text-white transition-all duration-150 ease-in-out hover:bg-primary-over;
   }
 }
 
 @layer utilities {
+  .content {
+    @apply mx-auto w-full max-w-screen-xl px-3 md:px-5;
+  }
 }

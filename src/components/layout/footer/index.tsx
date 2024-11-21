@@ -6,22 +6,22 @@ import { externalLinksList, INavigationLinkExternal } from '@/utils/links';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mx-auto w-full border-t border-grey-neutral">
-      <div className="mx-auto flex max-w-screen-xl flex-col-reverse px-8 pb-6 pt-8 md:flex-row md:items-center md:justify-between">
+    <footer className="border-grey-neutral">
+      <div className="content flex flex-col-reverse pb-4 pt-5 md:flex-row md:items-center md:justify-between">
         <div className="m-auto mt-8 text-center md:m-0">
-          <p className="text-small">© 2024 Mathieu Langumier</p>
+          <p className="text-sm">© 2024 Mathieu Langumier</p>
         </div>
         <div className="m-auto text-center md:m-0">
-          <ul className="flew-row flex gap-8 py-4">
+          <ul className="flew-row flex gap-5 py-2">
             {externalLinksList.map((link: INavigationLinkExternal) => (
               <li key={link.label}>
                 <NavigationLinkExternal href={link.url}>
                   <Image
                     src={link.icon}
                     alt={`${link.label} icon`}
-                    height={30}
-                    width={30}
-                    className="size-12 md:size-10"
+                    height={32}
+                    width={32}
+                    className="size-8 md:size-6"
                   />
                 </NavigationLinkExternal>
               </li>

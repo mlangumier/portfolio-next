@@ -1,6 +1,6 @@
 module.exports = {
   trailingComma: 'es5',
-  tabWidth: 2, // Identation space
+  tabWidth: 2,
   useTabs: false, // Accept tabs as indentation or only spaces
   printWidth: 120, // Prettier will wrap code longer than that
   bracketSpacing: true, // Add spaces inside brackets
@@ -10,6 +10,9 @@ module.exports = {
   jsxSingleQuote: false,
   quoteProps: 'as-needed',
 
+  tailwindConfig: './tailwind.config.ts',
+  tailwindFunctions: ['clsx', 'tw'],
+
   plugins: ['prettier-plugin-tailwindcss'],
 
   overrides: [
@@ -18,14 +21,12 @@ module.exports = {
       options: {
         parser: 'typescript',
         singleQuote: true,
-        trailingComma: 'es5',
       },
     },
     {
       files: ['*.js', '*.mjs'],
       options: {
         singleQuote: true,
-        trailingComma: 'all',
       },
     },
     {

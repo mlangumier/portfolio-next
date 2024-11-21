@@ -32,7 +32,7 @@ const Header: React.FC = () => {
       document.body.style.overflow = '';
     }
 
-    // Clean up overflow on unmount component (prevent unexpected behaviour)
+    // Cleans up overflow on unmount component (prevent unexpected behaviour)
     return () => {
       document.body.style.overflow = '';
     };
@@ -40,23 +40,19 @@ const Header: React.FC = () => {
 
   const navItems: INavItem[] = [
     { label: t('navigation.about-me'), href: '/' },
-    { label: t('navigation.experiences'), href: '/experiences' },
     // { label: t('navigation.projects'), href: '/projects' },
   ];
 
   return (
-    <header className="fixed z-[100] mx-auto h-fit min-h-[8rem] w-full bg-white shadow-lg">
-      <div className="mx-auto flex min-h-[8rem] max-w-screen-xl flex-row justify-between px-8 py-4 md:items-center">
+    <header className="fixed z-[100] mx-auto w-full bg-white shadow-lg">
+      <div className="content flex min-h-[90px] flex-row items-center justify-between py-2">
         {/* Title */}
-        <Link href="/" className="flex flex-col items-baseline hover:text-inherit lg:flex-row">
-          <div className="flex flex-row items-center gap-4">
+        <Link href="/" className="flex flex-col items-baseline">
+          <div className="flex flex-row items-center gap-3">
             <span className="hidden size-[18px] rotate-12 bg-primary sm:inline" />
-            <p className="h1-like text-large-25 font-bold text-primary-dark lg:leading-[2rem]">{t('name')}</p>
+            <p className="title-h1 text-2xl font-bold text-primary-dark">{t('name')}</p>
           </div>
-          <p className="text-[1.8rem] font-light uppercase">
-            <span className="hidden lg:inline lg:px-4">/</span>
-            {t('title')}
-          </p>
+          <p className="text-lg font-light uppercase">{t('title')}</p>
         </Link>
 
         {/* Responsive navigation*/}
@@ -66,12 +62,12 @@ const Header: React.FC = () => {
             isMenuOpen ? 'z-[100] opacity-100' : 'top-[-100%] opacity-0'
           )}
         >
-          <ul className="flex flex-col items-center justify-center gap-14 md:flex-row md:gap-10 md:pb-0 portrait:pb-[15rem] landscape:gap-8 landscape:pb-0">
+          <ul className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6 portrait:pb-[15rem]">
             {navItems.map((item: INavItem) => (
               <li key={item.href}>
                 <NavigationLink
                   checkActive
-                  className="font-sans text-large-25 font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary-light md:text-large md:font-light"
+                  className="font-sans text-2xl font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary-light md:text-xl md:font-light"
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                 >
@@ -79,13 +75,12 @@ const Header: React.FC = () => {
                 </NavigationLink>
               </li>
             ))}
-
             <LocalSwitcher btnLabel={t('localeSwitcher.label')} handleCloseMobileMenu={() => setIsMenuOpen(false)} />
           </ul>
         </div>
 
         {/* Mobile burger */}
-        <div className="z-[100] flex items-center justify-center pt-4 md:hidden">
+        <div className="z-[100] pt-2 md:hidden">
           <BurgerIcon
             btnLabel={t('navigation.btnBurger')}
             isOpen={isMenuOpen}

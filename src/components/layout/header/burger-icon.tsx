@@ -9,23 +9,23 @@ interface Props {
 
 const BurgerIcon: React.FC<Props> = ({ isOpen, btnLabel, handleIsOpen }) => {
   return (
-    <button aria-label={btnLabel} onClick={handleIsOpen} className="relative h-full w-14 hover:cursor-pointer">
+    <button aria-label={btnLabel} onClick={handleIsOpen} className="relative h-10 w-12 hover:cursor-pointer">
       <span
         className={clsx(
-          'absolute right-[50%] top-0 h-1.5 w-7 transform rounded-sm bg-primary transition duration-500 ease-in-out',
-          isOpen && 'translate-x-1.5 translate-y-3 rotate-45'
+          'absolute left-0 top-0 h-1 w-1/2 transform rounded-sm bg-primary transition duration-500 ease-in-out',
+          isOpen && 'translate-x-[4px] translate-y-[10px] rotate-45'
         )}
       />
       <span
         className={clsx(
-          'absolute right-0 top-5 h-1.5 w-14 transform rounded-sm bg-primary transition duration-500 ease-in-out',
+          'absolute right-0 top-1/2 h-1 w-12 -translate-y-1/2 transform rounded-sm bg-primary transition duration-500 ease-in-out',
           isOpen && '-rotate-45'
         )}
       />
       <span
         className={clsx(
-          'absolute right-0 top-10 h-1.5 w-7 transform rounded-sm bg-primary transition duration-500 ease-in-out',
-          isOpen && '-translate-x-1.5 -translate-y-3 rotate-45'
+          'absolute bottom-0 right-0 h-1 w-1/2 transform rounded-sm bg-primary transition duration-500 ease-in-out',
+          isOpen && '-translate-x-[4px] -translate-y-[10px] rotate-45'
         )}
       />
     </button>

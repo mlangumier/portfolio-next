@@ -34,14 +34,14 @@ const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => 
   return (
     <button
       aria-label={btnLabel}
-      className="hover:cursor-pointer"
+      className="mt-2 hover:cursor-pointer md:ml-2 md:mt-0"
       onClick={() => handleSwitchLocale(locale === 'fr' ? 'en' : 'fr')}
       disabled={isPending}
     >
       {locale === 'fr' ? (
-        <Image src={englishFlagIcon} alt="" height={40} width={40} className="size-16 md:size-10" />
+        <Image src={englishFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
       ) : (
-        <Image src={frenchFlagIcon} alt="" height={40} width={40} className="size-16 md:size-10" />
+        <Image src={frenchFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
       )}
     </button>
   );

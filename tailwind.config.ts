@@ -1,6 +1,4 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
-
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -10,25 +8,15 @@ const config: Config = {
     './src/views/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '992px',
-      xl: '1200px',
-    },
     fontFamily: {
       sans: ['"Excon"', ...defaultTheme.fontFamily.sans],
       serif: ['"Ranade"', ...defaultTheme.fontFamily.serif],
     },
-    fontSize: {
-      'small-10': ['1rem', '2rem'],
-      small: ['1.4rem', '2rem'],
-      base: ['1.6rem', '2rem'],
-      medium: ['1.8rem', '2rem'],
-      large: ['2rem', '2.5rem'],
-      'large-22': ['2.2rem', '3rem'],
-      'large-25': ['2.5rem', '3.5rem'],
-      'large-30': ['3rem', '4rem'],
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
     },
     extend: {
       colors: {
@@ -66,6 +54,9 @@ const config: Config = {
           DEFAULT: 'rgb(var(--color-info))',
         },
       },
+      gridTemplateRows: {
+        layout: '1fr auto',
+      },
       boxShadow: {
         'bottom-right': '6px 6px 6px 0 rgba(var(--color-grey-dark) / 0.1)',
       },
@@ -74,15 +65,7 @@ const config: Config = {
       // animations: {},
     },
   },
-  plugins: [
-    // Set the base font-size for the project, allows for more developer-friendly use of REM values.
-    // If using the VSCode extension, change VSCode setting "tailwindCSS.rootFontSize" to "10"
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: '10px' },
-      });
-    }),
-  ],
+  // plugins: [],
 };
 
 export default config;

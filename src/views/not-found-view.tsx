@@ -8,12 +8,12 @@ const NotFoundView: React.FC = () => {
   const t = useTranslations('Pages.NotFound');
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex w-full grow flex-col items-center justify-center">
+    <section className="py-10">
+      <div className="content flex grow flex-col items-center justify-center">
         <Image src={notFoundImage} alt="" width={480} height={320} className="w-full max-w-screen-sm" />
-        <h2 className="flex-1 pt-4 text-center uppercase">{t('text')}</h2>
+        <p className="title-h2 flex-1 pt-2 text-center uppercase">{t('text')}</p>
       </div>
-    </div>
+    </section>
   );
 };
 

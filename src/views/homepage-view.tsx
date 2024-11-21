@@ -3,14 +3,11 @@ import Image from 'next/image';
 import React from 'react';
 
 import { nextjsIcon, profilePicture, reactjsIcon, tailwindcssIcon, typescriptIcon } from '@/assets/images';
-import Card from '@/components/card';
 import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
-import NavigationLink from '@/components/navigation/navigation-link';
 import { githubLink, linkedinLink } from '@/utils/links';
 
 const HomepageView = () => {
   const t = useTranslations('Pages.Homepage.content');
-  const nav = useTranslations('Components.Header.navigation');
 
   const techList = [
     { label: 'React.js', icon: reactjsIcon },
@@ -20,15 +17,13 @@ const HomepageView = () => {
   ];
 
   return (
-    <Card padding className="flex w-full max-w-screen-sm flex-col md:max-w-screen-lg">
+    <>
       {/* Introduction */}
-      <section id="introduction" className="flex flex-col-reverse justify-between gap-12 md:flex-row">
-        <div className="flex flex-col gap-12 md:justify-between">
+      <section className="content flex flex-col-reverse justify-between gap-8 py-20 md:flex-row">
+        <div className="flex flex-col gap-8 md:justify-between">
           <div className="flex flex-col">
-            <h1 className="text-large-22 font-bold text-primary-dark md:text-large-25">{t('intro.name')}</h1>
-            <h2 className="mb-4 mt-1 font-serif text-large font-bold uppercase text-primary md:text-large-25">
-              {t('intro.title')}
-            </h2>
+            <h1 className="font-bold text-primary-dark">{t('intro.name')}</h1>
+            <h2 className="mb-2 mt-1 font-serif font-bold uppercase text-primary">{t('intro.title')}</h2>
             <p>
               {t.rich('intro.description', {
                 code: chunk => <span className="font-bold text-primary">{chunk}</span>,
@@ -36,75 +31,72 @@ const HomepageView = () => {
             </p>
           </div>
 
-          <div className="flex flex-row items-center justify-center gap-8 md:justify-start">
-            <NavigationLink href={'/experiences'} className="btn">
-              {nav('experiences')}
-            </NavigationLink>
-            {/* TODO: add button when the page is done */}
-            {/* <NavigationLink href={'/projects'} className="btn">
+          {/* TODO: add button when the page is done */}
+          {/* <div className="flex flex-row items-center justify-center gap-8 md:justify-start">
+            <NavigationLink href={'/projects'} className="btn">
               {nav('projects')}
-            </NavigationLink> */}
-          </div>
+            </NavigationLink>
+          </div> */}
         </div>
 
         <div className="flex min-w-fit items-center justify-center">
           <Image
             src={profilePicture}
             alt="Mathieu Langumier"
-            height={250}
-            width={250}
-            className="size-[20rem] rounded-full md:size-[25rem]"
+            className="size-[200px] rounded-full md:size-[250px]"
+            priority // For LCP
           />
         </div>
       </section>
 
-      <span className="m-auto mb-12 mt-16 h-[.1rem] w-[80%] bg-primary md:mb-16 md:mt-20 md:h-[.2rem] md:w-1/5" />
+      <span className="m-auto mb-8 mt-10 h-[1px] w-4/5 bg-primary md:mb-10 md:mt-12 md:h-[2px] md:w-1/5" />
 
-      <section>
+      <section className="content pb-24 pt-20">
         {/* TODO: "title" utility class */}
-        <h3 className="m-auto mb-16 w-fit border-b-2 border-secondary-light text-center text-large font-bold uppercase text-primary-dark md:mb-20 md:text-large-22">
+        <h2 className="m-auto mb-10 w-fit border-b-2 border-secondary-light text-center font-bold uppercase text-primary-dark md:mb-12">
           {t('overview.title')}
-        </h3>
+        </h2>
 
-        <div className="flex flex-col gap-16">
+        <div className="flex flex-col gap-10">
           {/* Technical skills */}
           <div>
-            <h4 className="relative z-10 mx-auto mb-8 w-fit px-8 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-6 w-4/5 bg-primary-transparent md:h-8" />
+            {/* TODO: title-bg utility class (how to do ::before) */}
+            <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
               {t('overview.skills.title')}
-            </h4>
-            <div className="flex flex-row items-center justify-center gap-12 md:gap-20">
+            </h3>
+            <div className="flex flex-row items-center justify-center gap-5 md:gap-10">
               {techList.map(item => (
-                <Image key={item.label} src={item.icon} alt={`${item.label} logo`} className="size-20 md:size-24" />
+                <Image key={item.label} src={item.icon} alt={`${item.label} logo`} className="size-12 md:size-16" />
               ))}
             </div>
           </div>
 
           {/* Experiences */}
           <div>
-            <h4 className="relative z-10 mx-auto mb-8 w-fit px-8 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-6 w-4/5 bg-primary-transparent md:h-8" />
+            <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
               {t('overview.experiences.title')}
-            </h4>
-            <div className="mb-4 md:border-l-4 md:border-primary md:pl-4">
-              <h5>
+            </h3>
+            <div className="mb-3 md:border-l-4 md:border-primary md:pl-3">
+              <h4>
                 {t.rich('overview.experiences.dixeed.jobInfo', {
                   code: chunk => <span className="font-bold text-primary">{chunk}</span>,
                 })}
-              </h5>
-              <p className="ml-4">
+              </h4>
+              <p className="ml-3">
                 {t.rich('overview.experiences.dixeed.description', {
                   code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
                 })}
               </p>
             </div>
-            <div className="mb-4 md:border-l-4 md:border-primary md:pl-4">
-              <h5>
+            <div className="mb-3 md:border-l-4 md:border-primary md:pl-3">
+              <h4>
                 {t.rich('overview.experiences.ffy.jobInfo', {
                   code: chunk => <span className="font-bold text-primary">{chunk}</span>,
                 })}
-              </h5>
-              <p className="ml-4">
+              </h4>
+              <p className="ml-3">
                 {t.rich('overview.experiences.ffy.description', {
                   code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
                 })}
@@ -114,13 +106,13 @@ const HomepageView = () => {
 
           {/* Contact */}
           <div>
-            <h4 className="relative z-10 mx-auto mb-8 w-fit px-8 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-6 w-4/5 bg-primary-transparent md:h-8" />
+            <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
               {t('overview.contact.title')}
-            </h4>
-            <div className="flex flex-col justify-center gap-6 md:flex-row md:items-center md:gap-20">
+            </h3>
+            <div className="flex flex-col justify-center gap-4 md:flex-row md:items-center md:gap-5">
               <p>{t('overview.contact.text')}</p>
-              <div className="flex flex-row items-center justify-center gap-8 md:justify-start">
+              <div className="flex flex-row items-center justify-center gap-5 md:justify-start">
                 <NavigationLinkExternal id="link-linkedin" href={linkedinLink.url} className="btn">
                   {linkedinLink.label}
                 </NavigationLinkExternal>
@@ -132,7 +124,7 @@ const HomepageView = () => {
           </div>
         </div>
       </section>
-    </Card>
+    </>
   );
 };
 

@@ -1,22 +1,22 @@
 // ----- External Links logos
-export { default as githubIcon } from '../../public/external-links/github.svg';
-export { default as linkedinIcon } from '../../public/external-links/linkedin.svg';
+export { default as githubIcon } from './external-links/github.svg';
+export { default as linkedinIcon } from './external-links/linkedin.svg';
 
 // ----- Language Flags
-export { default as englishFlagIcon } from '../../public/flags/flag-english.svg';
-export { default as frenchFlagIcon } from '../../public/flags/flag-french.svg';
+export { default as englishFlagIcon } from './flags/flag-english.svg';
+export { default as frenchFlagIcon } from './flags/flag-french.svg';
 
 // ----- Illustrations
-export { default as underConstructionImage } from '../../public/illustrations/under-construction.svg';
-export { default as notFoundImage } from '../../public/illustrations/not-found.svg';
+export { default as underConstructionImage } from './illustrations/under-construction.svg';
+export { default as notFoundImage } from './illustrations/not-found.svg';
 
 // ----- Misc
-export { default as profilePicture } from '../../public/misc/profile-picture.png';
+export { default as profilePicture } from './misc/profile-picture.webp';
 
 // ----- Techs logos
-export { default as nextjsIcon } from '../../public/techs/nextjs.svg';
-export { default as reactjsIcon } from '../../public/techs/reactjs.svg';
-export { default as typescriptIcon } from '../../public/techs/typescript.svg';
-export { default as tailwindcssIcon } from '../../public/techs/tailwindcss.svg';
+export { default as nextjsIcon } from './techs/nextjs.svg';
+export { default as reactjsIcon } from './techs/reactjs.svg';
+export { default as typescriptIcon } from './techs/typescript.svg';
+export { default as tailwindcssIcon } from './techs/tailwindcss.svg';
 
 // ----- UI Icons

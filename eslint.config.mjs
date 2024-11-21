@@ -22,7 +22,7 @@ const eslintConfig = [
     'next/core-web-vitals',
     'next/typescript',
     'plugin:react/recommended',
-    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended'
   ),
   {
     ignores: ['./docker-compose.yml', './Dockerfile.dev', '**/.*'],
