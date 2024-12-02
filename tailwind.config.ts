@@ -1,58 +1,29 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/views/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    fontFamily: {
-      sans: ['"Excon"', ...defaultTheme.fontFamily.sans],
-      serif: ['"Ranade"', ...defaultTheme.fontFamily.serif],
-    },
     screens: {
       sm: '640px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
     },
+    fontFamily: {
+      sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
+    },
+    // fontsize: {}
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'rgb(var(--color-primary))',
-          light: 'rgb(var(--color-primary-light))',
-          dark: 'rgb(var(--color-primary-dark))',
-          over: 'rgb(var(--color-primary-over))',
-          transparent: 'rgba(var(--color-primary-transparent) / 0.2)',
+          DEFAULT: 'hsl(var(--primary))',
         },
         secondary: {
-          DEFAULT: 'rgb(var(--color-secondary))',
-          light: 'rgb(var(--color-secondary-light))',
-          dark: 'rgb(var(--color-secondary-dark))',
-          over: 'rgb(var(--color-secondary-dark))',
-          transparent: 'rgb(var(--color-secondary-transparent) / 0.5)',
+          DEFAULT: 'hsl(var(--secondary))',
         },
-        grey: {
-          DEFAULT: 'rgb(var(--color-grey))',
-          light: 'rgb(var(--color-grey-light))',
-          neutral: 'rgb(var(--color-grey-neutral))',
-          dark: 'rgb(var(--color-grey-dark))',
-          black: 'rgb(var(--color-grey-black))',
-        },
-        error: {
-          DEFAULT: 'rgb(var(--color-error))',
-        },
-        warning: {
-          DEFAULT: 'rgb(var(--color-warning))',
-        },
-        success: {
-          DEFAULT: 'rgb(var(--color-success))',
-        },
-        info: {
-          DEFAULT: 'rgb(var(--color-info))',
-        },
+        // grey: { ...colors.slate },
       },
       gridTemplateRows: {
         layout: '1fr auto',
@@ -65,7 +36,7 @@ const config: Config = {
       // animations: {},
     },
   },
-  // plugins: [],
+  plugins: [],
 };
 
 export default config;

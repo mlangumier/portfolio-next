@@ -9,7 +9,7 @@ const UnderConstructionView: React.FC = () => {
   const t = useTranslations('Pages.UnderConstruction');
 
   return (
-    <section className="size-full bg-grey-light md:flex md:items-center">
+    <section className="bg-grey-light size-full md:flex md:items-center">
       <div className="content pb-14 pt-12 md:py-0">
         <p className="title-h2 pb-8 text-center uppercase md:pb-8">{t('title')}</p>
 

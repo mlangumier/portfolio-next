@@ -50,7 +50,8 @@ const Header: React.FC = () => {
         <Link href="/" className="flex flex-col items-baseline">
           <div className="flex flex-row items-center gap-3">
             <span className="hidden size-[18px] rotate-12 bg-primary sm:inline" />
-            <p className="title-h1 text-2xl font-bold text-primary-dark">{t('name')}</p>
+            {/* TODO: text-primary-dark */}
+            <p className="title-h1 text-2xl font-bold text-primary">{t('name')}</p>
           </div>
           <p className="text-lg font-light uppercase">{t('title')}</p>
         </Link>
@@ -58,7 +59,7 @@ const Header: React.FC = () => {
         {/* Responsive navigation*/}
         <div
           className={clsx(
-            'fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-grey-light transition-opacity duration-300 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
+            'bg-grey-light fixed left-0 top-0 flex h-screen w-screen items-center justify-center transition-opacity duration-300 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
             isMenuOpen ? 'z-[100] opacity-100' : 'top-[-100%] opacity-0'
           )}
         >
@@ -67,7 +68,8 @@ const Header: React.FC = () => {
               <li key={item.href}>
                 <NavigationLink
                   checkActive
-                  className="font-sans text-2xl font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary-light md:text-xl md:font-light"
+                  // TODO: rework "hover:text-primary-dark"
+                  className="text-2xl font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary md:text-xl md:font-light"
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
                 >
