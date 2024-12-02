@@ -22,8 +22,9 @@ const HomepageView = () => {
       <section className="content flex flex-col-reverse justify-between gap-8 py-20 md:flex-row">
         <div className="flex flex-col gap-8 md:justify-between">
           <div className="flex flex-col">
-            <h1 className="font-bold text-primary-dark">{t('intro.name')}</h1>
-            <h2 className="mb-2 mt-1 font-serif font-bold uppercase text-primary">{t('intro.title')}</h2>
+            {/* TODO: text-primary-dark */}
+            <h1 className="font-bold text-primary">{t('intro.name')}</h1>
+            <h2 className="mb-2 mt-1 font-bold uppercase text-primary">{t('intro.title')}</h2>
             <p>
               {t.rich('intro.description', {
                 code: chunk => <span className="font-bold text-primary">{chunk}</span>,
@@ -52,8 +53,8 @@ const HomepageView = () => {
       <span className="m-auto mb-8 mt-10 h-[1px] w-4/5 bg-primary md:mb-10 md:mt-12 md:h-[2px] md:w-1/5" />
 
       <section className="content pb-24 pt-20">
-        {/* TODO: "title" utility class */}
-        <h2 className="m-auto mb-10 w-fit border-b-2 border-secondary-light text-center font-bold uppercase text-primary-dark md:mb-12">
+        {/* TODO: text-primary-dark */}
+        <h2 className="border-secondary-light m-auto mb-10 w-fit border-b-2 text-center font-bold uppercase text-primary md:mb-12">
           {t('overview.title')}
         </h2>
 
@@ -62,7 +63,8 @@ const HomepageView = () => {
           <div>
             {/* TODO: title-bg utility class (how to do ::before) */}
             <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
+              {/* TODO: bg-primary-transparent */}
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary md:h-5" />
               {t('overview.skills.title')}
             </h3>
             <div className="flex flex-row items-center justify-center gap-5 md:gap-10">
@@ -75,7 +77,8 @@ const HomepageView = () => {
           {/* Experiences */}
           <div>
             <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
+              {/* TODO: bg-primary-transparent */}
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary md:h-5" />
               {t('overview.experiences.title')}
             </h3>
             <div className="mb-3 md:border-l-4 md:border-primary md:pl-3">
@@ -107,7 +110,8 @@ const HomepageView = () => {
           {/* Contact */}
           <div>
             <h3 className="relative z-10 mx-auto mb-5 w-fit px-5 md:mx-0">
-              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary-transparent md:h-5" />
+              {/* TODO: bg-primary-transparent */}
+              <span className="absolute left-[5%] top-1/2 -z-10 h-4 w-4/5 bg-primary md:h-5" />
               {t('overview.contact.title')}
             </h3>
             <div className="flex flex-col justify-center gap-4 md:flex-row md:items-center md:gap-5">

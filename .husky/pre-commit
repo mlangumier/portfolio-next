@@ -10,12 +10,12 @@ npm run check-n-format
 echo ">>> 🔵 Now starting the production build..."
 
 npm run build || {
-        echo '>>> 🔴 Next.js build failed. Check the error log above.'
+        echo '>>> ❌ Next.js build failed. Check the error log above.'
         false;
 }
 
 # If build is successful, the commit can procede:
-echo '>>> 🟢 Pre-commit verifications successful! Committing changes...'
+echo '>>> ✅ Pre-commit verifications successful! Committing changes...'
 
 git add .
 

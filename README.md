@@ -1,41 +1,35 @@
 # Next.js Portfolio
 
-Hi! I am Mathieu Langumier, and this is my portfolio.
+Welcome! I am **Mathieu Langumier**, and this is my portfolio.
 
 This is a project that regroups some personnal and profesionnal projects I have had the pleasure of working on. It serves as both a continuous training project and an overview of the skills I have acquired.
 
-Please enjoy your visit, and don't hesitate to contact me if you have questions or need any information
-
-## Description
-
-This project uses Next.js 15 with Turbopack, React 19, TypeScript and TailwindCSS. Various dependencies will be added depending on the different skills used in this projects. The most common dependencies such as Axios, Tanstack Query, Redux and i18n will be used, others will be added if they are relevant.
-
-[Work in Progress]
+This project uses **Next.js 15** with Turbopack, **React 19**, **TypeScript** and **Tailwind CSS**. Various dependencies will be added depending on the different skills used in this projects.
 
 ## Start the project
 
-There are a few steps required to setup the environment. Instead of using `localhost:3000` during development, we'll be using `https://mathieulangumier.local`. By doing so, the experience while developing will be much closer to the one in production and will allow us to detect issues that a basic setup wouldn't.
+There are a few steps required to setup the environment. Instead of using `localhost:3000` during development, we'll be using `https://mathieulangumier.local`. By doing so, the experience while developing will be much closer to the one in production and will allow us to detect issues more effectively.
 
-### - Step 1: Change the host name
+### Step 1 - Change the host name
 
 In the file `~/../../etc/hosts`, add the name `mathieulangumier.local` to the list host names.
 
-### - Step 2: HTTPS Certificate
+### Step 2 - HTTPS Certificate
 
-Install [mkcert](https://github.com/FiloSottile/mkcert) and the use the following command, it will generate the certificates required to run on a locally-trusted environment.
+Install [mkcert](https://github.com/FiloSottile/mkcert), then use the following command to generate the certificates required to run on a locally trusted environment.
 
-```
+```cli
 mkcert --cert-file mathieulangumier.local.crt --key-file mathieulangumier.local.key mathieulangumier.local
 ```
 
-Once the two files are created, create a `/cert` folder a the root of the project and move them inside.
+Once the two files are created, create a `/cert` folder at the root of the project and move them inside.
 
-### - Step 3: Docker
+### Step 3 - Docker
 
-This project uses `Docker v27.3.1` and `docker-compose v2.29.2-desktop.2`. Make sure you have a relatively recent version for both.
+This project uses the latest versions of `docker` and `docker-compose`.
 
-Use the command `docker-compose build` to run the project for the first time. After that, use `docker-compose up` to start the development environment. Use Ctrl+C to exit, and `docker-compose down` to stop the containers.
-Navigate to `https://mathieulangumier.local` and make sure that this URL works. The app should automatically reload while making changes on the project.
+Use the command `docker-compose build` to run the project for the first time. After that, use `docker-compose up` to start the development environment. Navigate to `https://mathieulangumier.local` and make sure that this URL works. The app should automatically reload while making changes on the project.
+Use Ctrl+C to stop the live server, and `docker-compose down` to stop the containers.
 
 ### Warning
 
@@ -43,23 +37,16 @@ If you have an Apache or Nginx server that starts automatically and is using the
 
 ## Style & Formatting
 
-### TailwindCss
-
-For an easier use of font sizes while working with TailwindCss, we need to change the default font size from 16 to 10. This is set up inside the `tailwind.config.ts` file, but if you're using the `Tailwind Css IntelliSense` plugin, you need to modify its default font size with your IDE. To do that, go into your VSCode settings, and change this setting:
-
-```js
-// Tailwind CSS: Root Font Size
-tailwindCSS.rootFontSize: 10
-```
-
-### Prettier & ESLint
-
-In order to have a homogenous code base within our project, we're going to use `ESLint` and `Prettier`.
+In order to have a homogenous code base within our project, we're going to use **ESLint** and **Prettier** with **Husky**.
 
 If you are already using their related VSCode extensions, VSCode should use this project's config as a base while you're working on it.
 
-With the same goal, we're marking sure that the remote repository will be protected against non-formatted commits. For that, we're using `husky`'s pre-commit feature, which allows a script to run each time we're comming changes. We've also created another script in `./scripts/format.sh` that has the same purpose but that we can use anytime with `npm run check-n-format`.
+With these dependencies, we're marking sure that the remote repository's if formatted and homogenous. For that, we're using **Husky**'s pre-commit feature, which allows a script to run each time we're comming changes. We've also created another script in `./scripts/format.sh` that has the same purpose but that we can use anytime with `npm run check-n-format`.
 
-## Deployement
+## Deployment
 
-(coming soon)
+This project uses **Github** & **Vercel**'s features to simplify the deployment process. We are using our `main` branch as our automatic deployment branch, and the `develop` branch to preview any changes done before that.
+
+## Contact
+
+If you have any question, you can contact me on [LinkedIn](https://www.linkedin.com/in/mathieu-langumier/).

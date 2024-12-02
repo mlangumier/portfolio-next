@@ -1,77 +1,68 @@
-@import "./fonts/fonts.css";
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  /* Primary - Blue */
-  --color-primary: 47 129 154;
-  --color-primary-light: 52 161 188;
-  --color-primary-dark: 11 44 62;
-  --color-primary-over: 20 81 105;
-  --color-primary-transparent: 47 129 154; /* Primary & Opacity: 0.2 */
-
-  /* Secondary - Gold */
-  --color-secondary: 217 153 13;
-  --color-secondary-light: 255 194 41;
-  --color-secondary-dark: 170 100 0;
-  --color-secondary-transparent: 255 194 41; /* Secondary-light & Opacity: 0.5 */
-
-  /* Grey */
-  --color-grey: 108 117 125;
-  --color-grey-light: 233 236 239;
-  --color-grey-neutral: 200 200 200; /* For opacity? */
-  --color-grey-dark: 33 37 41;
-  --color-grey-black: 19 21 24;
-
-  /* Notifications */
-  --color-error: 255 0 0;
-  --color-success: 0 150 0;
-  --color-info: 0 150 255;
-  --color-warning: 255 125 0;
-}
-
 @layer base {
+  :root {
+    /** Colors in hsl() for easier variations setup */
+
+    /* Primary - Cyan 700 */
+    --primary: 193 82 31;
+    /* --primary-hover: 193 82 25; */
+    /* --primary-light: 193 82 50; */
+    /* --primary-dark: 193 82 20; */
+
+    /* Secondary - Yellow 500 */
+    --secondary: 45 93 47;
+
+    /* Misc / Greys */
+    /* setup by color or purpose? (ex: grey/grey-light/grey-dark vs border/bg-light/bg-dark */
+  }
+
+  /* For dark-mode setup
+    .dark {} 
+  */
+
   *,
   *::before,
   *::after {
     box-sizing: border-box;
   }
 
-  #root,
   html,
   body {
     @apply h-full;
   }
 
   body {
-    @apply grid min-h-svh grid-rows-layout bg-white font-serif text-base font-normal text-grey-dark;
-    /* @apply bg-white font-serif text-base font-normal text-grey-dark; */
+    @apply grid min-h-svh grid-rows-layout bg-white text-base font-normal text-black;
   }
+
   h1,
   .title-h1 {
-    @apply font-sans text-3xl md:text-4xl;
+    @apply text-3xl md:text-4xl;
   }
   h2,
   .title-h2 {
-    @apply font-sans text-2xl md:text-3xl;
+    @apply text-2xl md:text-3xl;
   }
   h3,
   .title-h3 {
-    @apply font-sans text-2xl;
+    @apply text-2xl;
   }
   h4,
   .title-h4 {
-    @apply font-sans text-xl;
+    @apply text-xl;
   }
   h5,
   .title-h5 {
-    @apply font-sans text-lg;
+    @apply text-lg;
   }
   h6,
   .title-h6 {
-    @apply font-sans text-base;
+    @apply text-base;
   }
 
   a {
@@ -91,12 +82,19 @@
 }
 
 @layer components {
-  /* TODO: Move to ButtonComponent (rename 'cta-link' ?) if only used there, or keep here if used for components & CTAs (then add function for color selection (check best way to do it)
-    ! internal links => nav-links != cta-links;
-    ! external links and component specific (bg-none, p-none) ;
+  /* Section title: Border-bottom or :before background ? */
+  /* Block text: max-width, center */
+  /* Card: background, border, hover: shadow, border (?), other effect (?) */
+
+  /* TODO: Setup color selection: multiple classes, or function props ?
+    * Normalise all CTA/links/btn (do in base layer above): remove all default styles (decoration, background, active etc), then create classes per uses:
+    - Link nav: header (& footer ?)
+    - Button: either generic button with variants depending on background, or separate style (internal vs external link, vs button)
+      Check Tailwind use of: .my-class__other-class {} <- variants?
   */
   .btn {
-    @apply rounded-md bg-primary px-5 py-3 font-sans text-white transition-all duration-150 ease-in-out hover:bg-primary-over;
+    @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary;
+    /* @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary-over; */
   }
 }
 
@@ -104,4 +102,5 @@
   .content {
     @apply mx-auto w-full max-w-screen-xl px-3 md:px-5;
   }
+  /* section padding-y ? */
 }

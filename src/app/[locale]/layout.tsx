@@ -2,14 +2,22 @@ import '@/styles/globals.css';
 
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
+import { DM_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
 import { Locale, routing } from '@/i18n/routing';
 import { LayoutProps } from '@/utils/types';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import type { Metadata } from 'next';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-dm-sans',
+});
 
 export function metadata(): Metadata {
   return {
@@ -29,15 +37,16 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     notFound();
   }
 
-  // Providing all messages to the client side for easier starting point (adapt later)
+  // Provides all messages to the client side for easier starting point (adapt later)
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className={`${dmSans.variable}`}>
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
           <Analytics />
+          <SpeedInsights />
         </NextIntlClientProvider>
       </body>
     </html>

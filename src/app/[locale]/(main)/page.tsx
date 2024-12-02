@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { getTranslations } from 'next-intl/server';
 import React from 'react';
 
 import { PageProps } from '@/utils/types';
@@ -14,10 +14,6 @@ export async function generateMetadata({ params }: PageProps) {
   };
 }
 
-export default async function Homepage({ params }: PageProps) {
-  const { locale } = await params;
-  // Enable static rendering
-  setRequestLocale(locale);
-
+export default async function Homepage({}: PageProps) {
   return <HomepageView />;
 }
