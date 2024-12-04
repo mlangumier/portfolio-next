@@ -18,18 +18,26 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'hsl(var(--primary))',
+          DEFAULT: 'var(--primary)',
+          hover: 'var(--primary-hover)',
+          light: 'var(--primary-light)',
+          'light-hover': 'var(--primary-light-hover)',
         },
         secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
+          DEFAULT: 'var(--secondary)',
+          hover: 'var(--secondary-hover)',
         },
-        // grey: { ...colors.slate },
+        grey: {
+          DEFAULT: 'var(--grey)',
+          light: 'var(--grey-light)',
+        },
       },
       gridTemplateRows: {
         layout: '1fr auto',
       },
       boxShadow: {
-        'bottom-right': '6px 6px 6px 0 rgba(var(--color-grey-dark) / 0.1)',
+        'card-25': '4px 4px 4px 0 rgba(var(--color-black) / 0.25)',
+        'card-50': '4px 4px 4px 0 rgba(var(--color-black) / 0.50)',
       },
       // Use keyframes and animations for reusable "fade" and "slide" animations
       // keyframes:{},

@@ -20,3 +20,4 @@ export { default as typescriptIcon } from './techs/typescript.svg';
 export { default as tailwindcssIcon } from './techs/tailwindcss.svg';
 
 // ----- UI Icons
+// Use as components or from a library ? (React-icons: https://react-icons.github.io/react-icons/)

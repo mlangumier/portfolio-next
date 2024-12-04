@@ -11,7 +11,7 @@ const Card: React.FC<Props> = ({ children, className, padding = false }) => {
   return (
     <div
       className={clsx(
-        'overflow-hidden rounded-md bg-white shadow-bottom-right',
+        'shadow-bottom-right overflow-hidden rounded-md bg-white',
         className,
         padding && 'px-5 py-8 md:px-8 md:py-10'
       )}

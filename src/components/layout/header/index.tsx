@@ -59,7 +59,7 @@ const Header: React.FC = () => {
         {/* Responsive navigation*/}
         <div
           className={clsx(
-            'bg-grey-light fixed left-0 top-0 flex h-screen w-screen items-center justify-center transition-opacity duration-300 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
+            'fixed left-0 top-0 flex h-screen w-screen items-center justify-center bg-grey-light transition-opacity duration-300 ease-in-out md:static md:h-auto md:w-auto md:bg-inherit md:opacity-100',
             isMenuOpen ? 'z-[100] opacity-100' : 'top-[-100%] opacity-0'
           )}
         >

@@ -6,19 +6,20 @@
 
 @layer base {
   :root {
-    /** Colors in hsl() for easier variations setup */
+    /* Primary - Sky lights (<500), Cyan dark (>600) */
+    --primary: #0e7490;
+    --primary-hover: #164e63;
 
-    /* Primary - Cyan 700 */
-    --primary: 193 82 31;
-    /* --primary-hover: 193 82 25; */
-    /* --primary-light: 193 82 50; */
-    /* --primary-dark: 193 82 20; */
+    --primary-light: #f0f9ff;
+    --primary-ligh-hover: #e0f2fe;
 
-    /* Secondary - Yellow 500 */
-    --secondary: 45 93 47;
+    /* Secondary - Amber */
+    --secondary: #fbbf24;
+    --secondary-hover: #f59e0b;
 
-    /* Misc / Greys */
-    /* setup by color or purpose? (ex: grey/grey-light/grey-dark vs border/bg-light/bg-dark */
+    /* Greys - Slate */
+    --grey: #e2e8f0;
+    --grey-light: #94a3b8;
   }
 
   /* For dark-mode setup
@@ -37,33 +38,26 @@
   }
 
   body {
-    @apply grid min-h-svh grid-rows-layout bg-white text-base font-normal text-black;
+    @apply grid min-h-svh grid-rows-layout bg-primary-light text-base text-black;
   }
 
+  /** TYPOGRAPHY */
+
   h1,
-  .title-h1 {
-    @apply text-3xl md:text-4xl;
+  .title-main {
+    @apply text-4xl font-bold;
   }
+
   h2,
-  .title-h2 {
-    @apply text-2xl md:text-3xl;
+  .title-section {
+    @apply text-3xl font-bold text-primary;
   }
-  h3,
-  .title-h3 {
-    @apply text-2xl;
+
+  .title-card {
+    @apply text-lg font-bold text-primary;
   }
-  h4,
-  .title-h4 {
-    @apply text-xl;
-  }
-  h5,
-  .title-h5 {
-    @apply text-lg;
-  }
-  h6,
-  .title-h6 {
-    @apply text-base;
-  }
+
+  /** Elements */
 
   a {
     @apply cursor-pointer text-base font-medium no-underline;
@@ -82,19 +76,14 @@
 }
 
 @layer components {
-  /* Section title: Border-bottom or :before background ? */
-  /* Block text: max-width, center */
-  /* Card: background, border, hover: shadow, border (?), other effect (?) */
-
-  /* TODO: Setup color selection: multiple classes, or function props ?
-    * Normalise all CTA/links/btn (do in base layer above): remove all default styles (decoration, background, active etc), then create classes per uses:
-    - Link nav: header (& footer ?)
-    - Button: either generic button with variants depending on background, or separate style (internal vs external link, vs button)
-      Check Tailwind use of: .my-class__other-class {} <- variants?
-  */
   .btn {
-    @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary;
-    /* @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary-over; */
+    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-hover;
+  }
+  .btn-primary-light {
+    @apply bg-primary-light text-primary hover:bg-primary-light-hover hover:text-primary-hover;
   }
 }
 
@@ -102,5 +91,7 @@
   .content {
     @apply mx-auto w-full max-w-screen-xl px-3 md:px-5;
   }
-  /* section padding-y ? */
+  .section {
+    @apply py-20;
+  }
 }

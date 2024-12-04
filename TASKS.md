@@ -82,16 +82,16 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 
 - [ ] Update Layout
 
-  - [ ] Clean up the main layout, use lighter colors for mobile navigation background.
-  - [ ] Setup translations
-  - [ ] Update typography style (+check Tailwind's CSS typography)
-  - [ ] Header: adapt navigation items component and style
-  - [ ] Footer: new categories with responsive grid layout, adapt links style
-  - [ ] Setup function for PDF preview or download on button click
+  - [ ] Update typography & setup new classes & names
+  - [ ] Setup full translations for header & footer
+  - [ ] Clean up the main layout's style (component and function to setup style desktop vs mobile)
+  - [ ] Header: adapt navigation items component and style (+ mobile)
+  - [ ] Footer: replace with categories & responsive grid layout, adapt links style
+  - [ ] Setup function for PDF preview / download (see what's best) on button click
 
 - [ ] Hero section: LCP -> image priority, must load fast.
 
-  - [ ] Setup translations
+  - [ ] Setup translations (structure; texts might be updated)
   - [ ] On desktop (& tablet?) have the section take at least the whole screen-height (no distraction at first glance, except Header)
   - [ ] Centre blocks content & image, but content can't appear to be higher than the image.
   - [ ] Button: links to LinkedIn or #contact-section ? Setup generic button style & variants
