@@ -22,7 +22,8 @@ interface INavItem {
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  const t = useTranslations('Components.Header');
+  const tHeader = useTranslations('Layout.Header');
+  const tCommon = useTranslations('Common.Routes');
 
   useEffect(() => {
     // Disable scrolling on body when mobile menu opens
@@ -39,8 +40,9 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   const navItems: INavItem[] = [
-    { label: t('navigation.about-me'), href: '/' },
-    // { label: t('navigation.projects'), href: '/projects' },
+    { label: tCommon('home'), href: '/' },
+    { label: tCommon('aboutMe'), href: '/about-me' },
+    { label: tCommon('projects'), href: '/projects' },
   ];
 
   return (
@@ -51,9 +53,8 @@ const Header: React.FC = () => {
           <div className="flex flex-row items-center gap-3">
             <span className="hidden size-[18px] rotate-12 bg-primary sm:inline" />
             {/* TODO: text-primary-dark */}
-            <p className="title-h1 text-2xl font-bold text-primary">{t('name')}</p>
+            <p className="title-h1 text-2xl font-bold text-primary">{tHeader('title')}</p>
           </div>
-          <p className="text-lg font-light uppercase">{t('title')}</p>
         </Link>
 
         {/* Responsive navigation*/}
@@ -77,17 +78,13 @@ const Header: React.FC = () => {
                 </NavigationLink>
               </li>
             ))}
-            <LocalSwitcher btnLabel={t('localeSwitcher.label')} handleCloseMobileMenu={() => setIsMenuOpen(false)} />
+            <LocalSwitcher handleCloseMobileMenu={() => setIsMenuOpen(false)} />
           </ul>
         </div>
 
         {/* Mobile burger */}
         <div className="z-[100] pt-2 md:hidden">
-          <BurgerIcon
-            btnLabel={t('navigation.btnBurger')}
-            isOpen={isMenuOpen}
-            handleIsOpen={() => setIsMenuOpen(!isMenuOpen)}
-          />
+          <BurgerIcon isOpen={isMenuOpen} handleIsOpen={() => setIsMenuOpen(!isMenuOpen)} />
         </div>
       </div>
     </header>

@@ -31,9 +31,9 @@ These are the current dependencies and environment setup on this project, and a 
 - [ ] Database (Supabase? -> PostgreSQL, RESTful API, auth, assets storage)
 - [ ] Jest (tests unitaires)
 
-<!-- Add routes organisation info when multiple pages in place -->
+<!-- Add route organisation info when multiple pages in place -->
 
-## CURRENT ROADMAP
+## ROADMAP
 
 ### Initialisation
 
@@ -82,12 +82,11 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 
 - [ ] Update Layout
 
-  - [ ] Update typography & setup new classes & names
-  - [ ] Setup full translations for header & footer
-  - [ ] Clean up the main layout's style (component and function to setup style desktop vs mobile)
-  - [ ] Header: adapt navigation items component and style (+ mobile)
+  - [x] Update typography & setup new classes & names
+  - [x] Setup full translations for header & footer
+  - [ ] Clean up the layout's style (component and function to setup style desktop vs mobile)
+  - [ ] Header: modify title and adapt navigation items responsive (component & style)
   - [ ] Footer: replace with categories & responsive grid layout, adapt links style
-  - [ ] Setup function for PDF preview / download (see what's best) on button click
 
 - [ ] Hero section: LCP -> image priority, must load fast.
 
@@ -155,10 +154,11 @@ Now that out page is looking much better, we're going to add some animations and
 
 ## FIXES & UPDATES
 
-Not linked to any roadmap, but to do when relevant or necessary.
+Not linked to any roadmap, but to do when/if relevant or necessary.
 
 - [ ] Theme - Setup dark mode integration
 - [ ] Component - Add a scroll-to-top button
+- [ ] Component - Change language switcher to Select component
 - [ ] Internationalization - Add translations for accessibility & common items (links, buttons)
 - [ ] Routes - Upon adding new pages, reorganise routes
 - [ ] Internationalization - Separate dictionaries in multiple files when starting projects

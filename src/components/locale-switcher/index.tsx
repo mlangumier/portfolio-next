@@ -7,11 +7,10 @@ import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
 import { Locale, usePathname, useRouter } from '@/i18n/routing';
 
 interface Props {
-  btnLabel: string;
   handleCloseMobileMenu: () => void;
 }
 
-const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => {
+const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
   const locale = useLocale() as Locale;
   const router = useRouter();
   const [isPending, startTransition] = useTransition(); // Add 'isPending' to use with Spinner
@@ -28,12 +27,12 @@ const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => 
         { locale: nextLocale }
       );
     });
+
     handleCloseMobileMenu();
   };
 
   return (
     <button
-      aria-label={btnLabel}
       className="mt-2 hover:cursor-pointer md:ml-2 md:mt-0"
       onClick={() => handleSwitchLocale(locale === 'fr' ? 'en' : 'fr')}
       disabled={isPending}

@@ -1,4 +1,36 @@
 {
+  "Common": {
+    "Routes": {
+      "home": "Accueil",
+      "aboutMe": "À Propos",
+      "projects": "Projets"
+    },
+    "ExternalLinks": {
+      "linkedIn": "LinkedIn",
+      "github": "Github"
+    },
+    "Files": {
+      "resume": "C.V.",
+      "competencies": "Dossier de Compétences"
+    }
+  },
+
+  "Components": {
+    "Buttons": {}
+  },
+
+  "Layout": {
+    "Header": {
+      "title": "Mathieu Langumier"
+    },
+    "Footer": {
+      "pages": "Pages",
+      "socials": "Réseaux",
+      "projects": "Projets",
+      "download": "À Télécharger"
+    }
+  },
+
   "Pages": {
     "Homepage": {
       "metadata": {
@@ -34,7 +66,6 @@
         }
       }
     },
-    "Experiences": {},
     "Projects": {},
     "NotFound": {
       "text": "Page non trouvée"
@@ -45,22 +76,6 @@
       "githubText": "En attendant, vous pouvez jeter un oeil sur le <code>repository Github</code> si vous voulez plus d'informations sur les outils que j'utilise et les fonctionnalités qui pourront être mises en place sur ce site.",
       "linkedinText": "N'hésitez pas à me contacter sur <code>LinkedIn</code> si vous avez la moindre question concernant mon parcours ou ce projet.",
       "goodbyeText": "Je vous remercie de votre visite, et espère vous retrouver rapidement !"
-    }
-  },
-
-  "Components": {
-    "Header": {
-      "name": "Mathieu Langumier",
-      "title": "Développeur Frontend",
-      "navigation": {
-        "btnBurger": "Ouvrir et fermer le menu",
-        "about-me": "À Propos",
-        "experiences": "Expériences",
-        "projects": "Projets"
-      },
-      "localeSwitcher": {
-        "label": "Changer de langue"
-      }
     }
   }
 }
