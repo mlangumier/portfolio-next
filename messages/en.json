@@ -5,13 +5,8 @@
       "aboutMe": "About me",
       "projects": "Projects"
     },
-    "ExternalLinks": {
-      "linkedIn": "LinkedIn",
-      "github": "Github"
-    },
     "Files": {
-      "resume": "Resume",
-      "competencies": "Portfolio of Competencies"
+      "resume": "Resume"
     }
   },
 

@@ -3,8 +3,8 @@ import Image from 'next/image';
 import React from 'react';
 
 import { nextjsIcon, profilePicture, reactjsIcon, tailwindcssIcon, typescriptIcon } from '@/assets/images';
-import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
-import { githubLink, linkedinLink } from '@/utils/links';
+import ExternalLink from '@/components/links/external-link';
+import { socials } from '@/utils/socials';
 
 const HomepageView = () => {
   const t = useTranslations('Pages.Homepage.content');
@@ -117,12 +117,12 @@ const HomepageView = () => {
             <div className="flex flex-col justify-center gap-4 md:flex-row md:items-center md:gap-5">
               <p>{t('overview.contact.text')}</p>
               <div className="flex flex-row items-center justify-center gap-5 md:justify-start">
-                <NavigationLinkExternal id="link-linkedin" href={linkedinLink.url} className="btn">
-                  {linkedinLink.label}
-                </NavigationLinkExternal>
-                <NavigationLinkExternal id="link-github" href={githubLink.url} className="btn">
-                  {githubLink.label}
-                </NavigationLinkExternal>
+                <ExternalLink id="link-linkedin" href={socials.linkedin.url} className="btn">
+                  {socials.linkedin.label}
+                </ExternalLink>
+                <ExternalLink id="link-github" href={socials.github.url} className="btn">
+                  {socials.github.label}
+                </ExternalLink>
               </div>
             </div>
           </div>

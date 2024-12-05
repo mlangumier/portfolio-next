@@ -6,10 +6,17 @@ const config: Config = {
   content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: '640px',
+      sm: '576px',
       md: '768px',
       lg: '1024px',
       xl: '1280px',
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '0',
+      },
     },
     fontFamily: {
       sans: ['DM Sans', ...defaultTheme.fontFamily.sans],

@@ -5,25 +5,22 @@ import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import LocalSwitcher from '@/components/locale-switcher';
-import NavigationLink from '@/components/navigation/navigation-link';
-import { Link, Pathnames } from '@/i18n/routing';
+import NavigationLink from '@/components/links/navigation-link';
+import { Link } from '@/i18n/routing';
+import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
-
-interface INavItem {
-  label: string;
-  href: Pathnames;
-}
 
 /**
  * The header uses the mobile navigation, at `md` it
  * switches to responsive desktop, and wide-screen at `lg`.
  */
-
-const Header: React.FC = () => {
+interface Props {
+  navItems: INavRouteItem[];
+}
+const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const tHeader = useTranslations('Layout.Header');
-  const tCommon = useTranslations('Common.Routes');
 
   useEffect(() => {
     // Disable scrolling on body when mobile menu opens
@@ -38,12 +35,6 @@ const Header: React.FC = () => {
       document.body.style.overflow = '';
     };
   }, [isMenuOpen]);
-
-  const navItems: INavItem[] = [
-    { label: tCommon('home'), href: '/' },
-    { label: tCommon('aboutMe'), href: '/about-me' },
-    { label: tCommon('projects'), href: '/projects' },
-  ];
 
   return (
     <header className="fixed z-[100] mx-auto w-full bg-white shadow-lg">
@@ -65,13 +56,13 @@ const Header: React.FC = () => {
           )}
         >
           <ul className="flex flex-col items-center justify-center gap-4 md:flex-row md:gap-6 portrait:pb-[15rem]">
-            {navItems.map((item: INavItem) => (
-              <li key={item.href}>
+            {navItems.map((item: INavRouteItem) => (
+              <li key={item.pathname}>
                 <NavigationLink
-                  checkActive
+                  showActive
                   // TODO: rework "hover:text-primary-dark"
                   className="text-2xl font-bold uppercase transition-all duration-200 ease-in-out hover:text-primary md:text-xl md:font-light"
-                  href={item.href}
+                  href={item.pathname}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}

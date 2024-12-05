@@ -53,6 +53,10 @@
     @apply text-3xl font-bold text-primary;
   }
 
+  .title-category {
+    @apply text-lg font-medium;
+  }
+
   .title-card {
     @apply text-lg font-bold text-primary;
   }
@@ -60,7 +64,7 @@
   /** Elements */
 
   a {
-    @apply cursor-pointer text-base font-medium no-underline;
+    @apply cursor-pointer no-underline;
   }
 
   li {
@@ -85,12 +89,11 @@
   .btn-primary-light {
     @apply bg-primary-light text-primary hover:bg-primary-light-hover hover:text-primary-hover;
   }
+
+  /*? For links components, prop: style: "btn" | "neutral" | "custom";*/
 }
 
 @layer utilities {
-  .content {
-    @apply mx-auto w-full max-w-screen-xl px-3 md:px-5;
-  }
   .section {
     @apply py-20;
   }

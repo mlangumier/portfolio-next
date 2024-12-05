@@ -1,7 +1,3 @@
-// ----- External Links logos
-export { default as githubIcon } from './external-links/github.svg';
-export { default as linkedinIcon } from './external-links/linkedin.svg';
-
 // ----- Language Flags
 export { default as englishFlagIcon } from './flags/flag-english.svg';
 export { default as frenchFlagIcon } from './flags/flag-french.svg';

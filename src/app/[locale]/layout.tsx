@@ -6,7 +6,7 @@ import { DM_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
 
-import { Locale, routing } from '@/i18n/routing';
+import { ILocale, routing } from '@/i18n/routing';
 import { LayoutProps } from '@/utils/types';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
@@ -33,7 +33,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
   const { locale } = await params;
 
   // Ensures valid incoming `locale`
-  if (!routing.locales.includes(locale as Locale)) {
+  if (!routing.locales.includes(locale as ILocale)) {
     notFound();
   }
 

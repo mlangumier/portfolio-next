@@ -4,20 +4,20 @@ import { useParams } from 'next/navigation';
 import React, { useTransition } from 'react';
 
 import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
-import { Locale, usePathname, useRouter } from '@/i18n/routing';
+import { ILocale, usePathname, useRouter } from '@/i18n/routing';
 
 interface Props {
   handleCloseMobileMenu: () => void;
 }
 
 const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
-  const locale = useLocale() as Locale;
+  const locale = useLocale() as ILocale;
   const router = useRouter();
   const [isPending, startTransition] = useTransition(); // Add 'isPending' to use with Spinner
   const pathname = usePathname();
   const params = useParams();
 
-  const handleSwitchLocale = (nextLocale: Locale) => {
+  const handleSwitchLocale = (nextLocale: ILocale) => {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import { underConstructionImage } from '@/assets/images';
-import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
+import ExternalLink from '@/components/links/external-link';
 
 const UnderConstructionView: React.FC = () => {
   const t = useTranslations('Pages.UnderConstruction');
@@ -20,18 +20,18 @@ const UnderConstructionView: React.FC = () => {
             <p className="pb-2">
               {t.rich('githubText', {
                 code: chunk => (
-                  <NavigationLinkExternal href="https://github.com/mlangumier/portfolio" className="underline">
+                  <ExternalLink href="https://github.com/mlangumier/portfolio" className="underline">
                     {chunk}
-                  </NavigationLinkExternal>
+                  </ExternalLink>
                 ),
               })}
             </p>
             <p className="pb-2">
               {t.rich('linkedinText', {
                 code: chunk => (
-                  <NavigationLinkExternal href="https://www.linkedin.com/in/mathieu-langumier" className="underline">
+                  <ExternalLink href="https://www.linkedin.com/in/mathieu-langumier" className="underline">
                     {chunk}
-                  </NavigationLinkExternal>
+                  </ExternalLink>
                 ),
               })}
             </p>

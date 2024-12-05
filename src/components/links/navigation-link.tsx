@@ -6,17 +6,17 @@ import React, { ComponentProps } from 'react';
 import { Link, usePathname } from '@/i18n/routing';
 
 interface Props extends ComponentProps<typeof Link> {
-  checkActive?: boolean;
+  showActive?: boolean;
 }
 
-const NavigationLink: React.FC<Props> = ({ href, className, checkActive = false, ...rest }) => {
+const NavigationLink: React.FC<Props> = ({ href, className, showActive = false, ...rest }) => {
   const pathname = usePathname();
   const isActive = href === pathname;
 
   return (
     <Link
       aria-current={isActive && 'page'}
-      className={clsx('', className, checkActive && isActive && 'text-primary')}
+      className={clsx('', className, showActive && isActive && 'text-primary')}
       href={href}
       {...rest}
     />
