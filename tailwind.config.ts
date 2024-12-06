@@ -15,7 +15,10 @@ const config: Config = {
       center: true,
       padding: {
         DEFAULT: '1rem',
-        sm: '0',
+        lg: '0',
+      },
+      screens: {
+        lg: '1024px',
       },
     },
     fontFamily: {
@@ -37,6 +40,7 @@ const config: Config = {
         grey: {
           DEFAULT: 'var(--grey)',
           light: 'var(--grey-light)',
+          border: 'var(--grey-border)',
         },
       },
       gridTemplateRows: {
@@ -45,6 +49,9 @@ const config: Config = {
       boxShadow: {
         'card-25': '4px 4px 4px 0 rgba(var(--color-black) / 0.25)',
         'card-50': '4px 4px 4px 0 rgba(var(--color-black) / 0.50)',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
       // Use keyframes and animations for reusable "fade" and "slide" animations
       // keyframes:{},

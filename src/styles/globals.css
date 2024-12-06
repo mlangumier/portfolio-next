@@ -18,8 +18,10 @@
     --secondary-hover: #f59e0b;
 
     /* Greys - Slate */
-    --grey: #e2e8f0;
-    --grey-light: #94a3b8;
+    --grey: #94a3b8;
+    --grey-light: #e2e8f0;
+
+    --grey-border: #e2e8f0;
   }
 
   /* For dark-mode setup
@@ -64,7 +66,7 @@
   /** Elements */
 
   a {
-    @apply cursor-pointer no-underline;
+    @apply no-underline hover:cursor-pointer;
   }
 
   li {
@@ -81,7 +83,7 @@
 
 @layer components {
   .btn {
-    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out;
+    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out hover:cursor-pointer;
   }
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary-hover;
