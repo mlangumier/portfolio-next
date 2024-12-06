@@ -16,7 +16,9 @@
 
   "Layout": {
     "Header": {
-      "title": "Mathieu Langumier"
+      "title": "Mathieu Langumier",
+      "pages": "Pages",
+      "switchLanguage": "Changer de langue"
     },
     "Footer": {
       "pages": "Pages",

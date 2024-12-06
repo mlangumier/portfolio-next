@@ -7,7 +7,7 @@ import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
 import { ILocale, usePathname, useRouter } from '@/i18n/routing';
 
 interface Props {
-  handleCloseMobileMenu: () => void;
+  handleCloseMobileMenu?: () => void;
 }
 
 const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
@@ -28,19 +28,19 @@ const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
       );
     });
 
-    handleCloseMobileMenu();
+    if (handleCloseMobileMenu) handleCloseMobileMenu();
   };
 
   return (
     <button
-      className="mt-2 hover:cursor-pointer md:ml-2 md:mt-0"
+      className="hover:cursor-pointer"
       onClick={() => handleSwitchLocale(locale === 'fr' ? 'en' : 'fr')}
       disabled={isPending}
     >
       {locale === 'fr' ? (
-        <Image src={englishFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
+        <Image src={englishFlagIcon} alt="" className="size-9 md:size-7" />
       ) : (
-        <Image src={frenchFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
+        <Image src={frenchFlagIcon} alt="" className="size-9 md:size-7" />
       )}
     </button>
   );

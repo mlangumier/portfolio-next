@@ -6,20 +6,14 @@
 
 @layer base {
   :root {
-    /* Primary - Sky lights (<500), Cyan dark (>600) */
-    --primary: #0e7490;
-    --primary-hover: #164e63;
+    --primary: #0e7490; /* cyan-700 */
+    --primary-hover: #164e63; /* cyan-900 */
 
-    --primary-light: #f0f9ff;
-    --primary-ligh-hover: #e0f2fe;
+    --primary-light: #f0f9ff; /* sky-50 */
+    --primary-ligh-hover: #e0f2fe; /* sky-100 */
 
-    /* Secondary - Amber */
-    --secondary: #fbbf24;
-    --secondary-hover: #f59e0b;
-
-    /* Greys - Slate */
-    --grey: #e2e8f0;
-    --grey-light: #94a3b8;
+    --grey-text: #64748b; /* slate-500 */
+    --grey-border: #e2e8f0; /* slate-200 */
   }
 
   /* For dark-mode setup
@@ -61,10 +55,10 @@
     @apply text-lg font-bold text-primary;
   }
 
-  /** Elements */
+  /** ELEMENTS */
 
   a {
-    @apply cursor-pointer no-underline;
+    @apply no-underline hover:cursor-pointer;
   }
 
   li {
@@ -81,7 +75,7 @@
 
 @layer components {
   .btn {
-    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out;
+    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out hover:cursor-pointer;
   }
   .btn-primary {
     @apply bg-primary text-white hover:bg-primary-hover;

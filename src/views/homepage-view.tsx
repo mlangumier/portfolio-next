@@ -89,7 +89,7 @@ const HomepageView = () => {
               </h4>
               <p className="ml-3">
                 {t.rich('overview.experiences.dixeed.description', {
-                  code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
+                  code: chunk => <span className="text-secondary font-bold">{chunk}</span>,
                 })}
               </p>
             </div>
@@ -101,7 +101,7 @@ const HomepageView = () => {
               </h4>
               <p className="ml-3">
                 {t.rich('overview.experiences.ffy.description', {
-                  code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
+                  code: chunk => <span className="text-secondary font-bold">{chunk}</span>,
                 })}
               </p>
             </div>

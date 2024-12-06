@@ -87,8 +87,8 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Update theme & layout's style
   - [x] Setup full translations for header & footer
   - [x] Footer: replace with categories & responsive grid layout, adapt links style
-  - [ ] Header: modify title, manage the language icon & update the mobile navigation menu
-  - [ ] Setup styles for links (navigation & external)
+  - [x] Header: modify title, manage the language icon & update the mobile navigation menu
+  - [ ] Finalize colors theme & setup styles for links (navigation & external)
 
 - [ ] Dependencies
 
@@ -101,6 +101,14 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [ ] On desktop (& tablet?) have the section take at least the whole screen-height (no distraction at first glance, except Header)
   - [ ] Centre blocks content & image, but content can't appear to be higher than the image.
   - [ ] Button: links to LinkedIn or #contact-section ? Setup generic button style & variants
+
+- [ ] Contact section:
+
+  - [ ] Setup translations
+  - [ ] Use the SectionIntroBlock to create a basic title/description/btn for now. We'll create a contact form later.
+  - [ ] Buttons: LinkedIn, Github, mailto.
+
+- [ ] Deploy these two sections (need a new build ASAP)
 
 - [ ] Skills section:
 
@@ -121,12 +129,6 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [ ] Create ExperiencesBlock component with responsive grid
   - [ ] Use Card component to display experiences
   - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
-
-- [ ] Contact section:
-
-  - [ ] Setup translations
-  - [ ] Use the SectionIntroBlock to create a basic title/description/btn for now. We'll create a contact form later.
-  - [ ] Buttons: LinkedIn, Github, mailto.
 
 - [ ] Test very background-color for some sections (does it add anything to page?)
 - [ ] Merge and deploy
