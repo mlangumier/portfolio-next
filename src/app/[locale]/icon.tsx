@@ -9,7 +9,10 @@ export const size = {
 
 export const contentType = 'image/png';
 
-// Image generation
+/**
+ * Renders a favicon using custom inline code and style
+ * @returns The website's favicon
+ */
 export default function Icon() {
   return new ImageResponse(
     (

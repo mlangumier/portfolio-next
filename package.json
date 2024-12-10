@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "0.4.0",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -15,7 +15,7 @@
     "check-n-format": "sh -c ./scripts/format.sh"
   },
   "engines": {
-    "node": "22.x",
+    "node": "20.x",
     "npm": "10.x"
   },
   "dependencies": {
