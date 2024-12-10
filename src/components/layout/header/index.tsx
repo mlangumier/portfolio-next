@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import NavigationLink from '@/components/links/navigation-link';
 import LocalSwitcher from '@/components/locale-switcher';
+import { isScreenLargerThan } from '@/utils/is-screen-larger-than';
 import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
@@ -13,14 +14,13 @@ import BurgerIcon from './burger-icon';
 interface Props {
   navItems: INavRouteItem[];
 }
+
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const tHeader = useTranslations('Layout.Header');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
-    const isDesktop = window.matchMedia('(min-width: 768px)').matches;
-
-    if (!isDesktop) {
+    if (!isScreenLargerThan('md')) {
       setIsMenuOpen(state === 'open');
     }
   };
@@ -36,23 +36,20 @@ const Header: React.FC<Props> = ({ navItems }) => {
     } else {
       document.body.style.overflow = '';
     }
-
-    // Cleans up overflow on unmount component (prevent unexpected behaviour)
-    return () => {
-      document.body.style.overflow = '';
-    };
   }, [isMenuOpen]);
 
   return (
-    <header className="fixed z-40 w-full bg-primary-light">
-      <div className="container relative flex min-h-20 flex-row items-center justify-between">
+    <header className="fixed z-40 w-full bg-background">
+      <div className="container relative flex h-20 flex-row items-center justify-between">
         {/* Title */}
         <div className="grid w-full grid-cols-header-title-center items-center gap-3 md:w-fit md:grid-cols-header-title-start">
-          <div id="website-name-square" className="hidden size-6 rotate-[15deg] bg-primary md:inline-block" />
+          <div id="website-name-square" className="hidden size-6 rotate-[15deg] bg-accent md:inline-block" />
           <BurgerIcon isOpen={isMenuOpen} handleIsOpen={toggleBurgerMenu} className="md:hidden" />
 
           <NavigationLink href="/" onClick={() => handleBurgerMenu('close')}>
-            <p className="text-nowrap text-center text-2xl font-bold md:text-wrap md:text-start">{tHeader('title')}</p>
+            <p className="text-nowrap text-center text-2xl font-bold text-primary md:text-wrap md:text-start">
+              {tHeader('title')}
+            </p>
           </NavigationLink>
         </div>
 
@@ -61,7 +58,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
           <ul className="flex flex-row gap-6">
             {navItems.map((item: INavRouteItem, i) => (
               <li key={i}>
-                <NavigationLink href={item.pathname} showActive className="text-lg uppercase">
+                <NavigationLink href={item.pathname} showActive className="nav nav-header">
                   {item.label}
                 </NavigationLink>
               </li>
@@ -78,16 +75,16 @@ const Header: React.FC<Props> = ({ navItems }) => {
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
         >
-          <div className="flex h-full w-full min-w-fit max-w-screen-sm flex-col gap-4 bg-primary-light px-6">
+          <div className="flex h-full w-full min-w-fit max-w-screen-sm flex-col gap-4 bg-background px-6">
             <div className="mt-4">
-              <p className="font-light uppercase text-grey">{tHeader('pages')}</p>
+              <p className="font-light uppercase text-foreground-muted">{tHeader('pages')}</p>
               <ul className="flex h-full flex-col">
                 {navItems.map((item: INavRouteItem, i) => (
                   <li key={i} className="flex border-b border-grey-border last-of-type:border-none">
                     <NavigationLink
                       href={item.pathname}
                       showActive
-                      className="w-full px-4 py-4 text-xl uppercase"
+                      className="nav nav-mobile w-full px-4 py-4"
                       onClick={() => handleBurgerMenu('close')}
                     >
                       {item.label}
@@ -98,10 +95,10 @@ const Header: React.FC<Props> = ({ navItems }) => {
             </div>
 
             <div>
-              <p className="font-light uppercase text-grey">{tHeader('switchLanguage')}</p>
+              <p className="font-light uppercase text-foreground-muted">{tHeader('switchLanguage')}</p>
               <ul className="flex h-full flex-col">
                 <li className="mt-2 px-4">
-                  <LocalSwitcher handleCloseMobileMenu={() => setIsMenuOpen(false)} />
+                  <LocalSwitcher handleCloseMobileMenu={() => handleBurgerMenu('close')} />
                 </li>
               </ul>
             </div>
@@ -110,7 +107,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
           <div
             id="backdrop"
             className={clsx(
-              'w-full bg-black/50 backdrop-blur-xs',
+              'backdrop w-full',
               'transition-all delay-100 duration-500',
               isMenuOpen ? 'opacity-100' : 'opacity-0'
             )}

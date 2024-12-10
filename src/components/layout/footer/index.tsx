@@ -17,12 +17,14 @@ const Footer: React.FC<Props> = ({ navItems }) => {
   const tFiles = useTranslations('Common.Files');
 
   return (
-    <footer className="pt-8 sm:pb-6 md:pb-8 md:pt-12">
+    <footer className="bg-background pt-8 sm:pb-6 md:pb-8 md:pt-12">
       <div className="container grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-y-0">
         <CategoryBlock title={tFooter('pages')}>
           {navItems.map((route, i) => (
             <li key={i}>
-              <NavigationLink href={route.pathname}>{route.label}</NavigationLink>
+              <NavigationLink className="nav" href={route.pathname}>
+                {route.label}
+              </NavigationLink>
             </li>
           ))}
         </CategoryBlock>
@@ -30,7 +32,9 @@ const Footer: React.FC<Props> = ({ navItems }) => {
         <CategoryBlock title={tFooter('socials')}>
           {socialsList.map((link, i) => (
             <li key={i}>
-              <ExternalLink href={link.url}>{link.label}</ExternalLink>
+              <ExternalLink className="nav" href={link.url}>
+                {link.label}
+              </ExternalLink>
             </li>
           ))}
         </CategoryBlock>
@@ -41,7 +45,9 @@ const Footer: React.FC<Props> = ({ navItems }) => {
 
         <CategoryBlock title={tFooter('download')} className="sm:col-start-4">
           <li>
-            <ExternalLink href="/CV_Developpeur_Frontend.pdf">{tFiles('resume')}</ExternalLink>
+            <ExternalLink className="nav" href="/CV_Developpeur_Frontend.pdf">
+              {tFiles('resume')}
+            </ExternalLink>
           </li>
         </CategoryBlock>
       </div>

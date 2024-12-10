@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { underConstructionImage } from '@/assets/images';
+import { underConstructionImage } from '@/assets';
 import ExternalLink from '@/components/links/external-link';
 
 const UnderConstructionView: React.FC = () => {

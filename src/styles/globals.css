@@ -6,19 +6,22 @@
 
 @layer base {
   :root {
-    --primary: #0e7490; /* cyan-700 */
-    --primary-hover: #164e63; /* cyan-900 */
+    --primary: 196.4 63.6 23.7; /* cyan-900 */
 
-    --primary-light: #f0f9ff; /* sky-50 */
-    --primary-ligh-hover: #e0f2fe; /* sky-100 */
+    --accent: 192.9 82.3 31; /* cyan-700 */
+    --accent-hover: var(--primary);
 
-    --grey-text: #64748b; /* slate-500 */
-    --grey-border: #e2e8f0; /* slate-200 */
+    --secondary: 204 100 97.1; /* sky-50 */
+
+    --background: var(--secondary);
+    --foreground: 222.2 47.4 11.2; /* slate-900 */
+    --muted-foreground: 215.4 16.3 46.9; /* slate-500 */
+
+    --border: 214.3 31.8 91.4; /* slate-200 */
+    --shadow: 222.2 84 4.9; /* slate-950 */
   }
 
-  /* For dark-mode setup
-    .dark {} 
-  */
+  /* .dark {} */
 
   *,
   *::before,
@@ -32,7 +35,7 @@
   }
 
   body {
-    @apply grid min-h-svh grid-rows-layout bg-primary-light text-base text-black;
+    @apply grid min-h-svh grid-rows-layout bg-background text-base text-foreground;
   }
 
   /** TYPOGRAPHY */
@@ -74,21 +77,32 @@
 }
 
 @layer components {
+  .nav {
+    @apply hover:cursor-pointer hover:text-primary;
+  }
+  .nav-header {
+    @apply text-lg uppercase;
+  }
+  .nav-mobile {
+    @apply text-xl uppercase;
+  }
+  .nav-active {
+    @apply text-accent;
+  }
+
   .btn {
     @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out hover:cursor-pointer;
   }
   .btn-primary {
-    @apply bg-primary text-white hover:bg-primary-hover;
+    @apply bg-accent text-white hover:bg-accent-hover;
   }
-  .btn-primary-light {
-    @apply bg-primary-light text-primary hover:bg-primary-light-hover hover:text-primary-hover;
-  }
-
-  /*? For links components, prop: style: "btn" | "neutral" | "custom";*/
 }
 
 @layer utilities {
   .section {
     @apply py-20;
+  }
+  .backdrop {
+    @apply backdrop-blur-xs backdrop-brightness-50;
   }
 }

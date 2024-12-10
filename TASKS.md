@@ -81,17 +81,18 @@ Here, we have a very basic version website, not well thought and hastily done. W
 
 Using our new design, we're going to rework our homepage, making it more enjoyable to see, with its reworked style, organised sections, and a few simple animations.
 
-- [ ] Update Layout
+- [x] Update Layout
 
   - [x] Update typography & setup new classes & names
   - [x] Update theme & layout's style
   - [x] Setup full translations for header & footer
   - [x] Footer: replace with categories & responsive grid layout, adapt links style
   - [x] Header: modify title, manage the language icon & update the mobile navigation menu
-  - [ ] Finalize colors theme & setup styles for links (navigation & external)
+  - [x] Finalize colors theme & setup styles for links (navigation & external)
 
 - [ ] Dependencies
 
+  - [ ] Add rules to prettier & format project
   - [ ] Update dependencies and check deprecated
   - [ ] Check Node version with Vercel deployment's warning message (upgrade to Node 22.x ?)
 

@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { nextjsIcon, profilePicture, reactjsIcon, tailwindcssIcon, typescriptIcon } from '@/assets/images';
+import { nextjsIcon, profilePicture, reactjsIcon, tailwindcssIcon, typescriptIcon } from '@/assets';
 import ExternalLink from '@/components/links/external-link';
 import { socials } from '@/utils/socials';
 
@@ -89,7 +89,7 @@ const HomepageView = () => {
               </h4>
               <p className="ml-3">
                 {t.rich('overview.experiences.dixeed.description', {
-                  code: chunk => <span className="text-secondary font-bold">{chunk}</span>,
+                  code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
                 })}
               </p>
             </div>
@@ -101,7 +101,7 @@ const HomepageView = () => {
               </h4>
               <p className="ml-3">
                 {t.rich('overview.experiences.ffy.description', {
-                  code: chunk => <span className="text-secondary font-bold">{chunk}</span>,
+                  code: chunk => <span className="font-bold text-secondary">{chunk}</span>,
                 })}
               </p>
             </div>

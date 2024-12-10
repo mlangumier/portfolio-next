@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import React, { useTransition } from 'react';
 
-import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
+import { englishFlagIcon, frenchFlagIcon } from '@/assets';
 import { ILocale, usePathname, useRouter } from '@/i18n/routing';
 
 interface Props {
@@ -28,7 +28,9 @@ const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
       );
     });
 
-    if (handleCloseMobileMenu) handleCloseMobileMenu();
+    if (handleCloseMobileMenu) {
+      handleCloseMobileMenu();
+    }
   };
 
   return (

@@ -16,7 +16,7 @@ const NavigationLink: React.FC<Props> = ({ href, className, showActive = false, 
   return (
     <Link
       aria-current={isActive && 'page'}
-      className={clsx('', className, showActive && isActive && 'text-primary')}
+      className={clsx(className, showActive && isActive && 'nav-active')}
       href={href}
       {...rest}
     />

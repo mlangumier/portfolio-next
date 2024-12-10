@@ -28,14 +28,26 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'var(--primary)',
-          hover: 'var(--primary-hover)',
-          light: 'var(--primary-light)',
-          'light-hover': 'var(--primary-light-hover)',
+          DEFAULT: 'hsl(var(--primary))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          hover: 'hsl(var(--accent-hover))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+        },
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+        },
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          muted: 'hsl(var(--muted-foreground))',
         },
         grey: {
-          DEFAULT: 'var(--grey-text)',
-          border: 'var(--grey-border)',
+          border: 'hsl(var(--border))',
+          shadow: 'hsl(var(--shadow))',
+          backdrop: 'hsl(var(--backdrop) / 50)',
         },
       },
       gridTemplateRows: {
@@ -46,8 +58,8 @@ const config: Config = {
         'header-title-start': 'auto 1fr',
       },
       boxShadow: {
-        'card-25': '4px 4px 4px 0 rgba(var(--color-black) / 0.25)',
-        'card-50': '4px 4px 4px 0 rgba(var(--color-black) / 0.50)',
+        'card-25': '4px 4px 4px 0 hsl(var(--shadow) / 0.25)',
+        'card-50': '4px 4px 4px 0 hsl(var(--shadow) / 0.50)',
       },
       backdropBlur: {
         xs: '2px',
