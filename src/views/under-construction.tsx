@@ -2,14 +2,14 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { underConstructionImage } from '@/assets/images';
-import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
+import { underConstructionImage } from '@/assets';
+import ExternalLink from '@/components/links/external-link';
 
 const UnderConstructionView: React.FC = () => {
   const t = useTranslations('Pages.UnderConstruction');
 
   return (
-    <section className="bg-grey-light size-full md:flex md:items-center">
+    <section className="size-full md:flex md:items-center">
       <div className="content pb-14 pt-12 md:py-0">
         <p className="title-h2 pb-8 text-center uppercase md:pb-8">{t('title')}</p>
 
@@ -20,18 +20,18 @@ const UnderConstructionView: React.FC = () => {
             <p className="pb-2">
               {t.rich('githubText', {
                 code: chunk => (
-                  <NavigationLinkExternal href="https://github.com/mlangumier/portfolio" className="underline">
+                  <ExternalLink href="https://github.com/mlangumier/portfolio" className="underline">
                     {chunk}
-                  </NavigationLinkExternal>
+                  </ExternalLink>
                 ),
               })}
             </p>
             <p className="pb-2">
               {t.rich('linkedinText', {
                 code: chunk => (
-                  <NavigationLinkExternal href="https://www.linkedin.com/in/mathieu-langumier" className="underline">
+                  <ExternalLink href="https://www.linkedin.com/in/mathieu-langumier" className="underline">
                     {chunk}
-                  </NavigationLinkExternal>
+                  </ExternalLink>
                 ),
               })}
             </p>

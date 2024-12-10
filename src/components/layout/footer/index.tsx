@@ -1,33 +1,55 @@
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
-import { externalLinksList, INavigationLinkExternal } from '@/utils/links';
+import ExternalLink from '@/components/links/external-link';
+import NavigationLink from '@/components/links/navigation-link';
+import { socialsList } from '@/utils/socials';
+import { INavRouteItem } from '@/utils/types';
 
-const Footer: React.FC = () => {
+import { CategoryBlock } from './category-block';
+
+interface Props {
+  navItems: INavRouteItem[];
+}
+
+const Footer: React.FC<Props> = ({ navItems }) => {
+  const tFooter = useTranslations('Layout.Footer');
+  const tFiles = useTranslations('Common.Files');
+
   return (
-    <footer className="border-grey-neutral">
-      <div className="content flex flex-col-reverse pb-4 pt-5 md:flex-row md:items-center md:justify-between">
-        <div className="m-auto mt-8 text-center md:m-0">
-          <p className="text-sm">© 2024 Mathieu Langumier</p>
-        </div>
-        <div className="m-auto text-center md:m-0">
-          <ul className="flew-row flex gap-5 py-2">
-            {externalLinksList.map((link: INavigationLinkExternal) => (
-              <li key={link.label}>
-                <NavigationLinkExternal href={link.url}>
-                  <Image
-                    src={link.icon}
-                    alt={`${link.label} icon`}
-                    height={32}
-                    width={32}
-                    className="size-8 md:size-6"
-                  />
-                </NavigationLinkExternal>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <footer className="bg-background pt-8 sm:pb-6 md:pb-8 md:pt-12">
+      <div className="container grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-y-0">
+        <CategoryBlock title={tFooter('pages')}>
+          {navItems.map((route, i) => (
+            <li key={i}>
+              <NavigationLink className="nav" href={route.pathname}>
+                {route.label}
+              </NavigationLink>
+            </li>
+          ))}
+        </CategoryBlock>
+
+        <CategoryBlock title={tFooter('socials')}>
+          {socialsList.map((link, i) => (
+            <li key={i}>
+              <ExternalLink className="nav" href={link.url}>
+                {link.label}
+              </ExternalLink>
+            </li>
+          ))}
+        </CategoryBlock>
+
+        {/* <CategoryBlock title={tFooter('projects')} className="hidden">
+          <li>(soon)</li>
+        </CategoryBlock> */}
+
+        <CategoryBlock title={tFooter('download')} className="sm:col-start-4">
+          <li>
+            <ExternalLink className="nav" href="/CV_Developpeur_Frontend.pdf">
+              {tFiles('resume')}
+            </ExternalLink>
+          </li>
+        </CategoryBlock>
       </div>
     </footer>
   );

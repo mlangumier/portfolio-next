@@ -2,7 +2,7 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { notFoundImage } from '@/assets/images';
+import { notFoundImage } from '@/assets';
 
 const NotFoundView: React.FC = () => {
   const t = useTranslations('Pages.NotFound');

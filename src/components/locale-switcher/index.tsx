@@ -3,22 +3,21 @@ import Image from 'next/image';
 import { useParams } from 'next/navigation';
 import React, { useTransition } from 'react';
 
-import { englishFlagIcon, frenchFlagIcon } from '@/assets/images';
-import { Locale, usePathname, useRouter } from '@/i18n/routing';
+import { englishFlagIcon, frenchFlagIcon } from '@/assets';
+import { ILocale, usePathname, useRouter } from '@/i18n/routing';
 
 interface Props {
-  btnLabel: string;
-  handleCloseMobileMenu: () => void;
+  handleCloseMobileMenu?: () => void;
 }
 
-const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => {
-  const locale = useLocale() as Locale;
+const LocalSwitcher: React.FC<Props> = ({ handleCloseMobileMenu }) => {
+  const locale = useLocale() as ILocale;
   const router = useRouter();
   const [isPending, startTransition] = useTransition(); // Add 'isPending' to use with Spinner
   const pathname = usePathname();
   const params = useParams();
 
-  const handleSwitchLocale = (nextLocale: Locale) => {
+  const handleSwitchLocale = (nextLocale: ILocale) => {
     startTransition(() => {
       router.replace(
         // @ts-expect-error -- TypeScript will validate that only known `params`
@@ -28,20 +27,22 @@ const LocalSwitcher: React.FC<Props> = ({ btnLabel, handleCloseMobileMenu }) => 
         { locale: nextLocale }
       );
     });
-    handleCloseMobileMenu();
+
+    if (handleCloseMobileMenu) {
+      handleCloseMobileMenu();
+    }
   };
 
   return (
     <button
-      aria-label={btnLabel}
-      className="mt-2 hover:cursor-pointer md:ml-2 md:mt-0"
+      className="hover:cursor-pointer"
       onClick={() => handleSwitchLocale(locale === 'fr' ? 'en' : 'fr')}
       disabled={isPending}
     >
       {locale === 'fr' ? (
-        <Image src={englishFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
+        <Image src={englishFlagIcon} alt="" className="size-9 md:size-7" />
       ) : (
-        <Image src={frenchFlagIcon} alt="" height={40} width={40} className="size-10 md:size-7" />
+        <Image src={frenchFlagIcon} alt="" className="size-9 md:size-7" />
       )}
     </button>
   );

@@ -6,24 +6,22 @@
 
 @layer base {
   :root {
-    /** Colors in hsl() for easier variations setup */
+    --primary: 196.4 63.6 23.7; /* cyan-900 */
 
-    /* Primary - Cyan 700 */
-    --primary: 193 82 31;
-    /* --primary-hover: 193 82 25; */
-    /* --primary-light: 193 82 50; */
-    /* --primary-dark: 193 82 20; */
+    --accent: 192.9 82.3 31; /* cyan-700 */
+    --accent-hover: var(--primary);
 
-    /* Secondary - Yellow 500 */
-    --secondary: 45 93 47;
+    --secondary: 204 100 97.1; /* sky-50 */
 
-    /* Misc / Greys */
-    /* setup by color or purpose? (ex: grey/grey-light/grey-dark vs border/bg-light/bg-dark */
+    --background: var(--secondary);
+    --foreground: 222.2 47.4 11.2; /* slate-900 */
+    --muted-foreground: 215.4 16.3 46.9; /* slate-500 */
+
+    --border: 214.3 31.8 91.4; /* slate-200 */
+    --shadow: 222.2 84 4.9; /* slate-950 */
   }
 
-  /* For dark-mode setup
-    .dark {} 
-  */
+  /* .dark {} */
 
   *,
   *::before,
@@ -37,36 +35,33 @@
   }
 
   body {
-    @apply grid min-h-svh grid-rows-layout bg-white text-base font-normal text-black;
+    @apply grid min-h-svh grid-rows-layout bg-background text-base text-foreground;
   }
+
+  /** TYPOGRAPHY */
 
   h1,
-  .title-h1 {
-    @apply text-3xl md:text-4xl;
-  }
-  h2,
-  .title-h2 {
-    @apply text-2xl md:text-3xl;
-  }
-  h3,
-  .title-h3 {
-    @apply text-2xl;
-  }
-  h4,
-  .title-h4 {
-    @apply text-xl;
-  }
-  h5,
-  .title-h5 {
-    @apply text-lg;
-  }
-  h6,
-  .title-h6 {
-    @apply text-base;
+  .title-main {
+    @apply text-4xl font-bold;
   }
 
+  h2,
+  .title-section {
+    @apply text-3xl font-bold text-primary;
+  }
+
+  .title-category {
+    @apply text-lg font-medium;
+  }
+
+  .title-card {
+    @apply text-lg font-bold text-primary;
+  }
+
+  /** ELEMENTS */
+
   a {
-    @apply cursor-pointer text-base font-medium no-underline;
+    @apply no-underline hover:cursor-pointer;
   }
 
   li {
@@ -82,25 +77,32 @@
 }
 
 @layer components {
-  /* Section title: Border-bottom or :before background ? */
-  /* Block text: max-width, center */
-  /* Card: background, border, hover: shadow, border (?), other effect (?) */
+  .nav {
+    @apply hover:cursor-pointer hover:text-primary;
+  }
+  .nav-header {
+    @apply text-lg uppercase;
+  }
+  .nav-mobile {
+    @apply text-xl uppercase;
+  }
+  .nav-active {
+    @apply text-accent;
+  }
 
-  /* TODO: Setup color selection: multiple classes, or function props ?
-    * Normalise all CTA/links/btn (do in base layer above): remove all default styles (decoration, background, active etc), then create classes per uses:
-    - Link nav: header (& footer ?)
-    - Button: either generic button with variants depending on background, or separate style (internal vs external link, vs button)
-      Check Tailwind use of: .my-class__other-class {} <- variants?
-  */
   .btn {
-    @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary;
-    /* @apply rounded-md bg-primary px-5 py-3 text-white transition-all duration-150 ease-in-out hover:bg-primary-over; */
+    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out hover:cursor-pointer;
+  }
+  .btn-primary {
+    @apply bg-accent text-white hover:bg-accent-hover;
   }
 }
 
 @layer utilities {
-  .content {
-    @apply mx-auto w-full max-w-screen-xl px-3 md:px-5;
+  .section {
+    @apply py-20;
   }
-  /* section padding-y ? */
+  .backdrop {
+    @apply backdrop-blur-xs backdrop-brightness-50;
+  }
 }
