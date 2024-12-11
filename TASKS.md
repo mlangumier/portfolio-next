@@ -34,34 +34,7 @@ These are the current dependencies and environment setup on this project, and a 
 
 <!-- Add route organisation info when multiple pages in place -->
 
-## ROADMAP
-
-### Initialisation
-
-- [x] Install dependencies and create basic project structure
-- [x] Setup Docker for local environment (Vercel doesn't support Docker in production)
-- [x] Import style template and setup first layout and page files
-
-### Setup
-
-- [x] Theme: Choose color scheme, fonts (inspired by template, but personnal color)
-- [x] Setup ESLint, Prettier & Husky pre-commit script
-- [x] Create "work in progress" template
-- [x] Deploy on Vercel with Github
-
-### Pages Layout
-
-- [x] Layout responsive
-- [x] Header: Navigation + burger menu, title, links
-- [x] Footer links and contact
-- [x] Internationalization FR/EN
-
-### Homepage
-
-- [x] Create card component
-- [x] Design & fill in introduction content
-- [x] Fix mobile navigation scroll down issue
-- [x] Finish SEO setup & performance tests
+## ROADMAP - TODO
 
 ### Rework project
 
@@ -92,9 +65,10 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 
 - [ ] Dependencies
 
-  - [ ] Add rules to prettier & format project
-  - [ ] Update dependencies and check deprecated
-  - [ ] Check Node version with Vercel deployment's warning message (upgrade to Node 22.x ?)
+  - [x] Check Node version with Vercel deployment's warning message (upgrade to Node 22.x ?)
+  - [x] Update dependencies (+ check deprecated)
+  - [ ] Clean up code to prepare for next steps (comment sections and remove unused code)
+  - [ ] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
 
 - [ ] Hero section: LCP -> image priority, must load fast.
 
@@ -161,6 +135,35 @@ Now that out page is looking much better, we're going to add some animations and
   - [ ] Double-check mobile behaviour
 
 - [ ] Merge and deploy
+
+## ROADMAP - DONE
+
+### Initialisation
+
+- [x] Install dependencies and create basic project structure
+- [x] Setup Docker for local environment (Vercel doesn't support Docker in production)
+- [x] Import style template and setup first layout and page files
+
+### Setup
+
+- [x] Theme: Choose color scheme, fonts (inspired by template, but personnal color)
+- [x] Setup ESLint, Prettier & Husky pre-commit script
+- [x] Create "work in progress" template
+- [x] Deploy on Vercel with Github
+
+### Pages Layout
+
+- [x] Layout responsive
+- [x] Header: Navigation + burger menu, title, links
+- [x] Footer links and contact
+- [x] Internationalization FR/EN
+
+### Homepage
+
+- [x] Create card component
+- [x] Design & fill in introduction content
+- [x] Fix mobile navigation scroll down issue
+- [x] Finish SEO setup & performance tests
 
 ## FIXES & UPDATES
 
