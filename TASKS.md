@@ -66,24 +66,9 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 - [ ] Dependencies
 
   - [x] Check Node version with Vercel deployment's warning message (upgrade to Node 22.x ?)
-  - [ ] Check deprecated dependencies & upgrade if needed
+  - [x] Update dependencies (+ check deprecated)
   - [ ] Clean up code to prepare for next steps (comment sections and remove unused code)
-
-<!-- REMOVE THIS WHEN DONE -->
-
-INFO:
-
-- Husky: check changes (8.0.3 -> 9.1.7) & upgrade
-- Punycode: "DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead. (Use `node --trace-deprecation ...` to show where the warning was created)"
-
-TODO:
-
-- [ ] First, check dependencies that need / could use udate, and **PIN** versions with `~` (ex: `"dep":"~1.2.1"` -> `1.2.1` >= OK > `1.2.9`)
-- [ ] Then, upgrade dependencies by removing `node_module` & typing `npm ci` to install pinned versions
-- [ ]
-- [ ] Test performances of app on Vercel & check if animations block rendering / routing (check Vercel's preview tools), & check static pages (projects = dynamic??)
-
-<!-- REMOVE THIS WHEN DONE -->
+  - [ ] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
 
 - [ ] Hero section: LCP -> image priority, must load fast.
 
@@ -184,7 +169,6 @@ Now that out page is looking much better, we're going to add some animations and
 
 Not linked to any roadmap, but to do when/if relevant or necessary.
 
-- [ ] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
 - [ ] Theme - Setup dark mode integration (+ must allow other themes as well)
 - [ ] Component - Add a scroll-to-top button
 - [ ] Component - Change language switcher to a `Select` component
