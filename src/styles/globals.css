@@ -47,7 +47,7 @@
 
   h2,
   .title-section {
-    @apply text-3xl font-bold text-primary;
+    @apply text-3xl font-bold uppercase text-primary;
   }
 
   .title-category {
@@ -91,16 +91,19 @@
   }
 
   .btn {
-    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-in-out hover:cursor-pointer;
+    @apply rounded-md px-6 py-3 font-bold transition-all duration-150 ease-out;
   }
-  .btn-primary {
+  /* .btn-primary {
     @apply bg-accent text-white hover:bg-accent-hover;
-  }
+  } */
 }
 
 @layer utilities {
   .section {
     @apply py-20;
+  }
+  .section-h-screen {
+    @apply min-h-[calc(100vh-5rem)];
   }
   .backdrop {
     @apply backdrop-blur-xs backdrop-brightness-50;

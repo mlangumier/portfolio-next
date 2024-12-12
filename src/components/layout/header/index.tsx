@@ -6,7 +6,7 @@ import React, { useEffect, useState } from 'react';
 
 import NavigationLink from '@/components/links/navigation-link';
 import LocalSwitcher from '@/components/locale-switcher';
-import { isScreenLargerThan } from '@/utils/is-screen-larger-than';
+import { useIsScreenLargerThan } from '@/hooks/use-is-screen-larger-than';
 import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
@@ -18,24 +18,35 @@ interface Props {
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const tHeader = useTranslations('Layout.Header');
+  const isLargeScreen = useIsScreenLargerThan('md');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
-    if (!isScreenLargerThan('md')) {
-      setIsMenuOpen(state === 'open');
-    }
+    setIsMenuOpen(state === 'open');
   };
 
   const toggleBurgerMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
 
+  // Closes the mobile menu when increasing the browser's window size
+  // -> 'overflow-hidden' would otherwise stay and prevent the user from navigation the page
   useEffect(() => {
-    // Disable scrolling on body when mobile menu opens
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
+    if (isLargeScreen) {
+      setIsMenuOpen(false);
     }
+  }, [isLargeScreen]);
+
+  // Disables scrolling when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
   }, [isMenuOpen]);
 
   return (
@@ -71,7 +82,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         <div
           className={clsx(
             'fixed inset-0 top-20 z-40 flex flex-row md:hidden',
-            'transition-all duration-500',
+            'transition-all duration-500 ease-out',
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
         >

@@ -9,7 +9,7 @@ interface Props {
 
 const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen, className }) => {
   return (
-    <button onClick={handleIsOpen} className={clsx('relative h-7 w-10 hover:cursor-pointer', className)}>
+    <div onClick={handleIsOpen} className={clsx('relative h-7 w-10 hover:cursor-pointer', className)}>
       <span
         className={clsx(
           'absolute left-0 h-1 rounded-sm bg-accent transition-all',
@@ -28,7 +28,7 @@ const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen, className }) => {
           isOpen ? 'bottom-1/2 w-full translate-y-1/2 -rotate-[45deg] duration-500' : 'bottom-0 w-2/3 duration-200'
         )}
       />
-    </button>
+    </div>
   );
 };
 

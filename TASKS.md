@@ -63,12 +63,12 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Header: modify title, manage the language icon & update the mobile navigation menu
   - [x] Finalize colors theme & setup styles for links (navigation & external)
 
-- [ ] Dependencies
+- [x] Dependencies
 
   - [x] Check Node version with Vercel deployment's warning message (upgrade to Node 22.x ?)
   - [x] Update dependencies (+ check deprecated)
-  - [ ] Clean up code to prepare for next steps (comment sections and remove unused code)
-  - [ ] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
+  - [x] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
+  - [x] Clean up code to prepare for next steps (comment sections and remove unused code)
 
 - [ ] Hero section: LCP -> image priority, must load fast.
 
@@ -80,10 +80,10 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 - [ ] Contact section:
 
   - [ ] Setup translations
-  - [ ] Use the SectionIntroBlock to create a basic title/description/btn for now. We'll create a contact form later.
+  - [ ] Use the SectionIntroBlock to create a basic title/description/btn for now. We'll create a contact form later
   - [ ] Buttons: LinkedIn, Github, mailto.
 
-- [ ] Deploy these two sections (need a new build ASAP)
+- [ ] Deploy these two sections (needs a new build ASAP)
 
 - [ ] Skills section:
 
@@ -105,8 +105,7 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [ ] Use Card component to display experiences
   - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
 
-- [ ] Test very background-color for some sections (does it add anything to page?)
-- [ ] Merge and deploy
+- [ ] Deploy full basic homepage
 
 #### Animation & interaction
 
