@@ -4,9 +4,9 @@ import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
-import NavigationLink from '@/components/links/navigation-link';
 import LocalSwitcher from '@/components/locale-switcher';
 import { useIsScreenLargerThan } from '@/hooks/use-is-screen-larger-than';
+import { Link, usePathname } from '@/i18n/routing';
 import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
@@ -17,6 +17,7 @@ interface Props {
 
 const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+  const pathname = usePathname();
   const tHeader = useTranslations('Layout.Header');
   const isLargeScreen = useIsScreenLargerThan('md');
 
@@ -57,11 +58,13 @@ const Header: React.FC<Props> = ({ navItems }) => {
           <div id="website-name-square" className="hidden size-6 rotate-[15deg] bg-accent md:inline-block" />
           <BurgerIcon isOpen={isMenuOpen} handleIsOpen={toggleBurgerMenu} className="md:hidden" />
 
-          <NavigationLink href="/" onClick={() => handleBurgerMenu('close')}>
-            <p className="text-nowrap text-center text-2xl font-bold text-primary md:text-wrap md:text-start">
-              {tHeader('title')}
-            </p>
-          </NavigationLink>
+          <Link
+            href="/"
+            onClick={() => handleBurgerMenu('close')}
+            className="text-nowrap text-center text-2xl font-bold text-primary md:text-wrap md:text-start"
+          >
+            {tHeader('title')}
+          </Link>
         </div>
 
         {/* Navigation - Desktop */}
@@ -69,9 +72,13 @@ const Header: React.FC<Props> = ({ navItems }) => {
           <ul className="flex flex-row gap-6">
             {navItems.map((item: INavRouteItem, i) => (
               <li key={i}>
-                <NavigationLink href={item.pathname} showActive className="nav nav-header">
+                <Link
+                  href={item.pathname}
+                  aria-current={pathname === item.pathname}
+                  className={clsx('nav nav-header', pathname === item.pathname && 'nav-active')}
+                >
                   {item.label}
-                </NavigationLink>
+                </Link>
               </li>
             ))}
             <LocalSwitcher />
@@ -92,14 +99,14 @@ const Header: React.FC<Props> = ({ navItems }) => {
               <ul className="flex h-full flex-col">
                 {navItems.map((item: INavRouteItem, i) => (
                   <li key={i} className="flex border-b border-grey-border last-of-type:border-none">
-                    <NavigationLink
+                    <Link
                       href={item.pathname}
-                      showActive
-                      className="nav nav-mobile w-full px-4 py-4"
+                      aria-current={pathname === item.pathname}
+                      className={clsx('nav nav-mobile w-full px-4 py-4', pathname === item.pathname && 'nav-active')}
                       onClick={() => handleBurgerMenu('close')}
                     >
                       {item.label}
-                    </NavigationLink>
+                    </Link>
                   </li>
                 ))}
               </ul>

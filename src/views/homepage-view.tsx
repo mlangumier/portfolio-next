@@ -3,42 +3,65 @@ import Image from 'next/image';
 import React from 'react';
 
 import { profilePicture } from '@/assets';
+import ExternalLink from '@/components/links/external-link';
+import NavigationLink from '@/components/links/navigation-link';
+import SectionWrapper from '@/components/section-block';
+import SectionTitle from '@/components/section-title-block';
+import { socials } from '@/utils/socials';
 
 const HomepageView = () => {
-  const t = useTranslations('Pages.Homepage.content');
-
-  // const techList = [
-  //   { label: 'React.js', icon: reactjsIcon },
-  //   { label: 'Next.js', icon: nextjsIcon },
-  //   { label: 'TypeScript', icon: typescriptIcon },
-  //   { label: 'TailwindCSS', icon: tailwindcssIcon },
-  // ];
+  const tPage = useTranslations('Pages.Homepage.sections');
+  const tButton = useTranslations('Components.Buttons');
+  const { linkedin, github } = socials;
 
   return (
     <>
-      {/* Introduction */}
-      <section className="flex flex-col-reverse justify-between gap-8 py-20 md:flex-row">
-        <div className="flex flex-col gap-8 md:justify-between">
-          <div className="flex flex-col">
-            <h1 className="font-bold text-primary">{t('intro.name')}</h1>
-            <h2 className="mb-2 mt-1 font-bold uppercase text-primary">{t('intro.title')}</h2>
-            <p>
-              {t.rich('intro.description', {
-                code: chunk => <span className="font-bold text-primary">{chunk}</span>,
-              })}
-            </p>
-          </div>
+      <SectionWrapper
+        id="hero"
+        full
+        first
+        containerStyle="flex flex-col-reverse justify-between gap-8 md:flex-row md:gap-12 lg:gap-32"
+      >
+        <div id="texts" className="text-center md:text-start">
+          <p className="font-bold text-primary md:text-start">{tPage('hero.salutation')}</p>
+          <h1 className="mt-4 md:mt-2 md:text-start">{tPage('hero.title')}</h1>
+          <p className="mt-5 text-lg md:text-start">
+            {tPage.rich('hero.description', {
+              jobTitle: chunk => <span className="font-bold text-primary">{chunk}</span>,
+              tech: chunk => <span className="font-bold text-primary">{chunk}</span>,
+            })}
+          </p>
+          <NavigationLink href={{ pathname: '/', hash: '#contact' }} scroll={true} className="mt-8">
+            {tButton('talk')}
+          </NavigationLink>
         </div>
 
-        <div className="flex min-w-fit items-center justify-center">
+        <div id="picture" className="flex min-w-fit justify-center">
           <Image
             src={profilePicture}
             alt="Mathieu Langumier"
-            className="size-[200px] rounded-full md:size-[250px]"
+            className="size-[15rem] rounded-full md:size-[20rem]"
             priority // For LCP
           />
         </div>
-      </section>
+      </SectionWrapper>
+
+      <SectionWrapper id="contact" full>
+        <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')}>
+          <ExternalLink href={linkedin.url}>{linkedin.label}</ExternalLink>
+          <ExternalLink href={github.url}>{github.label}</ExternalLink>
+          <ExternalLink href={`mailto:${process.env.CONTACT_EMAIL}?subject=Portfolio%20-%20Contact`}>
+            {tButton('sendEmail')}
+          </ExternalLink>
+        </SectionTitle>
+      </SectionWrapper>
+
+      <SectionWrapper id="under-construction">
+        <SectionTitle
+          title={`[ ${tPage('underConstruction.title')} ]`}
+          description={tPage('underConstruction.description')}
+        />
+      </SectionWrapper>
     </>
   );
 };
