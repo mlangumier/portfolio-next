@@ -9,6 +9,9 @@ interface Props extends ComponentProps<typeof Link> {
   showActive?: boolean;
 }
 
+/**
+ * Link component for internal routes navigation set in `src/i18n/routing.ts`
+ */
 const NavigationLink: React.FC<Props> = ({ href, className, showActive = false, ...rest }) => {
   const pathname = usePathname();
   const isActive = href === pathname;
