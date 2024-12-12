@@ -6,9 +6,9 @@ export const routing = defineRouting({
   defaultLocale: 'fr',
   pathnames: {
     '/': '/',
-    '/about-me': {
+    '/about': {
       fr: '/a-propos',
-      en: '/about-me',
+      en: '/about',
     },
     '/projects': {
       fr: '/projets',

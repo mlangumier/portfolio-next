@@ -3,51 +3,15 @@ import Image from 'next/image';
 import React from 'react';
 
 import { underConstructionImage } from '@/assets';
-import ExternalLink from '@/components/links/external-link';
 
 const UnderConstructionView: React.FC = () => {
   const t = useTranslations('Pages.UnderConstruction');
 
   return (
-    <section className="size-full md:flex md:items-center">
-      <div className="content pb-14 pt-12 md:py-0">
-        <p className="title-h2 pb-8 text-center uppercase md:pb-8">{t('title')}</p>
-
-        <div className="flex flex-col items-center gap-8 md:flex-row">
-          <div className="max-w-[480px] text-center md:flex md:max-w-full md:flex-[55%] md:flex-col md:justify-center md:text-start">
-            <p className="pb-2">{t('welcomeText')}</p>
-
-            <p className="pb-2">
-              {t.rich('githubText', {
-                code: chunk => (
-                  <ExternalLink href="https://github.com/mlangumier/portfolio" className="underline">
-                    {chunk}
-                  </ExternalLink>
-                ),
-              })}
-            </p>
-            <p className="pb-2">
-              {t.rich('linkedinText', {
-                code: chunk => (
-                  <ExternalLink href="https://www.linkedin.com/in/mathieu-langumier" className="underline">
-                    {chunk}
-                  </ExternalLink>
-                ),
-              })}
-            </p>
-
-            <p>{t('goodbyeText')}</p>
-          </div>
-          <div className="flex md:flex-[45%]">
-            <Image
-              src={underConstructionImage}
-              alt=""
-              width={480}
-              height={295}
-              className="m-auto w-full max-w-[480px]"
-            />
-          </div>
-        </div>
+    <section className="section section-h-screen">
+      <div className="container flex grow flex-col items-center justify-center gap-8">
+        <Image src={underConstructionImage} alt="" width={480} height={295} className="w-full max-w-screen-sm" />
+        <p className="title-section text-center">{t('text')}</p>
       </div>
     </section>
   );

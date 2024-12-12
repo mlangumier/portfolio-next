@@ -82,7 +82,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
         <div
           className={clsx(
             'fixed inset-0 top-20 z-40 flex flex-row md:hidden',
-            'transition-all duration-500',
+            'transition-all duration-500 ease-out',
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
           )}
         >
