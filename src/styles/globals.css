@@ -4,8 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* TODO: use snake_case for custom classes -> easily recognizable */
-
 @layer base {
   :root {
     --cyan-900: 196.4 63.6 23.7;

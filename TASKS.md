@@ -85,9 +85,9 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 
 - [ ] Deployement (v0.6)
 
-  - [ ] Change custom classes names to `snake_case` (easier to locate and recognize)
-  - [ ] Optimize FCP/LCP
-  - [ ] Check code, fix bugs, clean up code if necessary
+  - [x] Optimize FCP/LCP
+  - [x] Add tailwind-merge and the function to work with clsx
+  - [ ] Check code, fix bugs, clean up code
   - [ ] Deploy & test
 
 - [ ] Skills section:

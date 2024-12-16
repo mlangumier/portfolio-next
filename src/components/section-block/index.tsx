@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import React from 'react';
+
+import { cn } from '@/utils/tailwindcss';
 
 interface Props {
   id: string;
@@ -19,8 +20,8 @@ interface Props {
  */
 const SectionWrapper: React.FC<Props> = ({ id, first = false, full = false, containerStyle, children }) => {
   return (
-    <section id={id} className={clsx('', first ? 'section-py-first' : 'section-py', full && 'section-full')}>
-      <div className={clsx('container', containerStyle)}>{children}</div>
+    <section id={id} className={cn('', first ? 'section-py-first' : 'section-py', full && 'section-full')}>
+      <div className={cn('container', containerStyle)}>{children}</div>
     </section>
   );
 };
