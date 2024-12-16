@@ -38,7 +38,7 @@ These are the current dependencies and environment setup on this project, and a 
 
 ### Rework project
 
-Here, we have a very basic version website, not well thought and hastily done. We now need to work on a proper design, think about the content, and simplify the developer experience by following the wonderful **KISS principle (Keep It Simple, Stupid!)**. So, we're going to rely more on Tailwind CSS default values and development tools, instead of customizing everything.
+Here, we have a very basic version website, not well thought and hastily done. We now need to work on a proper design and think about the content in advance.
 
 #### Design & planning
 
@@ -70,20 +70,25 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] UX - Fix mobile navigation overflow-hidden when increasing browser page width or switching from portrait to landscape.
   - [x] Clean up code to prepare for next steps (comment sections and remove unused code)
 
-- [ ] Hero section: LCP -> image priority, must load fast.
+- [x] Hero section: LCP -> image priority, must load fast.
 
-  - [ ] Setup translations (structure; texts might be updated)
-  - [ ] On desktop (& tablet?) have the section take at least the whole screen-height (no distraction at first glance, except Header)
-  - [ ] Centre blocks content & image, but content can't appear to be higher than the image.
-  - [ ] Button: links to LinkedIn or #contact-section ? Setup generic button style & variants
+  - [x] Setup translations (basic; texts will be updated later)
+  - [x] Setup block
+  - [x] Section full screen height
+  - [x] Button: links to LinkedIn or #contact-section ? Setup generic button style & variants
 
-- [ ] Contact section:
+- [x] Contact section:
 
-  - [ ] Setup translations
-  - [ ] Use the SectionIntroBlock to create a basic title/description/btn for now. We'll create a contact form later
-  - [ ] Buttons: LinkedIn, Github, mailto.
+  - [x] Setup translations (basic; texts will be updated later)
+  - [x] Use the SectionIntroBlock to create a basic title/description/btn. (We'll create a contact-form later)
+  - [x] Buttons: LinkedIn, Github, mailto.
 
-- [ ] Deploy these two sections (needs a new build ASAP)
+- [ ] Deployement (v0.6)
+
+  - [ ] Change custom classes names to `snake_case` (easier to locate and recognize)
+  - [ ] Optimize FCP/LCP
+  - [ ] Check code, fix bugs, clean up code if necessary
+  - [ ] Deploy & test
 
 - [ ] Skills section:
 
@@ -175,6 +180,7 @@ Not linked to any roadmap, but to do when/if relevant or necessary.
 - [ ] Routes - Upon adding new pages, reorganise routes
 - [ ] Internationalization - Separate dictionaries in multiple files when starting projects
 - [ ] Theme - When creating project, check if relevant to use style files (.css + tailwind.config.ts) specific to the project's route to override generic style (layout, component, fonts etc.).
+- [ ] Markdown - Update files & formatting, add table of contents (cf. extension)
 
 ## FUTURE ROADMAP & IDEAS
 

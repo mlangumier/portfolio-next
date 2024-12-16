@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { getNavigationRoutes } from '@/i18n/get-navigation-items';
+
 import Footer from './footer';
 import Header from './header';
-import { getNavigationRoutes } from '@/i18n/get-navigation-items';
 
 interface IProps {
   children: React.ReactNode;

@@ -1,8 +1,7 @@
 import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import ExternalLink from '@/components/links/external-link';
-import NavigationLink from '@/components/links/navigation-link';
+import { Link } from '@/i18n/routing';
 import { socialsList } from '@/utils/socials';
 import { INavRouteItem } from '@/utils/types';
 
@@ -22,9 +21,9 @@ const Footer: React.FC<Props> = ({ navItems }) => {
         <CategoryBlock title={tFooter('pages')}>
           {navItems.map((route, i) => (
             <li key={i}>
-              <NavigationLink className="nav" href={route.pathname}>
+              <Link href={route.pathname} className="nav">
                 {route.label}
-              </NavigationLink>
+              </Link>
             </li>
           ))}
         </CategoryBlock>
@@ -32,9 +31,9 @@ const Footer: React.FC<Props> = ({ navItems }) => {
         <CategoryBlock title={tFooter('socials')}>
           {socialsList.map((link, i) => (
             <li key={i}>
-              <ExternalLink className="nav" href={link.url}>
+              <a href={link.url} className="nav" target="_blank" rel="noopener noreferrer">
                 {link.label}
-              </ExternalLink>
+              </a>
             </li>
           ))}
         </CategoryBlock>
@@ -45,9 +44,9 @@ const Footer: React.FC<Props> = ({ navItems }) => {
 
         <CategoryBlock title={tFooter('download')} className="sm:col-start-4">
           <li>
-            <ExternalLink className="nav" href="/CV_Developpeur_Frontend.pdf">
+            <a className="nav" href="/CV_Developpeur_Frontend.pdf" target="_blank" rel="noopener noreferrer">
               {tFiles('resume')}
-            </ExternalLink>
+            </a>
           </li>
         </CategoryBlock>
       </div>

@@ -11,7 +11,10 @@
   },
 
   "Components": {
-    "Buttons": {}
+    "Buttons": {
+      "talk": "Discutons !",
+      "sendEmail": "Envoyer un email"
+    }
   },
 
   "Layout": {
@@ -34,32 +37,19 @@
         "title": "Portfolio",
         "description": "Portfolio avec mon CV et des exemples de projets personnels et professionnels que j'ai eu le plaisir de développer."
       },
-      "content": {
-        "intro": {
-          "name": "Mathieu Langumier",
-          "title": "Développeur Frontend",
-          "description": "Développeur Frontend expérimenté sur plusieurs frameworks JavaScript et TypeScript, dont <code>React</code> & <code>Next.js</code>, désormais en quête de nouveaux défis afin de développer des interfaces web modernes, performantes et accessibles, avec une approche mobile-first."
+      "sections": {
+        "hero": {
+          "salutation": "Bonjour ! Je m'appel Mathieu,",
+          "title": "Je développe des applications web modernes et performantes",
+          "description": "<jobTitle>DÉVELOPPEUR FRONTEND</jobTitle> expérimenté, je créé des applications <tech>React.js</tech> & <tech>TypeScript</tech> user-friendly, et j'ai pour objectif d'évoluer vers du développement Fullstack."
         },
-        "overview": {
-          "title": "Apperçu",
-          "skills": {
-            "title": "Compétences Techniques"
-          },
-          "experiences": {
-            "title": "Expériences",
-            "dixeed": {
-              "jobInfo": "2022-2024 - <code>Développeur Frontend</code>, Dixeed",
-              "description": "Développer des <code>applications web & mobiles dynamiques</code> à partir de designs et fiches techniques."
-            },
-            "ffy": {
-              "jobInfo": "2022 - <code>Développeur Frontend</code>, Flying For You",
-              "description": "Développer une <code>plateforme administrateur</code> afin d'observer et gérer les données envoyées par l'application mobile."
-            }
-          },
-          "contact": {
-            "title": "Contact",
-            "text": "Pour plus d'informations, n'hésitez pas à me contacter sur LinkedIn. Vous pouvez accéder au repository du projet sur Github par le lien suivant."
-          }
+        "contact": {
+          "title": "Me contacter",
+          "description": "Envie d'en savoir plus ? Jeter un oeil à mon profil LinkedIn pour plus d'info sur mes expériences, mon repository Github pour voir les techno que j'utilise, ou envoyez-moi un email grâce au lien ci-dessous !"
+        },
+        "underConstruction": {
+          "title": "Site en construction",
+          "description": "Plus d'info à venir !"
         }
       }
     },

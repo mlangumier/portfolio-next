@@ -10,6 +10,8 @@ This project uses **Next.js 15** with Turbopack, **React 19**, **TypeScript** an
 
 There are a few steps required to setup the environment. Instead of using `localhost:3000` during development, we'll be using `https://mathieulangumier.local`. By doing so, the experience while developing will be much closer to the one in production and will allow us to detect issues more effectively.
 
+If you want to quickly check out the project without any of this, forget these steps and simply use `npm run dev` after you've installed the dependencies.
+
 ### Step 1 - Change the host name
 
 In the file `~/../../etc/hosts`, add the name `mathieulangumier.local` to the list host names.
@@ -42,6 +44,10 @@ In order to have a homogenous code base within our project, we're going to use *
 If you are already using their related VSCode extensions, VSCode should use this project's config as a base while you're working on it.
 
 With these dependencies, we're marking sure that the remote repository's if formatted and homogenous. For that, we're using **Husky**'s pre-commit feature, which allows a script to run each time we're comming changes. We've also created another script in `./scripts/format.sh` that has the same purpose but that we can use anytime with `npm run check-n-format`.
+
+### Tailwind CSS IntelliSense
+
+This VSCode extension helps with auto-completion on the `className` attribute. In VSCode, the setting `Tailwind CSS: class attributes` allows you to add other attributes that will show auto-completion. You can add this project's custom attribute: `containerStyle`
 
 ## Deployment
 

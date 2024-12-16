@@ -11,7 +11,10 @@
   },
 
   "Components": {
-    "Buttons": {}
+    "Buttons": {
+      "talk": "Let's talk!",
+      "sendEmail": "Send an email"
+    }
   },
 
   "Layout": {
@@ -34,32 +37,19 @@
         "title": "Portfolio",
         "description": "A portfolio with my resume and examples of professional and personnal projects I have had the pleasure of working on."
       },
-      "content": {
-        "intro": {
-          "name": "Mathieu Langumier",
-          "title": "Frontend Developer",
-          "description": "Frontend Developper experienced with several JavaScript & TypeScript frameworks such as <code>React</code> & <code>Next.js</code>, now looking for new challenges to develop modern, optimized and accessible web applications, using a mobile-first approach."
+      "sections": {
+        "hero": {
+          "salutation": "Hello ! I'm Mathieu,",
+          "title": "I develop modern and optimized web applications",
+          "description": "As an experienced <jobTitle>FRONEND DEVELOPER</jobTitle>, I create user-friendly <tech>React.js</tech> & <tech>TypeScript</tech> applications, with the goal of becoming Fullstack developer."
         },
-        "overview": {
-          "title": "Overview",
-          "skills": {
-            "title": "Technical Skills"
-          },
-          "experiences": {
-            "title": "Experiences",
-            "dixeed": {
-              "jobInfo": "2022-2024 - <code>Frontend Developer</code>, Dixeed",
-              "description": "Developed <code>dynamic web & mobile applications</code> according to the given designs and technical specifications sheets."
-            },
-            "ffy": {
-              "jobInfo": "2022 - <code>Frontend Developer</code>, Flying For You",
-              "description": "Developed an <code>admin plateform</code> to observe and manage data sent by the mobile application."
-            }
-          },
-          "contact": {
-            "title": "Contact",
-            "text": "For more information, you can contact me on LinkedIn, and you can check this project's repository on Github."
-          }
+        "contact": {
+          "title": "Contact me",
+          "description": "Want to know more? Go check out my profile on LinkedIn to learn more about my experience, my Github repository to see what stack I'm using, or send me an email using the following link!"
+        },
+        "underConstruction": {
+          "title": "Website under construction",
+          "description": "More coming soon!"
         }
       }
     },

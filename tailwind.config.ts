@@ -37,6 +37,9 @@ const config: Config = {
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
         },
+        tertiary: {
+          DEFAULT: 'hsl(var(--tertiary))',
+        },
         background: {
           DEFAULT: 'hsl(var(--background))',
         },
