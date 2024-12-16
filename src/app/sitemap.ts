@@ -1,28 +1,26 @@
+import { getPathname, ILocale, routing } from '@/i18n/routing';
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    {
-      url: 'https://mathieulangumier.vercel.app',
-      alternates: {
-        languages: {
-          fr: 'https://mathieulangumier.vercel.app/fr',
-          en: 'https://mathieulangumier.vercel.app/en',
-        },
-      },
-      lastModified: new Date(),
-      priority: 1,
-    },
-    // {
-    //   url: 'https://mathieulangumier.vercel.app/projects',
-    //   alternates: {
-    //     languages: {
-    //       fr: 'https://mathieulangumier.vercel.app/fr/projects',
-    //       en: 'https://mathieulangumier.vercel.app/en/projects',
-    //     },
-    //   },
-    //   lastModified: new Date(),
-    //   priority: 0.8,
-    // },
+    getEntry('/'),
+    // getEntry('/about'),
+    // getEntry('/projects')
   ];
+}
+
+type Href = Parameters<typeof getPathname>[0]['href'];
+
+function getEntry(href: Href) {
+  return {
+    url: getUrl(href, routing.defaultLocale),
+    alternates: {
+      languages: Object.fromEntries(routing.locales.map((locale: ILocale) => [locale, getUrl(href, locale)])),
+    },
+  };
+}
+
+function getUrl(href: Href, locale: ILocale) {
+  const pathname = getPathname({ locale, href });
+  return process.env.NEXT_PUBLIC_SITE_URL + pathname;
 }

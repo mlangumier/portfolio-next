@@ -1,7 +1,7 @@
 import '@/styles/globals.css';
 
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
+import { getMessages, setRequestLocale } from 'next-intl/server';
 import { DM_Sans } from 'next/font/google';
 import { notFound } from 'next/navigation';
 import React from 'react';
@@ -19,13 +19,17 @@ const dmSans = DM_Sans({
   variable: '--font-dm-sans',
 });
 
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }));
+}
+
 export function metadata(): Metadata {
   return {
     title: {
       template: '%s | Mathieu Langumier',
       default: 'Portfolio | Mathieu Langumier',
     },
-    description: 'Portfolio - Next.js 15, TypeScript & TailwindCSS.',
+    description: 'Portfolio de Mathieu Langumier - Projet Next.js 15, TypeScript & Tailwind CSS.',
   };
 }
 
@@ -37,6 +41,9 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
     notFound();
   }
 
+  // Enable static rendering of pages inside this route
+  setRequestLocale(locale);
+
   // Provides all messages to the client side for easier starting point (adapt later)
   const messages = await getMessages();
 
@@ -45,7 +52,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps) {
       <body>
         <NextIntlClientProvider messages={messages}>
           {children}
-          <Analytics mode="production" />
+          <Analytics />
           <SpeedInsights />
         </NextIntlClientProvider>
       </body>
