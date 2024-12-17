@@ -6,6 +6,7 @@ interface Props {
   id: string;
   full?: boolean;
   first?: boolean;
+  dark?: boolean;
   containerStyle?: string;
   children: React.ReactNode;
 }
@@ -16,11 +17,22 @@ interface Props {
  * @param id - Section's name
  * @param full - Makes the section use the viewport's height, minus the Header.
  * @param first - (only for first section of the page) Reduces the padding-top on mobile
+ * @param dark - This section will have a behavior similar to a dark-mode
  * @param containerStyle - Adding style to container
  */
-const SectionWrapper: React.FC<Props> = ({ id, first = false, full = false, containerStyle, children }) => {
+const SectionWrapper: React.FC<Props> = ({
+  id,
+  first = false,
+  full = false,
+  dark = false,
+  containerStyle,
+  children,
+}) => {
   return (
-    <section id={id} className={cn('', first ? 'section-py-first' : 'section-py', full && 'section-full')}>
+    <section
+      id={id}
+      className={cn('bg-background', first ? 'section-py-first' : 'section-py', full && 'section-full', dark && 'dark')}
+    >
       <div className={cn('container', containerStyle)}>{children}</div>
     </section>
   );
