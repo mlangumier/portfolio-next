@@ -46,7 +46,7 @@ const HomepageView = () => {
         </div>
       </SectionWrapper>
 
-      <SectionWrapper id="contact" full>
+      <SectionWrapper id="contact" full dark>
         <SectionTitle title={tPage('contact.title')} description={tPage('contact.description')}>
           <ExternalLink href={linkedin.url}>{linkedin.label}</ExternalLink>
           <ExternalLink href={github.url}>{github.label}</ExternalLink>

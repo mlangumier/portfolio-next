@@ -83,12 +83,12 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
   - [x] Use the SectionIntroBlock to create a basic title/description/btn. (We'll create a contact-form later)
   - [x] Buttons: LinkedIn, Github, mailto.
 
-- [ ] Deployement (v0.6)
+- [x] Deployement (v0.6)
 
-  - [ ] Change custom classes names to `snake_case` (easier to locate and recognize)
-  - [ ] Optimize FCP/LCP
-  - [ ] Check code, fix bugs, clean up code if necessary
-  - [ ] Deploy & test
+  - [x] Optimize FCP/LCP
+  - [x] Add tailwind-merge and the function to work with clsx
+  - [x] Check code, fix bugs, clean up code
+  - [x] Deploy & test
 
 - [ ] Skills section:
 

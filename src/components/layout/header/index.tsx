@@ -1,12 +1,11 @@
 'use client';
 
-import clsx from 'clsx';
 import { useTranslations } from 'next-intl';
 import React, { useEffect, useState } from 'react';
 
 import LocalSwitcher from '@/components/locale-switcher';
-import { useIsScreenLargerThan } from '@/hooks/use-is-screen-larger-than';
 import { Link, usePathname } from '@/i18n/routing';
+import { cn } from '@/utils/tailwindcss';
 import { INavRouteItem } from '@/utils/types';
 
 import BurgerIcon from './burger-icon';
@@ -19,7 +18,6 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const pathname = usePathname();
   const tHeader = useTranslations('Layout.Header');
-  const isLargeScreen = useIsScreenLargerThan('md');
 
   const handleBurgerMenu = (state: 'open' | 'close') => {
     setIsMenuOpen(state === 'open');
@@ -28,14 +26,6 @@ const Header: React.FC<Props> = ({ navItems }) => {
   const toggleBurgerMenu = () => {
     setIsMenuOpen(prev => !prev);
   };
-
-  // Closes the mobile menu when increasing the browser's window size
-  // -> 'overflow-hidden' would otherwise stay and prevent the user from navigation the page
-  useEffect(() => {
-    if (isLargeScreen) {
-      setIsMenuOpen(false);
-    }
-  }, [isLargeScreen]);
 
   // Disables scrolling when mobile menu is open
   useEffect(() => {
@@ -75,7 +65,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                 <Link
                   href={item.pathname}
                   aria-current={pathname === item.pathname}
-                  className={clsx('nav nav-header', pathname === item.pathname && 'nav-active')}
+                  className={cn('nav nav-header', pathname === item.pathname && 'nav-active')}
                 >
                   {item.label}
                 </Link>
@@ -87,7 +77,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
         {/* Navigation - Mobile */}
         <div
-          className={clsx(
+          className={cn(
             'fixed inset-0 top-20 z-40 flex flex-row md:hidden',
             'transition-all duration-500 ease-out',
             isMenuOpen ? 'visible left-0' : 'invisible left-[-100%]'
@@ -102,7 +92,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
                     <Link
                       href={item.pathname}
                       aria-current={pathname === item.pathname}
-                      className={clsx('nav nav-mobile w-full px-4 py-4', pathname === item.pathname && 'nav-active')}
+                      className={cn('nav nav-mobile w-full px-4 py-4', pathname === item.pathname && 'nav-active')}
                       onClick={() => handleBurgerMenu('close')}
                     >
                       {item.label}
@@ -124,7 +114,7 @@ const Header: React.FC<Props> = ({ navItems }) => {
 
           <div
             id="backdrop"
-            className={clsx(
+            className={cn(
               'backdrop w-full',
               'transition-all delay-100 duration-500',
               isMenuOpen ? 'opacity-100' : 'opacity-0'

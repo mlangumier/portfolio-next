@@ -1,5 +1,6 @@
-import clsx from 'clsx';
 import React from 'react';
+
+import { cn } from '@/utils/tailwindcss';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
@@ -8,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const Button: React.FC<ButtonProps> = ({ children, className, ...rest }) => {
   return (
-    <button className={clsx('btn btn-primary', className)} {...rest}>
+    <button className={cn('btn btn-primary', className)} {...rest}>
       {children}
     </button>
   );
