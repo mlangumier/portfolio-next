@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { getNavigationRoutes } from '@/i18n/get-navigation-items';
+
 import Footer from './footer';
 import Header from './header';
 
@@ -7,17 +9,17 @@ interface IProps {
   children: React.ReactNode;
 }
 
-const MainLayout: React.FC<IProps> = ({ children }) => {
+const MainLayout: React.FC<IProps> = async ({ children }) => {
+  const navItems = await getNavigationRoutes();
+
   return (
-    <div className="flex min-h-svh flex-col">
-      <Header />
+    <>
+      <Header navItems={navItems} />
 
-      <main className="mt-[8rem] flex grow flex-col items-center justify-center bg-grey-light px-8 py-12 md:px-12 md:py-16">
-        {children}
-      </main>
+      <main className="pt-20">{children}</main>
 
-      <Footer />
-    </div>
+      <Footer navItems={navItems} />
+    </>
   );
 };
 

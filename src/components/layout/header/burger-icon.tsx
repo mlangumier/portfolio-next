@@ -1,34 +1,35 @@
-import clsx from 'clsx';
 import React from 'react';
+
+import { cn } from '@/utils/tailwindcss';
 
 interface Props {
   isOpen: boolean;
-  btnLabel: string;
   handleIsOpen: () => void;
+  className?: string;
 }
 
-const BurgerIcon: React.FC<Props> = ({ isOpen, btnLabel, handleIsOpen }) => {
+const BurgerIcon: React.FC<Props> = ({ isOpen, handleIsOpen, className }) => {
   return (
-    <button aria-label={btnLabel} onClick={handleIsOpen} className="relative h-full w-14 hover:cursor-pointer">
+    <div onClick={handleIsOpen} className={cn('relative h-7 w-10 hover:cursor-pointer', className)}>
       <span
-        className={clsx(
-          'absolute right-[50%] top-0 h-1.5 w-7 transform rounded-sm bg-primary transition duration-500 ease-in-out',
-          isOpen && 'translate-x-1.5 translate-y-3 rotate-45'
+        className={cn(
+          'absolute left-0 h-1 rounded-sm bg-accent transition-all',
+          isOpen ? 'top-1/2 w-full -translate-y-1/2 rotate-45 duration-500' : 'top-0 w-2/3 duration-200'
         )}
       />
       <span
-        className={clsx(
-          'absolute right-0 top-5 h-1.5 w-14 transform rounded-sm bg-primary transition duration-500 ease-in-out',
-          isOpen && '-rotate-45'
+        className={cn(
+          'absolute top-1/2 h-1 -translate-y-1/2 transform rounded-sm bg-accent transition-all',
+          isOpen ? 'left-1/2 w-0 -translate-x-1/2 duration-200' : 'left-0 w-full duration-500'
         )}
       />
       <span
-        className={clsx(
-          'absolute right-0 top-10 h-1.5 w-7 transform rounded-sm bg-primary transition duration-500 ease-in-out',
-          isOpen && '-translate-x-1.5 -translate-y-3 rotate-45'
+        className={cn(
+          'absolute right-0 h-1 rounded-sm bg-accent transition-all',
+          isOpen ? 'bottom-1/2 w-full translate-y-1/2 -rotate-[45deg] duration-500' : 'bottom-0 w-2/3 duration-200'
         )}
       />
-    </button>
+    </div>
   );
 };
 

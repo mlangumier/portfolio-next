@@ -1,33 +1,54 @@
-import Image from 'next/image';
+import { useTranslations } from 'next-intl';
 import React from 'react';
 
-import NavigationLinkExternal from '@/components/navigation/navigation-link-external';
-import { externalLinksList, INavigationLinkExternal } from '@/utils/links';
+import { Link } from '@/i18n/routing';
+import { socialsList } from '@/utils/socials';
+import { INavRouteItem } from '@/utils/types';
 
-const Footer: React.FC = () => {
+import { CategoryBlock } from './category-block';
+
+interface Props {
+  navItems: INavRouteItem[];
+}
+
+const Footer: React.FC<Props> = ({ navItems }) => {
+  const tFooter = useTranslations('Layout.Footer');
+  const tFiles = useTranslations('Common.Files');
+
   return (
-    <footer className="mx-auto w-full border-t border-grey-neutral">
-      <div className="mx-auto flex max-w-screen-xl flex-col-reverse px-8 pb-6 pt-8 md:flex-row md:items-center md:justify-between">
-        <div className="m-auto mt-8 text-center md:m-0">
-          <p className="text-small">© 2024 Mathieu Langumier</p>
-        </div>
-        <div className="m-auto text-center md:m-0">
-          <ul className="flew-row flex gap-8 py-4">
-            {externalLinksList.map((link: INavigationLinkExternal) => (
-              <li key={link.label}>
-                <NavigationLinkExternal href={link.url}>
-                  <Image
-                    src={link.icon}
-                    alt={`${link.label} icon`}
-                    height={30}
-                    width={30}
-                    className="size-12 md:size-10"
-                  />
-                </NavigationLinkExternal>
-              </li>
-            ))}
-          </ul>
-        </div>
+    <footer className="bg-background pt-8 sm:pb-6 md:pb-8 md:pt-12">
+      <div className="container grid grid-cols-2 grid-rows-2 gap-x-4 gap-y-8 sm:grid-cols-4 sm:grid-rows-1 sm:gap-y-0">
+        <CategoryBlock title={tFooter('pages')}>
+          {navItems.map((route, i) => (
+            <li key={i}>
+              <Link href={route.pathname} className="nav">
+                {route.label}
+              </Link>
+            </li>
+          ))}
+        </CategoryBlock>
+
+        <CategoryBlock title={tFooter('socials')}>
+          {socialsList.map((link, i) => (
+            <li key={i}>
+              <a href={link.url} className="nav" target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </CategoryBlock>
+
+        {/* <CategoryBlock title={tFooter('projects')} className="hidden">
+          <li>(soon)</li>
+        </CategoryBlock> */}
+
+        <CategoryBlock title={tFooter('download')} className="sm:col-start-4">
+          <li>
+            <a className="nav" href="/CV_Developpeur_Frontend.pdf" target="_blank" rel="noopener noreferrer">
+              {tFiles('resume')}
+            </a>
+          </li>
+        </CategoryBlock>
       </div>
     </footer>
   );

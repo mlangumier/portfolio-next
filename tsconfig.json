@@ -13,6 +13,7 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    "noImplicitAny": true,
     "forceConsistentCasingInFileNames": true,
     "plugins": [
       {
@@ -23,6 +24,13 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs", ".next/types/**/*.ts", "tailwind.config.ts"],
+  "include": [
+    "next-env.d.ts", 
+    "**/*.ts", 
+    "**/*.tsx", 
+    "**/*.mjs", 
+    ".next/types/**/*.ts", 
+    "tailwind.config.ts"
+  ],
   "exclude": ["node_modules"]
 }

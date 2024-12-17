@@ -6,7 +6,10 @@ export const routing = defineRouting({
   defaultLocale: 'fr',
   pathnames: {
     '/': '/',
-    '/experiences': '/experiences',
+    '/about': {
+      fr: '/a-propos',
+      en: '/about',
+    },
     '/projects': {
       fr: '/projets',
       en: '/projects',
@@ -14,8 +17,8 @@ export const routing = defineRouting({
   },
 });
 
-export type Locale = (typeof routing.locales)[number];
-export type Pathnames = keyof typeof routing.pathnames;
+export type ILocale = (typeof routing.locales)[number];
+export type IPathname = keyof typeof routing.pathnames;
 
 // Lightweight wrappers around Next.js' navigation APIs that will consider the routing configuration
 // We've updated `esling.config.mjs` rules to show an error if we don't use next-intl API.
@@ -23,5 +26,5 @@ export const { Link, redirect, getPathname, usePathname, useRouter } = createNav
 
 // For static page generation
 export function generateStaticParams() {
-  return routing.locales.map((locale: Locale) => ({ locale }));
+  return routing.locales.map((locale: ILocale) => ({ locale }));
 }

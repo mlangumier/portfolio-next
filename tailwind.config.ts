@@ -1,88 +1,79 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
-import plugin from 'tailwindcss/plugin';
+import tailwindcssAnimate from 'tailwindcss-animate';
 
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/views/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      sm: '480px',
+      sm: '576px',
       md: '768px',
-      lg: '992px',
-      xl: '1200px',
+      lg: '1024px',
+      xl: '1280px',
+    },
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        lg: '0',
+      },
+      screens: {
+        lg: '1024px',
+      },
     },
     fontFamily: {
-      sans: ['"Excon"', ...defaultTheme.fontFamily.sans],
-      serif: ['"Ranade"', ...defaultTheme.fontFamily.serif],
+      sans: ['DM Sans', ...defaultTheme.fontFamily.sans],
     },
-    fontSize: {
-      'small-10': ['1rem', '2rem'],
-      small: ['1.4rem', '2rem'],
-      base: ['1.6rem', '2rem'],
-      medium: ['1.8rem', '2rem'],
-      large: ['2rem', '2.5rem'],
-      'large-22': ['2.2rem', '3rem'],
-      'large-25': ['2.5rem', '3.5rem'],
-      'large-30': ['3rem', '4rem'],
-    },
+    // fontsize: {}
     extend: {
       colors: {
         primary: {
-          DEFAULT: 'rgb(var(--color-primary))',
-          light: 'rgb(var(--color-primary-light))',
-          dark: 'rgb(var(--color-primary-dark))',
-          over: 'rgb(var(--color-primary-over))',
-          transparent: 'rgba(var(--color-primary-transparent) / 0.2)',
+          DEFAULT: 'hsl(var(--primary))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          hover: 'hsl(var(--accent-hover))',
         },
         secondary: {
-          DEFAULT: 'rgb(var(--color-secondary))',
-          light: 'rgb(var(--color-secondary-light))',
-          dark: 'rgb(var(--color-secondary-dark))',
-          over: 'rgb(var(--color-secondary-dark))',
-          transparent: 'rgb(var(--color-secondary-transparent) / 0.5)',
+          DEFAULT: 'hsl(var(--secondary))',
+        },
+        tertiary: {
+          DEFAULT: 'hsl(var(--tertiary))',
+        },
+        background: {
+          DEFAULT: 'hsl(var(--background))',
+        },
+        foreground: {
+          DEFAULT: 'hsl(var(--foreground))',
+          muted: 'hsl(var(--muted-foreground))',
         },
         grey: {
-          DEFAULT: 'rgb(var(--color-grey))',
-          light: 'rgb(var(--color-grey-light))',
-          neutral: 'rgb(var(--color-grey-neutral))',
-          dark: 'rgb(var(--color-grey-dark))',
-          black: 'rgb(var(--color-grey-black))',
-        },
-        error: {
-          DEFAULT: 'rgb(var(--color-error))',
-        },
-        warning: {
-          DEFAULT: 'rgb(var(--color-warning))',
-        },
-        success: {
-          DEFAULT: 'rgb(var(--color-success))',
-        },
-        info: {
-          DEFAULT: 'rgb(var(--color-info))',
+          border: 'hsl(var(--border))',
+          shadow: 'hsl(var(--shadow))',
+          backdrop: 'hsl(var(--backdrop) / 50)',
         },
       },
+      gridTemplateRows: {
+        layout: '1fr auto',
+      },
+      gridTemplateColumns: {
+        'header-title-center': 'auto 1fr minmax(0, 2.5rem)',
+        'header-title-start': 'auto 1fr',
+      },
       boxShadow: {
-        'bottom-right': '6px 6px 6px 0 rgba(var(--color-grey-dark) / 0.1)',
+        'card-25': '4px 4px 4px 0 hsl(var(--shadow) / 0.25)',
+        'card-50': '4px 4px 4px 0 hsl(var(--shadow) / 0.50)',
+      },
+      backdropBlur: {
+        xs: '2px',
       },
       // Use keyframes and animations for reusable "fade" and "slide" animations
       // keyframes:{},
       // animations: {},
     },
   },
-  plugins: [
-    // Set the base font-size for the project, allows for more developer-friendly use of REM values.
-    // If using the VSCode extension, change VSCode setting "tailwindCSS.rootFontSize" to "10"
-    plugin(function ({ addBase }) {
-      addBase({
-        html: { fontSize: '10px' },
-      });
-    }),
-  ],
+  plugins: [tailwindcssAnimate],
 };
 
 export default config;

@@ -2,18 +2,17 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import React from 'react';
 
-import { notFoundImage } from '@/assets/images';
+import { notFoundImage } from '@/assets';
+import SectionWrapper from '@/components/section-block';
 
 const NotFoundView: React.FC = () => {
   const t = useTranslations('Pages.NotFound');
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex w-full grow flex-col items-center justify-center">
-        <Image src={notFoundImage} alt="" width={480} height={320} className="w-full max-w-screen-sm" />
-        <h2 className="flex-1 pt-4 text-center uppercase">{t('text')}</h2>
-      </div>
-    </div>
+    <SectionWrapper id="not-found" full first containerStyle="flex grow flex-col items-center justify-center gap-8">
+      <Image src={notFoundImage} alt="" width={480} height={320} className="w-full max-w-screen-sm" />
+      <p className="title-section text-center">{t('text')}</p>
+    </SectionWrapper>
   );
 };
 
