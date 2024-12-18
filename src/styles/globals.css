@@ -6,6 +6,15 @@
 
 @layer base {
   :root {
+    /*TODO: Definitive colors with this: https://www.iamsajid.com/colors/
+      - primary for styled: buttons, titles, dark background, etc.
+      - secondary for background
+      - tertiary for texts
+      - accent for highlights & personality ()
+
+      -> on dark: simply switch lightness value to opposite (20% -> 80%)
+    */
+
     --cyan-900: 196.4 63.6 23.7;
     --cyan-700: 192.9 82.3 31;
     --sky-50: 204 100 97.1;
@@ -75,7 +84,7 @@
   }
 
   .title-card {
-    @apply text-lg font-bold text-primary;
+    @apply text-lg font-bold text-accent;
   }
 
   p,
@@ -117,6 +126,10 @@
   }
   .section-full {
     @apply min-h-[calc(100vh-5rem)] content-center;
+  }
+
+  .card {
+    @apply w-full rounded-lg border border-grey-border bg-white p-5 transition-all hover:scale-105 hover:shadow-card-25;
   }
 }
 

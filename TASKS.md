@@ -93,21 +93,18 @@ Using our new design, we're going to rework our homepage, making it more enjoyab
 - [ ] Skills section:
 
   - [ ] Setup translations
-  - [ ] Prepare items content in as data object (separate file if can get translation there, or directly in component)
-  - [ ] Create a SectionIntroBlock for title/description(s)/button(s) with prop for align (text & buttons-flex) and max-width
-  - [ ] Transform logos into svg components and setup sizes & colors.
-  - [ ] Create SkillBlock component with responsive grid.
-  - [ ] Develop Card component with simple animation on hover, add prop for bg-color, padding(?), and hover border direction (if using this).
+  - [x] Prepare items content in a data object (separate file if can get translation there, or directly in component)
+  - [ ] Use icons for cards: either tech logos (SVG components), or illustrative icons (from library)
+  - [x] Develop generic Card component with simple animation on hover
   - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
 
 - [ ] Experience section:
 
   - [ ] Setup translations
-  - [ ] Prepare items content in as data object
-  - [ ] Setup the temporary horizontal layout (vertical layout will be implemented with the animations).
-  - [ ] Use the SectionIntroBlock component for left-side content
-  - [ ] Create ExperiencesBlock component with responsive grid
-  - [ ] Use Card component to display experiences
+  - [ ] Prepare items content as data object
+  - [ ] Setup basic vertical (grid?) layout, check vertical line
+  - [ ] Re-use CardComponent for experiences (+ slide-in animations?)
+  - [ ] Use Card component for experiences
   - [ ] Optional: Setup section skeleton for suspense fallback if slow loading time
 
 - [ ] Deploy full basic homepage
@@ -173,6 +170,7 @@ Now that out page is looking much better, we're going to add some animations and
 
 Not linked to any roadmap, but to do when/if relevant or necessary.
 
+- [ ] Typescript - Correct imports for `React` (ex: `React.ReactNode` -> `ReactNode`)
 - [ ] Theme - Setup dark mode integration (+ must allow other themes as well)
 - [ ] Component - Add a scroll-to-top button
 - [ ] Component - Change language switcher to a `Select` component
